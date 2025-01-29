@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationDefinition" load_steps=3 format=3 uid="uid://b5xp3vma4moqa"]
+
+[ext_resource type="PackedScene" uid="uid://dsj8adenv17b6" path="res://Scenes/Locations/ShipHold.tscn" id="1_jqqiu"]
+[ext_resource type="Script" path="res://Scripts/location_definition.gd" id="1_t6boi"]
+
+[resource]
+script = ExtResource("1_t6boi")
+location_name = "Câle"
+scene = ExtResource("1_jqqiu")

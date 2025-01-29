@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationDefinition" load_steps=3 format=3 uid="uid://chjlesoi4geqn"]
+
+[ext_resource type="Script" path="res://Scripts/location_definition.gd" id="1_6eqgw"]
+[ext_resource type="PackedScene" uid="uid://mfkweep0uqko" path="res://Scenes/Locations/CaptainCabin.tscn" id="1_dj21h"]
+
+[resource]
+script = ExtResource("1_6eqgw")
+location_name = "La cabine du captaine"
+scene = ExtResource("1_dj21h")

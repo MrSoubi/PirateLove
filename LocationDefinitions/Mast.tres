@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationDefinition" load_steps=3 format=3 uid="uid://dga52foxrwb8y"]
+
+[ext_resource type="PackedScene" uid="uid://jdo7dirgyx75" path="res://Scenes/Locations/Mast.tscn" id="1_0u5h1"]
+[ext_resource type="Script" path="res://Scripts/location_definition.gd" id="1_ecof5"]
+
+[resource]
+script = ExtResource("1_ecof5")
+location_name = "Mât"
+scene = ExtResource("1_0u5h1")

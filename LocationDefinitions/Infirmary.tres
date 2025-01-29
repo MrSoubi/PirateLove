@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationDefinition" load_steps=3 format=3 uid="uid://b63s6gdga8p2f"]
+
+[ext_resource type="Script" path="res://Scripts/location_definition.gd" id="1_0ltc6"]
+[ext_resource type="PackedScene" uid="uid://ce07qfncfb66l" path="res://Scenes/Locations/Infirmary.tscn" id="1_rtidq"]
+
+[resource]
+script = ExtResource("1_0ltc6")
+location_name = "Infirmerie"
+scene = ExtResource("1_rtidq")
