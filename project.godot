@@ -24,20 +24,39 @@ CursorManager="*res://Scripts/cursor_manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"Cannonier": "res://Dialogic/Characters/Cannonier.dch",
+"Capitaine": "res://Dialogic/Characters/Capitaine.dch",
+"Cuistot": "res://Dialogic/Characters/Cuistot.dch",
+"Guet": "res://Dialogic/Characters/Guet.dch",
+"Medecin": "res://Dialogic/Characters/Medecin.dch",
+"Second": "res://Dialogic/Characters/Second.dch",
 "ch1_infirmerie_RatEtFromage_code": "res://Dialogic/Characters/ch1_infirmerie_RatEtFromage_code.dch",
 "mousse": "res://Dialogic/Characters/mousse.dch"
 }
 directories/dtl_directory={
-"ch1_RatEtFromage_infirmerie_RatQuiMange": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_RatQuiMange.dtl",
-"ch1_RatEtFromage_infirmerie_bureau": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_bureau.dtl",
-"ch1_RatEtFromage_infirmerie_etagere": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_etagere.dtl",
-"ch1_RatEtFromage_infirmerie_levier": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_levier.dtl",
-"ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_mousse.dtl",
-"ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_porte.dtl",
-"default_infirmerie_mousse": "res://Dialogic/Timelines/default_infirmerie_mousse.dtl"
+"ch1_RatEtFromage_infirmerie_RatQuiMange": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_RatQuiMange.dtl",
+"ch1_RatEtFromage_infirmerie_bureau": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_bureau.dtl",
+"ch1_RatEtFromage_infirmerie_etagere": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_etagere.dtl",
+"ch1_RatEtFromage_infirmerie_levier": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_levier.dtl",
+"ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_mousse.dtl",
+"ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_porte.dtl",
+"default_infirmerie_mousse": "res://Dialogic/Timelines/default_infirmerie_mousse.dtl",
+"premiere_conversation": "res://Dialogic/Timelines/LaLoucheDeMurlock/premiere_conversation.dtl"
 }
 variables={
 "Chapitre_1": {
+"LaLoucheDeMurlock": {
+"cuistot_possede_louche": false,
+"discussion_cannonier": false,
+"discussion_cuistot": false,
+"discussion_guet": false,
+"discussion_medecin": false,
+"indice_poudre": false,
+"possede_louche": false,
+"possede_plats": false,
+"quete_en_cours": false,
+"quete_finie": false
+},
 "RatEtFromage": {
 "cadenas_ouvert": false,
 "code": "0",

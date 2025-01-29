@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsj8adenv17b6"]
+[gd_scene load_steps=8 format=3 uid="uid://dsj8adenv17b6"]
 
 [ext_resource type="Texture2D" uid="uid://djoyyrc7rfm82" path="res://Textures/Locations/Placeholders/ship_hold.png" id="1_a87jf"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_46xdj"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="3_a6lkd"]
+[ext_resource type="Script" path="res://Scripts/character.gd" id="3_rt2fs"]
 [ext_resource type="PackedScene" uid="uid://hvuusqysuf45" path="res://Characters/Guet.tscn" id="4_drmdt"]
+[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_6ps22"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="5_p4q6l"]
 
 [node name="ShipHold" type="Node"]
@@ -19,40 +21,50 @@ grow_vertical = 2
 texture = ExtResource("1_a87jf")
 expand_mode = 3
 
-[node name="Door_To_Infirmary" type="Area2D" parent="CanvasLayer"]
-script = ExtResource("2_46xdj")
-destination = 1
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Infirmary"]
-polygon = PackedVector2Array(292, 558, 241, 731, 1028, 683, 686, 556)
-
-[node name="Door_To_Kitchen" type="Area2D" parent="CanvasLayer"]
-script = ExtResource("2_46xdj")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Kitchen"]
-polygon = PackedVector2Array(151, 357, 121, 435, 155, 472, 273, 460, 212, 337)
-
-[node name="Door_To_Deck2" type="Area2D" parent="CanvasLayer"]
-script = ExtResource("2_46xdj")
-destination = 4
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck2"]
-polygon = PackedVector2Array(862, 526, 1180, 577, 1206, -12)
-
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
 
 [node name="Cannonier" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("3_a6lkd")]
 position = Vector2(397, 414)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("3_rt2fs")
+timeline = "premiere_conversation"
 
 [node name="Guet" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("4_drmdt")]
 position = Vector2(530, 418)
 scale = Vector2(0.205809, 0.205809)
+script = ExtResource("3_rt2fs")
+timeline = "premiere_conversation"
 
 [node name="Medecin" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("5_p4q6l")]
 position = Vector2(680, 410)
 scale = Vector2(0.2, 0.2)
+script = ExtResource("3_rt2fs")
+timeline = "premiere_conversation"
 
-[connection signal="input_event" from="CanvasLayer/Door_To_Infirmary" to="CanvasLayer/Door_To_Infirmary" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/Door_To_Kitchen" to="CanvasLayer/Door_To_Kitchen" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_input_event"]
+[node name="Default" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("5_6ps22")
+hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
+
+[node name="Door_To_Infirmary" type="Area2D" parent="CanvasLayer/Default"]
+script = ExtResource("2_46xdj")
+destination = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Infirmary"]
+polygon = PackedVector2Array(292, 558, 241, 731, 1028, 683, 686, 556)
+
+[node name="Door_To_Kitchen" type="Area2D" parent="CanvasLayer/Default"]
+script = ExtResource("2_46xdj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Kitchen"]
+polygon = PackedVector2Array(151, 357, 121, 435, 155, 472, 273, 460, 212, 337)
+
+[node name="Door_To_Deck2" type="Area2D" parent="CanvasLayer/Default"]
+script = ExtResource("2_46xdj")
+destination = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Deck2"]
+polygon = PackedVector2Array(862, 526, 1180, 577, 1206, -12)
+
+[connection signal="input_event" from="CanvasLayer/Default/Door_To_Infirmary" to="CanvasLayer/Default/Door_To_Infirmary" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/Default/Door_To_Kitchen" to="CanvasLayer/Default/Door_To_Kitchen" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/Default/Door_To_Deck2" to="CanvasLayer/Default/Door_To_Deck2" method="_on_input_event"]
