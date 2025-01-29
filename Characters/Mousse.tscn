@@ -13,3 +13,5 @@ texture = ExtResource("2_ssu7r")
 polygon = PackedVector2Array(-98, -451, -164, -399, -152, -264, -125, -155, -176, -88, -260, 65, -260, 188, -115, 211, -221, 267, -250, 385, -139, 407, 21, 432, 113, 465, 201, 449, 256, 349, 193, 215, 236, 178, 277, 35, 275, -78, 267, -165, 278, -241, 297, -337, 245, -444, 177, -502, 102, -470, 95, -409)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
