@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jdo7dirgyx75"]
+[gd_scene load_steps=3 format=3 uid="uid://jdo7dirgyx75"]
 
 [ext_resource type="Texture2D" uid="uid://cqklod6edg2ej" path="res://Textures/Locations/Placeholders/mast.png" id="1_twx8v"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="2_vmtqc"]
 
 [node name="Mast" type="Node"]
 
@@ -14,3 +15,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_twx8v")
 expand_mode = 5
+
+[node name="Door_To_Deck1" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_vmtqc")
+destination = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck1"]
+polygon = PackedVector2Array(-35, 521, 1232, 498, 1163, 706, -151, 701)
+
+[connection signal="input_event" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_input_event"]

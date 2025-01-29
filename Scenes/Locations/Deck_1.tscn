@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4al51kvbcv4c"]
+[gd_scene load_steps=3 format=3 uid="uid://b4al51kvbcv4c"]
 
 [ext_resource type="Texture2D" uid="uid://dtncljihw3bfe" path="res://Textures/Locations/Placeholders/deck_1.png" id="1_lcqyd"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="2_wv11d"]
 
 [node name="Deck1" type="Node"]
 
@@ -14,3 +15,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_lcqyd")
 expand_mode = 5
+
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_wv11d")
+destination = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_ShipHold"]
+polygon = PackedVector2Array(-86, 585, 406, 501, 699, 521, 241, 688, -193, 650)
+
+[node name="Door_To_Mast" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_wv11d")
+destination = 6
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Mast"]
+polygon = PackedVector2Array(679, 456, 972, 468, 890, -43, 760, -37)
+
+[node name="Door_To_Deck2" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_wv11d")
+destination = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck2"]
+polygon = PackedVector2Array(702, 579, 455, 680, 1194, 677, 1197, 572)
+
+[connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/Door_To_Mast" to="CanvasLayer/Door_To_Mast" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_input_event"]
