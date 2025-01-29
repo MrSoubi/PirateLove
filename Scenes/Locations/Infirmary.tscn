@@ -88,25 +88,59 @@ destination = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold"]
 polygon = PackedVector2Array(930, 219, 933, 542, 1078, 641, 1079, 239)
 
-[node name="RatQuiMange" type="Node2D" parent="CanvasLayer/RatEtFromage"]
+[node name="RatQuiMange" type="Node2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
 script = ExtResource("6_edijj")
 hide_if_one_is_false = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/RatQuiMange"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange"]
 position = Vector2(259, 89)
 scale = Vector2(0.249578, 0.249578)
 texture = ExtResource("3_6v4ni")
 
-[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/RatQuiMange"]
+[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange"]
 script = ExtResource("3_nuxq3")
 timeline = "ch1_RatEtFromage_infirmerie_RatQuiMange"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatQuiMange/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D"]
 polygon = PackedVector2Array(249, 36, 212, 86, 206, 141, 289, 154, 324, 84, 316, 25)
 
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/Levier" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/Bureau" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/Placard" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/DoorInfo/Area2D" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/Door/Door_To_ShipHold" to="CanvasLayer/RatEtFromage/Door/Door_To_ShipHold" method="_on_input_event"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" method="_on_input_event"]
+[node name="Default" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("3_rvsmg")
+hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.quete_en_cours"])
+
+[node name="Door" type="Node2D" parent="CanvasLayer/Default"]
+script = ExtResource("6_edijj")
+
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/Default/Door"]
+script = ExtResource("2_5f6go")
+destination = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door/Door_To_ShipHold"]
+polygon = PackedVector2Array(930, 219, 933, 542, 1078, 641, 1079, 239)
+
+[node name="Mousse" parent="CanvasLayer/Default" instance=ExtResource("2_iqjt0")]
+position = Vector2(140, 368)
+scale = Vector2(0.377617, 0.377617)
+timeline = "default_infirmerie_mousse"
+
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/RatEtFromage/Placard" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/RatEtFromage/Placard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/RatEtFromage/Placard" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold" to="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold" to="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold" to="CanvasLayer/RatEtFromage/RatEtFromage/Door/Door_To_ShipHold" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/Default/Door/Door_To_ShipHold" to="CanvasLayer/Default/Door/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Default/Door/Door_To_ShipHold" to="CanvasLayer/Default/Door/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Default/Door/Door_To_ShipHold" to="CanvasLayer/Default/Door/Door_To_ShipHold" method="_on_mouse_exited"]
