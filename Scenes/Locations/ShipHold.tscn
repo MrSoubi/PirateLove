@@ -51,7 +51,7 @@ scale = Vector2(0.205809, 0.205809)
 
 [node name="Medecin" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("5_p4q6l")]
 position = Vector2(680, 410)
-scale = Vector2(0.24, 0.24)
+scale = Vector2(0.2, 0.2)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_Infirmary" to="CanvasLayer/Door_To_Infirmary" method="_on_input_event"]
 [connection signal="input_event" from="CanvasLayer/Door_To_Kitchen" to="CanvasLayer/Door_To_Kitchen" method="_on_input_event"]
