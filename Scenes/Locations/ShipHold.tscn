@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsj8adenv17b6"]
+[gd_scene load_steps=9 format=3 uid="uid://dsj8adenv17b6"]
 
 [ext_resource type="Texture2D" uid="uid://djoyyrc7rfm82" path="res://Textures/Locations/Placeholders/ship_hold.png" id="1_a87jf"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_46xdj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hvuusqysuf45" path="res://Characters/Guet.tscn" id="4_drmdt"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_6ps22"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="5_p4q6l"]
+[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_8py5v"]
 
 [node name="ShipHold" type="Node"]
 
@@ -41,6 +42,16 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("3_rt2fs")
 timeline = "premiere_conversation"
 
+[node name="Door" type="Node2D" parent="CanvasLayer/NourrirEquipage"]
+script = ExtResource("6_8py5v")
+hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.discussion_cannonier", "Chapitre_1.LaLoucheDeMurlock.discussion_guet", "Chapitre_1.LaLoucheDeMurlock.discussion_medecin"])
+
+[node name="Door_To_Kitchen" type="Area2D" parent="CanvasLayer/NourrirEquipage/Door"]
+script = ExtResource("2_46xdj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen"]
+polygon = PackedVector2Array(151, 357, 121, 435, 155, 472, 273, 460, 212, 337)
+
 [node name="Default" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("5_6ps22")
 hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
@@ -65,6 +76,24 @@ destination = 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Deck2"]
 polygon = PackedVector2Array(862, 526, 1180, 577, 1206, -12)
 
+[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Cannonier" to="CanvasLayer/NourrirEquipage/Cannonier" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Cannonier" to="CanvasLayer/NourrirEquipage/Cannonier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Cannonier" to="CanvasLayer/NourrirEquipage/Cannonier" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Guet" to="CanvasLayer/NourrirEquipage/Guet" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Guet" to="CanvasLayer/NourrirEquipage/Guet" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Guet" to="CanvasLayer/NourrirEquipage/Guet" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Medecin" to="CanvasLayer/NourrirEquipage/Medecin" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Medecin" to="CanvasLayer/NourrirEquipage/Medecin" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Medecin" to="CanvasLayer/NourrirEquipage/Medecin" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Default/Door_To_Infirmary" to="CanvasLayer/Default/Door_To_Infirmary" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Default/Door_To_Infirmary" to="CanvasLayer/Default/Door_To_Infirmary" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Default/Door_To_Infirmary" to="CanvasLayer/Default/Door_To_Infirmary" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Default/Door_To_Kitchen" to="CanvasLayer/Default/Door_To_Kitchen" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Default/Door_To_Kitchen" to="CanvasLayer/Default/Door_To_Kitchen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Default/Door_To_Kitchen" to="CanvasLayer/Default/Door_To_Kitchen" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Default/Door_To_Deck2" to="CanvasLayer/Default/Door_To_Deck2" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Default/Door_To_Deck2" to="CanvasLayer/Default/Door_To_Deck2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Default/Door_To_Deck2" to="CanvasLayer/Default/Door_To_Deck2" method="_on_mouse_exited"]

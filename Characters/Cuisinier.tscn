@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu13foefgfwex"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_dk06k"]
-[ext_resource type="Texture2D" uid="uid://cfhjp5t48jmyp" path="res://Textures/Characters/cuisinier.png" id="1_lqpxi"]
+[ext_resource type="Texture2D" uid="uid://21ibncx64vw2" path="res://Textures/Characters/Cuistot/Cuisiniere_chibi.png" id="2_5yyhd"]
 
 [node name="Cuisinier" type="Area2D"]
 script = ExtResource("1_dk06k")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-65, -455, -151, -275, -193, -29, -245, 419, 239, 425, 237, 251, 145, 125, 177, -7, 231, -213, 189, -349, 65, -455)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lqpxi")
+texture = ExtResource("2_5yyhd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(50, -819, 150, -844, 314, -819, 439, -708, 445, -588, 350, -553, 438, -202, 386, 21, 276, 181, 320, 361, 274, 583, 409, 732, 427, 800, 414, 849, 350, 858, -284, 858, -313, 814, -466, 697, -483, 610, -514, 534, -421, 423, -357, 259, -317, 93, -298, -30, -287, -229, -223, -387, -182, -597, 9, -698)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

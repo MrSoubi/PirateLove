@@ -1,0 +1,12 @@
+if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
+	Oh sacrebleu, oh sapristi, oh putain de sa race de mort...
+	join Cuistot (Angry) center [animation="Fade In Down"]
+	Cuistot (Angry): ELLE EST OU MA LOUCHE ?!
+	Cuistot (Disregard): C'est toi ? Désolée...
+	Cuistot (Default): Je trouve pas ma louche. C'est les autres qui t'ont envoyé ?
+	Cuistot: C'est des pleureuses. Trop peur de me faire face. Ils ont trop faim pour risquer de me mettre en colère.
+	Cuistot: Berf, j'ai besoin de ma louche moi.
+	set {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} = true
+else:
+	Cuistot: Sans ma louche, rien dans la bouche !
+[signal arg="variables_changed"]

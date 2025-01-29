@@ -8,9 +8,7 @@ func _ready() -> void:
 	check_conditions()
 
 func handle_dialogic_signal(argument : String):
-	print("signal")
 	if argument == "variables_changed":
-		print("signal ok")
 		check_conditions()
 
 func check_conditions():

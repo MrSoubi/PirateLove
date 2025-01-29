@@ -2,37 +2,40 @@ label premiere_rencontre
 join Guet left
 join Cannonier center
 join Medecin right
-- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false]
-	leave Medecin
-	leave Guet
-	update Cannonier center
-	Cannonier: Moi j'aurai bien fait péter la porte de l'infirmerie, on a plein de poudre sur le bateau.
-	Cannonier: Mais apparemment c'était pas une bonne idée.
-	Cannonier: "Heu gneu gneu non Orlagh, fais pas ça Orlagh."
-	Cannonier: "Heu gneuuu, c'est tout le bateau qui risque de sauter Orlagh."
-	Cannonier: Ils savent pas de quoi ils parlent.
-	Cannonier: Moi je sais y faire avec la poudre. Les canons ça me connait !
-	Cannonier: Et j'en ai vu des canons...
-	set {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} = true
-- Parler au médecin | [if {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == false]
-	leave Guet
-	leave Cannonier
-	update Medecin center
-	Medecin: On a une discussion à avoir tout les deux.
-	Medecin: J'espère que ça va, que vous tenez le coup.
-	Medecin: Bla bla bla, à remplir
-	set {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} = true
-- Parler au guet | [if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false]
-	leave Medecin
-	leave Cannonier
-	update Guet center
-	Guet: Bruits d'oiseau
-	Guet: Suce un furoncle, tête de pioche montée sur un manche à pelle !
-	set {Chapitre_1.LaLoucheDeMurlock.discussion_guet} = true
 if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == true:
 	leave --All--
 	join Medecin center
 	Medecin: La cuistot veut te voir.
 else:
+	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false]
+		leave Medecin
+		leave Guet
+		update Cannonier center
+		Cannonier: Moi j'aurai bien fait péter la porte de l'infirmerie, on a plein de poudre sur le bateau.
+		Cannonier: Mais apparemment c'était pas une bonne idée.
+		Cannonier: "Heu gneu gneu non Orlagh, fais pas ça Orlagh."
+		Cannonier: "Heu gneuuu, c'est tout le bateau qui risque de sauter Orlagh."
+		Cannonier: Ils savent pas de quoi ils parlent.
+		Cannonier: Moi je sais y faire avec la poudre. Les canons ça me connait !
+		Cannonier: Et j'en ai vu des canons...
+		set {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} = true
+		[signal arg="variables_changed"]
+	- Parler au médecin | [if {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == false]
+		leave Guet
+		leave Cannonier
+		update Medecin center
+		Medecin: On a une discussion à avoir tout les deux.
+		Medecin: J'espère que ça va, que vous tenez le coup.
+		Medecin: Bla bla bla, à remplir
+		set {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} = true
+		[signal arg="variables_changed"]
+	- Parler au guet | [if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false]
+		leave Medecin
+		leave Cannonier
+		update Guet center
+		Guet: Bruits d'oiseau
+		Guet: Suce un furoncle, tête de pioche montée sur un manche à pelle !
+		set {Chapitre_1.LaLoucheDeMurlock.discussion_guet} = true
+		[signal arg="variables_changed"]
 	jump premiere_rencontre
 [signal arg="variables_changed"]

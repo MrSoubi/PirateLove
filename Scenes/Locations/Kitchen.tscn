@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://uc7wiuquw018"]
+[gd_scene load_steps=6 format=3 uid="uid://uc7wiuquw018"]
+
+[ext_resource type="Texture2D" uid="uid://btmvdp7adfqgn" path="res://Textures/Locations/Placeholders/cuisine.png" id="1_4fqh7"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="2_mj3ii"]
+[ext_resource type="PackedScene" uid="uid://cu13foefgfwex" path="res://Characters/Cuisinier.tscn" id="3_8pbwl"]
+[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="4_of5xr"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="5_0eosh"]
 
 [node name="Kitchen" type="Node"]
 
@@ -10,3 +16,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_4fqh7")
+
+[node name="Default" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("4_of5xr")
+hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
+
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/Default"]
+script = ExtResource("2_mj3ii")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_ShipHold"]
+polygon = PackedVector2Array(241, 203, 241, 420, 388, 413, 395, 190)
+
+[node name="Cuisinier" parent="CanvasLayer/Default" instance=ExtResource("3_8pbwl")]
+position = Vector2(701, 358)
+scale = Vector2(0.20807, 0.20807)
+
+[node name="LaLoucheDeMurlock" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("4_of5xr")
+hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_finie"])
+
+[node name="Cuisinier" parent="CanvasLayer/LaLoucheDeMurlock" instance=ExtResource("3_8pbwl")]
+position = Vector2(701, 358)
+scale = Vector2(0.20807, 0.20807)
+timeline = "premiere_discussion_cuistot"
+
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/LaLoucheDeMurlock"]
+script = ExtResource("2_mj3ii")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold"]
+polygon = PackedVector2Array(241, 203, 241, 420, 388, 413, 395, 190)
+
+[node name="Etageres" type="Area2D" parent="CanvasLayer/LaLoucheDeMurlock"]
+script = ExtResource("5_0eosh")
+timeline = "etageres_poudre"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LaLoucheDeMurlock/Etageres"]
+polygon = PackedVector2Array(459, 231, 454, 306, 589, 294, 587, 247)
+
+[connection signal="input_event" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" to="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" to="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" to="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/LaLoucheDeMurlock/Etageres" to="CanvasLayer/LaLoucheDeMurlock/Etageres" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/LaLoucheDeMurlock/Etageres" to="CanvasLayer/LaLoucheDeMurlock/Etageres" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/LaLoucheDeMurlock/Etageres" to="CanvasLayer/LaLoucheDeMurlock/Etageres" method="_on_mouse_exited"]
