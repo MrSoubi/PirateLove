@@ -41,6 +41,8 @@ variables={
 "code": "0",
 "levier_active": false,
 "possede_fromage": false,
+"quete_en_cours": true,
+"quete_finie": false,
 "rat_parti": false,
 "rencontre_mousse": false
 }

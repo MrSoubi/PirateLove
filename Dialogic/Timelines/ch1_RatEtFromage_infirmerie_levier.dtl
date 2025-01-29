@@ -17,6 +17,8 @@ if {Chapitre_1.RatEtFromage.levier_active} == false:
 		Le levier est libre, pas un rat en vue.
 		- Actionner le levier
 			set {Chapitre_1.RatEtFromage.levier_active} = true
+			set {Chapitre_1.RatEtFromage.quete_finie} = true
+			set {Chapitre_1.RatEtFromage.quete_en_cours} = false
 			[signal arg="variables_changed"]
 			Le levier s'abaisse sans problème.
 			Je ferais mieux de me laver les mains quand même...

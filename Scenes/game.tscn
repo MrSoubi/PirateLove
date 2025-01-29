@@ -37,7 +37,7 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_51kkn")
-initial_scene = 3
+initial_scene = 1
 
 [node name="LocationContainer" type="Node" parent="."]
 
