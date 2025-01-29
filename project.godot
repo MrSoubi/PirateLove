@@ -28,11 +28,13 @@ directories/dch_directory={
 "mousse": "res://Dialogic/Characters/mousse.dch"
 }
 directories/dtl_directory={
+"ch1_RatEtFromage_infirmerie_RatQuiMange": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_RatQuiMange.dtl",
 "ch1_RatEtFromage_infirmerie_bureau": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_bureau.dtl",
 "ch1_RatEtFromage_infirmerie_etagere": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_etagere.dtl",
 "ch1_RatEtFromage_infirmerie_levier": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_levier.dtl",
 "ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_mousse.dtl",
-"ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_porte.dtl"
+"ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_porte.dtl",
+"default_infirmerie_mousse": "res://Dialogic/Timelines/default_infirmerie_mousse.dtl"
 }
 variables={
 "Chapitre_1": {
