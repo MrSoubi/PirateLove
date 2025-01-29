@@ -23,12 +23,29 @@ CursorManager="*res://Scripts/cursor_manager.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"ch1_infirmerie_RatEtFromage_code": "res://Dialogic/Characters/ch1_infirmerie_RatEtFromage_code.dch",
+"mousse": "res://Dialogic/Characters/mousse.dch"
+}
 directories/dtl_directory={
-"timeline_boucher": "res://Dialogic/Timelines/timeline_boucher.dtl"
+"ch1_RatEtFromage_infirmerie_bureau": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_bureau.dtl",
+"ch1_RatEtFromage_infirmerie_etagere": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_etagere.dtl",
+"ch1_RatEtFromage_infirmerie_levier": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_levier.dtl",
+"ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_mousse.dtl",
+"ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/ch1_RatEtFromage_infirmerie_porte.dtl"
 }
 variables={
-"boucher": false
+"Chapitre_1": {
+"RatEtFromage": {
+"cadenas_ouvert": false,
+"code": "0",
+"levier_active": false,
+"possede_fromage": false,
+"rat_parti": false,
+"rencontre_mousse": false
+}
+},
+"Var": ""
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -51,6 +68,10 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 save/autosave=true
 save/default_slot="Sauvegarde"
+text/autopauses={}
+layout/style_list=[]
+layout/default_style="Default"
+glossary/default_case_sensitive=true
 
 [display]
 

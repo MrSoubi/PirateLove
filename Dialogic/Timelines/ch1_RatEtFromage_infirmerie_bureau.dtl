@@ -1,0 +1,7 @@
+if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
+	Il y a un mot sur le bureau.
+	join ch1_infirmerie_RatEtFromage_code right
+	Mais à quoi donc pourrait bien servir ce mot ?
+else:
+	Il n'y a rien sur ce bureau, à part quelques crouttes de fromage.
+[signal arg="variables_changed"]

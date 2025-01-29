@@ -1,4 +1,12 @@
-[gd_scene format=3 uid="uid://ce07qfncfb66l"]
+[gd_scene load_steps=8 format=3 uid="uid://ce07qfncfb66l"]
+
+[ext_resource type="Texture2D" uid="uid://b78j7gn3sgsb2" path="res://Textures/Locations/Placeholders/infirmerie.png" id="1_85dcg"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="2_5f6go"]
+[ext_resource type="PackedScene" uid="uid://bicfe6o7ysdev" path="res://Characters/Mousse.tscn" id="2_iqjt0"]
+[ext_resource type="Texture2D" uid="uid://yj4vf5souc7b" path="res://Textures/Items/rat_sans_fromage.png" id="3_6v4ni"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="3_nuxq3"]
+[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="3_rvsmg"]
+[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_edijj"]
 
 [node name="Infirmary" type="Node"]
 
@@ -10,3 +18,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_85dcg")
+expand_mode = 3
+
+[node name="RatEtFromage" type="Node2D" parent="CanvasLayer"]
+
+[node name="Mousse" parent="CanvasLayer/RatEtFromage" instance=ExtResource("2_iqjt0")]
+position = Vector2(140, 368)
+scale = Vector2(0.377617, 0.377617)
+timeline = "ch1_RatEtFromage_infirmerie_mousse"
+
+[node name="Levier" type="Area2D" parent="CanvasLayer/RatEtFromage"]
+script = ExtResource("3_nuxq3")
+timeline = "ch1_RatEtFromage_infirmerie_levier"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Levier"]
+polygon = PackedVector2Array(799, 421, 755, 482, 751, 540, 811, 555, 850, 546, 837, 493, 853, 452, 827, 418)
+
+[node name="Bureau" type="Area2D" parent="CanvasLayer/RatEtFromage"]
+script = ExtResource("3_nuxq3")
+timeline = "ch1_RatEtFromage_infirmerie_bureau"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Bureau"]
+polygon = PackedVector2Array(350, 296, 277, 337, 297, 354, 300, 503, 507, 498, 522, 344, 552, 311, 549, 292)
+
+[node name="Placard" type="Area2D" parent="CanvasLayer/RatEtFromage"]
+script = ExtResource("3_nuxq3")
+timeline = "ch1_RatEtFromage_infirmerie_etagere"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Placard"]
+polygon = PackedVector2Array(637, 188, 632, 378, 808, 372, 802, 177)
+
+[node name="Rat" type="Node2D" parent="CanvasLayer/RatEtFromage"]
+position = Vector2(-27, 11)
+script = ExtResource("3_rvsmg")
+hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
+
+[node name="Rat" type="Sprite2D" parent="CanvasLayer/RatEtFromage/Rat"]
+position = Vector2(769, 498)
+scale = Vector2(0.257782, 0.257782)
+texture = ExtResource("3_6v4ni")
+
+[node name="DoorInfo" type="Node2D" parent="CanvasLayer/RatEtFromage"]
+script = ExtResource("3_rvsmg")
+hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.levier_active"])
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/DoorInfo"]
+z_index = 1
+script = ExtResource("3_nuxq3")
+timeline = "ch1_RatEtFromage_infirmerie_porte"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/DoorInfo/Area2D"]
+polygon = PackedVector2Array(917, 208, 919, 547, 1092, 661, 1092, 218)
+
+[node name="Door" type="Node2D" parent="CanvasLayer/RatEtFromage"]
+script = ExtResource("6_edijj")
+hide_if_one_is_false = Array[String](["Chapitre_1.RatEtFromage.levier_active"])
+
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/RatEtFromage/Door"]
+script = ExtResource("2_5f6go")
+destination = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Door/Door_To_ShipHold"]
+polygon = PackedVector2Array(930, 219, 933, 542, 1078, 641, 1079, 239)
+
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/Levier" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/Bureau" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/Placard" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/DoorInfo/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Door/Door_To_ShipHold" to="CanvasLayer/RatEtFromage/Door/Door_To_ShipHold" method="_on_input_event"]

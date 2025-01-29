@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var bool_conditions : Array[String]
+@export var hide_if_one_is_false : Array[String]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,12 +8,15 @@ func _ready() -> void:
 	check_conditions()
 
 func handle_dialogic_signal(argument : String):
+	print("signal")
 	if argument == "variables_changed":
+		print("signal ok")
 		check_conditions()
 
 func check_conditions():
-	var result : bool = true
-	for condition in bool_conditions:
-		result = result and Dialogic.VAR.get(condition)
+	var show : bool = true
 	
-	visible = result
+	for condition in hide_if_one_is_false:
+		show = show and Dialogic.VAR.get_variable(condition)
+	
+	visible = show
