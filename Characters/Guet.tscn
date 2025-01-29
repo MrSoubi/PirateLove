@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://hvuusqysuf45"]
+
+[ext_resource type="Texture2D" uid="uid://cvqv173ll3fjh" path="res://Textures/Characters/mousse.png" id="1_c86wn"]
+
+[node name="Guet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c86wn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-254, 273, -178, 424, 128, 488, 267, 395, 393, -67, 321, -323, 237, -472, -15, -514, -194, -366, -227, -165, -263, 118)
