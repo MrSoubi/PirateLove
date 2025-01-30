@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsj8adenv17b6"]
 
-[ext_resource type="Texture2D" uid="uid://djoyyrc7rfm82" path="res://Textures/Locations/Placeholders/ship_hold.png" id="1_a87jf"]
+[ext_resource type="Texture2D" uid="uid://bddyugvgptiid" path="res://Textures/Locations/Placeholders/cale_background.jpg" id="1_qcgb0"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_46xdj"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="3_a6lkd"]
 [ext_resource type="Script" path="res://Scripts/character.gd" id="3_rt2fs"]
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_a87jf")
+texture = ExtResource("1_qcgb0")
 expand_mode = 3
 
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
@@ -34,27 +34,28 @@ hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.discussion_c
 script = ExtResource("2_46xdj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen"]
-polygon = PackedVector2Array(151, 357, 121, 435, 155, 472, 273, 460, 212, 337)
+polygon = PackedVector2Array(148, 341, 148, 436, 208, 435, 209, 343)
 
 [node name="Cannonier" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("3_a6lkd")]
-position = Vector2(397, 414)
+position = Vector2(353, 381)
 scale = Vector2(0.2, 0.2)
 script = ExtResource("3_rt2fs")
 timeline = "discussion_trio"
 
 [node name="Guet" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("4_drmdt")]
-position = Vector2(530, 418)
-scale = Vector2(0.205809, 0.205809)
+position = Vector2(470, 416)
+scale = Vector2(0.105378, 0.105378)
 script = ExtResource("3_rt2fs")
 timeline = "discussion_trio"
 
 [node name="Medecin" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("5_p4q6l")]
-position = Vector2(680, 410)
-scale = Vector2(0.2, 0.2)
+position = Vector2(761, 399)
+scale = Vector2(0.0926031, 0.0926031)
 script = ExtResource("3_rt2fs")
 timeline = "discussion_trio"
 
 [node name="Default" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource("5_6ps22")
 hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
@@ -63,20 +64,20 @@ script = ExtResource("2_46xdj")
 destination = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Infirmary"]
-polygon = PackedVector2Array(292, 558, 241, 731, 1028, 683, 686, 556)
+polygon = PackedVector2Array(159, 565, 288, 705, 1099, 655, 596, 527)
 
 [node name="Door_To_Kitchen" type="Area2D" parent="CanvasLayer/Default"]
 script = ExtResource("2_46xdj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Kitchen"]
-polygon = PackedVector2Array(151, 357, 121, 435, 155, 472, 273, 460, 212, 337)
+polygon = PackedVector2Array(149, 343, 149, 436, 205, 435, 206, 344)
 
 [node name="Door_To_Deck2" type="Area2D" parent="CanvasLayer/Default"]
 script = ExtResource("2_46xdj")
 destination = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_Deck2"]
-polygon = PackedVector2Array(862, 526, 1180, 577, 1206, -12)
+polygon = PackedVector2Array(824, 525, 1180, 577, 1157, -51)
 
 [connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door/Door_To_Kitchen" method="_on_mouse_entered"]

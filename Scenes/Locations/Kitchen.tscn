@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://uc7wiuquw018"]
 
-[ext_resource type="Texture2D" uid="uid://btmvdp7adfqgn" path="res://Textures/Locations/Placeholders/cuisine.png" id="1_4fqh7"]
+[ext_resource type="Texture2D" uid="uid://041jl8sf10kn" path="res://Textures/Locations/Placeholders/cuisine_background.jpg" id="1_3a0b6"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_mj3ii"]
 [ext_resource type="PackedScene" uid="uid://cu13foefgfwex" path="res://Characters/Cuisinier.tscn" id="3_8pbwl"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="4_of5xr"]
@@ -16,7 +16,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_4fqh7")
+texture = ExtResource("1_3a0b6")
+expand_mode = 3
 
 [node name="Default" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("4_of5xr")
@@ -27,10 +28,10 @@ script = ExtResource("2_mj3ii")
 destination = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_ShipHold"]
-polygon = PackedVector2Array(241, 203, 241, 420, 388, 413, 395, 190)
+polygon = PackedVector2Array(243, 167, 241, 420, 401, 412, 399, 182)
 
 [node name="Cuisinier" parent="CanvasLayer/Default" instance=ExtResource("3_8pbwl")]
-position = Vector2(701, 358)
+position = Vector2(735, 381)
 scale = Vector2(0.20807, 0.20807)
 timeline = "discussion_murlock"
 
@@ -43,17 +44,17 @@ script = ExtResource("2_mj3ii")
 destination = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold"]
-polygon = PackedVector2Array(241, 203, 241, 420, 388, 413, 395, 190)
+polygon = PackedVector2Array(243, 169, 241, 420, 397, 408, 395, 190)
 
 [node name="Etageres" type="Area2D" parent="CanvasLayer/LaLoucheDeMurlock"]
 script = ExtResource("5_0eosh")
 timeline = "etageres_poudre"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LaLoucheDeMurlock/Etageres"]
-polygon = PackedVector2Array(459, 231, 454, 306, 589, 294, 587, 247)
+polygon = PackedVector2Array(427, 267, 422, 402, 466, 421, 566, 424, 567, 326, 545, 319, 525, 272)
 
 [node name="Cuisinier" parent="CanvasLayer/LaLoucheDeMurlock" instance=ExtResource("3_8pbwl")]
-position = Vector2(701, 358)
+position = Vector2(733, 382)
 scale = Vector2(0.20807, 0.20807)
 timeline = "discussion_murlock"
 
