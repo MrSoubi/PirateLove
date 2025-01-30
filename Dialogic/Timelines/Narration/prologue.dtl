@@ -1,4 +1,5 @@
 Capitaine: Le jeu commence ici
 Cuistot: Là on a un deuxième texte
 set {prologue_fini} = true
+set {Chapitre_1.RatEtFromage.quete_en_cours} = true
 [signal arg="variables_changed"]

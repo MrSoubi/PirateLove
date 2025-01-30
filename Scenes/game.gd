@@ -49,12 +49,40 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(handle_dialogic_signal)
 
 func handle_dialogic_signal(argument : String):
-	print("signal recu")
 	# on vient de finir le prologue
 	if prologue_termine != Dialogic.VAR.get_variable(prologue_var):
 		prologue_termine = true
 		set_location(GlobalScope.Location.INFIRMARY)
-		Dialogic.VAR.set_variable("Chapitre_1.RatEtFromage.quete_en_cours", true)
+	
+	# on vient de finir Rate et Fromage
+	if rat_et_fromage_termine != Dialogic.VAR.get_variable(rat_et_fromage_var):
+		rat_et_fromage_termine = true
+		start_cutscene(chapitre1_timeline)
+	
+	# on vient de finir le chapitre 1
+	if chapitre1_termine != Dialogic.VAR.get_variable(chapitre1_var):
+		chapitre1_termine = true
+		set_location(GlobalScope.Location.SHIP_HOLD)
+	
+	# on vient de finir la louche de Murlock
+	if louche_de_murlock_termine != Dialogic.VAR.get_variable(louche_de_murlock_var):
+		louche_de_murlock_termine = true
+		start_cutscene(chapitre2_timeline)
+	
+	# on vient de finir le chapitre 2
+	if chapitre2_termine != Dialogic.VAR.get_variable(chapitre2_var):
+		chapitre2_termine = true
+		set_location(GlobalScope.Location.DECK_1)
+	
+	# on vient de finir la réparation du bateau
+	if reparer_bateau_termine != Dialogic.VAR.get_variable(reparer_bateau_var):
+		reparer_bateau_termine = true
+		start_cutscene(test_du_second_timeline)
+	
+	# on vient de finir le test du second
+	if test_du_second_termine != Dialogic.VAR.get_variable(test_du_second_var):
+		test_du_second_termine = true
+		handle_endgame()
 
 func set_location(destination : GlobalScope.Location):
 	var destination_definition
@@ -87,7 +115,6 @@ func start_game():
 	main_menu.visible = false
 	
 	if not prologue_termine:
-		print("lancement du prologue")
 		start_cutscene(prologue_timeline)
 	elif not rat_et_fromage_termine:
 		set_location(GlobalScope.Location.INFIRMARY)

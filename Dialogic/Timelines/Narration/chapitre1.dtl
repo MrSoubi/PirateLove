@@ -1,0 +1,7 @@
+[background arg="res://Textures/Locations/Placeholders/deck_2.png" fade="0.0"]
+la c'est le chapitre 1
+blop
+blup
+set {chapitre1_fini} = true
+set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = true
+[signal arg="variables_changed"]

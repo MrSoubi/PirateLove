@@ -1,0 +1,3 @@
+la c'est le test du second
+set {test_du_second_fini} = true
+[signal arg="variables_changed"]
