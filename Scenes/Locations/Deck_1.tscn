@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4al51kvbcv4c"]
 
-[ext_resource type="Texture2D" uid="uid://dtncljihw3bfe" path="res://Textures/Locations/Placeholders/deck_1.png" id="1_lcqyd"]
+[ext_resource type="Texture2D" uid="uid://beo620dh1ulu8" path="res://Textures/Locations/Placeholders/deck_1_background.jpg" id="1_6hqek"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_wv11d"]
 
 [node name="Deck1" type="Node"]
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_lcqyd")
+texture = ExtResource("1_6hqek")
 expand_mode = 5
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
