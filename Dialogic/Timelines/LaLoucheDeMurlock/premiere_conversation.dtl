@@ -63,7 +63,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLouc
 # #####
 # Discussion après avoir discuté pour la première fois avec Murlock.
 # #####
-if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false:
+if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	*Qui je devrais interroger ?*
 	- Parler au médecin
 		Excuse moi Calico, mais est-ce que tu saurais où se trouve la louche de Murlock ?
@@ -147,4 +147,5 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
 	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = false
 	set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = false
 	set {Chapitre_1.LaLoucheDeMurlock.quete_finie} = true
+	[signal arg="variables_changed"]
 	[end_timeline]

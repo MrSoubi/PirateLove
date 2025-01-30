@@ -23,6 +23,8 @@ texture = ExtResource("1_a87jf")
 expand_mode = 3
 
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("6_8py5v")
+hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
 [node name="Door" type="Node2D" parent="CanvasLayer/NourrirEquipage"]
 script = ExtResource("6_8py5v")
