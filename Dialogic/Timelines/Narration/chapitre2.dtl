@@ -1,0 +1,5 @@
+chapitre 2
+ca chauffe
+set {chapitre2_fini} = true
+set {Chapitre_1.ReparerLeBateau.quete_en_cours} = true
+[signal arg="variables_changed"]

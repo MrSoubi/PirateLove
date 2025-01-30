@@ -1,0 +1,14 @@
+if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false and {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
+	donne des informations sur les araignées
+	set {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} = true
+	[signal arg="variables_changed"]
+	[end_timeline]
+
+if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true:
+	le joueur a des biscuits, rappel d'aller voir les araignées
+	[end_timeline]
+
+if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == true:
+	bla bla sur le fait qu'on ait apprivoisé les araignées
+	dire d'aller voir le guet
+	[end_timeline]

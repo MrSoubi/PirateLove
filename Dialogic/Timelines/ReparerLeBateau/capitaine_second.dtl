@@ -1,0 +1,17 @@
+# Première discussion
+if {Chapitre_1.ReparerLeBateau.discussion_capitaine_second_debut} == false:
+	bla bla du début
+	set {Chapitre_1.ReparerLeBateau.discussion_capitaine_second_debut} = true
+	[signal arg="variables_changed"]
+
+# Discussion sur les ressources, tourne en boucle jusqu'à choisir "Partir"
+label choix
+- Où trouver du bois ?
+	bla bla sur le bois
+	set {Chapitre_1.ReparerLeBateau.discussion_capitaine_second_bois} = true
+	[signal arg="variables_changed"]
+- Où trouver de la toile ?
+	bla bla sur la toile
+- Partir
+	[end_timeline]
+jump choix

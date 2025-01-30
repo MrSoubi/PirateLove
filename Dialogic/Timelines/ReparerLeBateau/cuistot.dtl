@@ -1,0 +1,11 @@
+if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == false:
+	bla bla, on a pas encore accès aux biscuits
+
+if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == true and {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
+	bla bla, on a récupère les biscuits
+	set {Chapitre_1.ReparerLeBateau.possede_biscuit} = true
+	[signal arg="variables_changed"]
+	[end_timeline]
+
+if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true:
+	bla bla, on a déjà les biscuits

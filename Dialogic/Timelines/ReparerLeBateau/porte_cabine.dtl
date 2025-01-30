@@ -1,0 +1,4 @@
+# Ecrire directement le texte, on peut intéragir qu'une seule fois avec la porte, après cette discussion il ne sera plus possible de "discuter" avec.
+
+set {Chapitre_1.ReparerLeBateau.porte_demantelee} = true
+[signal arg="variables_changed"]
