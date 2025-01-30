@@ -1,16 +1,21 @@
 if {Chapitre_1.RatEtFromage.levier_active} == false:
 	if {Chapitre_1.RatEtFromage.rat_parti} == false:
 		if {Chapitre_1.RatEtFromage.possede_fromage} == false:
-			Un gros rat dégueulasse racle ses dents contre le levier.
-			Il est ENOOORME.
+			*Un gros rat dégueulasse racle ses dents contre le levier.*
+			*Il est ENOOORME.*
 			Comment un rat peut trouver à se nourrir dans un bateau aussi pourri ?
-			Peut importe... Impossible de le bouger.
-			Il va falloir trouver une solution.
+			Peu importe... Impossible de le bouger... Allen ?
+			join mousse center
+			mousse: Ah non ! J'ai la phobie des rats ! J'essaye déjà de ne pas m'évanouir, donc débrouillez-vous !
+			leave mousse
+			J'avoue ne pas avoir envie de le toucher non plus. Il va falloir trouver une autre solution.
 		else:
-			Le rat vous regarde avec insistance.
-			Il est prêt à vous sauter dessus.
-			Vous jetez le fromage au bout de la cabine.
-			Le rat part à sa recherche.
+			*Le rat vous regarde avec insistance.*
+			*Il est prêt à vous sauter dessus.*
+			AAAAAAAAAAAH ! VA-T-EN SALE BÊTE !
+			*WHOOOSH, Vous jetez le fromage au bout de la cabine.*
+			*Le rat part à sa recherche.*
+			*Le levier est maintenant utilisable*
 			set {Chapitre_1.RatEtFromage.rat_parti} = true
 			[signal arg="variables_changed"]
 	else:
@@ -20,9 +25,14 @@ if {Chapitre_1.RatEtFromage.levier_active} == false:
 			set {Chapitre_1.RatEtFromage.quete_finie} = true
 			set {Chapitre_1.RatEtFromage.quete_en_cours} = false
 			[signal arg="variables_changed"]
-			Le levier s'abaisse sans problème.
+			*Le levier s'abaisse sans problème.*
 			Je ferais mieux de me laver les mains quand même...
+			join mousse center 
+			mousse: Sortons d'ici ! Je vais vous présenter au reste de l'équipage.
 		- Partir
+			Je ne sais pas pourquoi, mais j'ai une soudaine envie de ne pas baisser ce levier.
+			join mousse center 
+			mousse: Euh... Vous en êtes sûr ? Parce que j'ai bien envie de partir moi
 else:
-	Le levier est baissé.
+	*Le levier est baissé.*
 [signal arg="variables_changed"]

@@ -1,7 +1,13 @@
 if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
-	Il y a un mot sur le bureau.
+	*Le bureau est rempli de papiers avec une écriture illisible*
+	Qui travaille ici ?
+	join mousse center 
+	mousse: La médecin du bateau, Calico !
+	leave mousse
+	Ça explique l'écriture...
+	Oh ? Cette page a l'air d'être annoté.
 	join ch1_infirmerie_RatEtFromage_code right
-	Mais à quoi donc pourrait bien servir ce mot ?
+	Mais à quoi donc pourrait bien servir cette note ?
 else:
-	Il n'y a rien sur ce bureau, à part quelques crouttes de fromage.
+	*Il n'y a rien sur ce bureau, à part quelques crouttes de fromage et des papiers en vrac.*
 [signal arg="variables_changed"]
