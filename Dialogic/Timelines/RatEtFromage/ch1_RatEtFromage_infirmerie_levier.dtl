@@ -1,34 +1,28 @@
 if {Chapitre_1.RatEtFromage.levier_active} == false:
 	if {Chapitre_1.RatEtFromage.rat_parti} == false:
 		if {Chapitre_1.RatEtFromage.possede_fromage} == false:
-			[style name="PJPensif"]
 			join Rat center 
-			*Un gros rat dégueulasse racle ses dents contre le levier.*
-			*Il est ENOOORME.*
-			[style]
-			Comment un rat peut trouver à se nourrir dans un bateau aussi pourri ?
-			Peu importe... Impossible de le bouger... Allen ?
+			PJPensif:*Un gros rat dégueulasse racle ses dents contre le levier.*
+			PJPensif:*Il est ENOOORME.*
+			Corsaire: Comment un rat peut trouver à se nourrir dans un bateau aussi pourri ?
+			Corsaire: Peu importe... Impossible de le bouger... Allen ?
 			join mousse left 
 			update Rat right 
 			mousse: Ah non ! J'ai la phobie des rats ! J'essaye déjà de ne pas m'évanouir, donc débrouillez-vous !
 			leave mousse
 			update Rat center
-			J'avoue ne pas avoir envie de le toucher non plus. Il va falloir trouver une autre solution.
+			Corsaire: J'avoue ne pas avoir envie de le toucher non plus. Il va falloir trouver une autre solution.
 		else:
 			join Rat left 
 			join Fromage right
-			[style name="PJPensif"]
-			*Le rat vous regarde avec insistance.*
-			*Il est prêt à vous sauter dessus.*
-			[style]
-			AAAAAAAAAAAH ! VA-T-EN SALE BÊTE !
-			[style name="PJPensif"]
-			*WHOOOSH, Vous jetez le fromage au bout de la cabine.*
+			PJPensif: *Le rat vous regarde avec insistance.*
+			PJPensif: *Il est prêt à vous sauter dessus.*
+			Corsaire: AAAAAAAAAAAH ! VA-T-EN SALE BÊTE !
+			PJPensif: *WHOOOSH, Vous jetez le fromage au bout de la cabine.*
 			leave Rat
 			leave Fromage
-			*Le rat part à sa recherche.*
-			*Le levier est maintenant utilisable*
-			[style]
+			PJPensif: *Le rat part à sa recherche.*
+			PJPensif: *Le levier est maintenant utilisable*
 			set {Chapitre_1.RatEtFromage.rat_parti} = true
 			[signal arg="variables_changed"]
 	else:
@@ -38,18 +32,14 @@ if {Chapitre_1.RatEtFromage.levier_active} == false:
 			set {Chapitre_1.RatEtFromage.quete_finie} = true
 			set {Chapitre_1.RatEtFromage.quete_en_cours} = false
 			[signal arg="variables_changed"]
-			[style name="PJPensif"]
-			*Le levier s'abaisse sans problème.*
-			[style]
-			Je ferais mieux de me laver les mains quand même...
+			PJPensif: *Le levier s'abaisse sans problème.*
+			Corsaire: Je ferais mieux de me laver les mains quand même...
 			join mousse center
 			mousse: Sortons d'ici ! Je vais vous présenter au reste de l'équipage.
 		- Partir
-			Je ne sais pas pourquoi, mais j'ai une soudaine envie de ne pas baisser ce levier.
+			Corsaire: Je ne sais pas pourquoi, mais j'ai une soudaine envie de ne pas baisser ce levier.
 			join mousse center
 			mousse: Euh... Vous en êtes sûr ? Parce que j'ai bien envie de partir moi
 else:
-	[style name="PJPensif"]
-	*Le levier est baissé.*
-	[style]
+	PJPensif: *Le levier est baissé.*
 [signal arg="variables_changed"]

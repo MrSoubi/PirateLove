@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://d12st8rhuc2t1"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://ckxwgf4i6kudy"]
 
-[ext_resource type="Resource" uid="uid://dge22e1wxbq7f" path="res://Dialogic/Styles/DefaultStyle.tres" id="1_hptll"]
+[ext_resource type="Resource" uid="uid://4mounjk2gpf3" path="res://Dialogic/Styles/DefaultStyle.tres" id="1_hptll"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_dfw1i"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_mi1uf"]
 
@@ -60,4 +60,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_dfw1i")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "13"

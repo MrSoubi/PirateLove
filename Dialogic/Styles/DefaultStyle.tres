@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://dge22e1wxbq7f"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://4mounjk2gpf3"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_wlkco"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_gj0la"]
@@ -13,7 +13,9 @@
 
 [sub_resource type="Resource" id="Resource_88uav"]
 script = ExtResource("1_wlkco")
-overrides = {}
+overrides = {
+"global_font": "\"res://Fonts/ELEGANT TYPEWRITER Regular.ttf\""
+}
 
 [sub_resource type="Resource" id="Resource_sk44a"]
 script = ExtResource("1_wlkco")
@@ -33,7 +35,11 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_wpfgi"]
 script = ExtResource("1_wlkco")
 scene = ExtResource("5_k6ex7")
-overrides = {}
+overrides = {
+"bold_font": "\"res://Fonts/ELEGANT TYPEWRITER Bold.ttf\"",
+"italics_font": "\"res://Fonts/ELEGANT TYPEWRITER Italic.ttf\"",
+"normal_font": "\"res://Fonts/ELEGANT TYPEWRITER Regular.ttf\""
+}
 
 [sub_resource type="Resource" id="Resource_e0ej1"]
 script = ExtResource("1_wlkco")
@@ -72,4 +78,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_wlkco")]([])
-metadata/_latest_layer = "10"
+metadata/_latest_layer = ""
