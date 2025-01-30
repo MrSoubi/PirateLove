@@ -147,5 +147,5 @@ func handle_endgame():
 func start_cutscene(timeline : String):
 	prints("lancement cutscene", timeline)
 	transition_layer.transition()
-	await transition_layer.on_transition_finished
-	Dialogic.start_timeline(timeline)
+	#await transition_layer.on_transition_finished
+	Dialogic.start(timeline)
