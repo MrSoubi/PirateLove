@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://mfkweep0uqko"]
+[gd_scene load_steps=5 format=3 uid="uid://mfkweep0uqko"]
 
-[ext_resource type="Texture2D" uid="uid://dnpqp8dos0yeq" path="res://Textures/Locations/Placeholders/captain_cabin.png" id="1_3wa5r"]
+[ext_resource type="Texture2D" uid="uid://qxq7onqvtxyo" path="res://Textures/Locations/Placeholders/cabine_capitaine.png" id="1_ltlm0"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_y2d5c"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="3_8qo3i"]
+[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="4_gwqqp"]
 
 [node name="CaptainCabin" type="Node"]
 
@@ -13,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_3wa5r")
+texture = ExtResource("1_ltlm0")
 expand_mode = 5
 
 [node name="Door_To_Deck" type="Area2D" parent="CanvasLayer"]
@@ -21,6 +23,35 @@ script = ExtResource("2_y2d5c")
 destination = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck"]
-polygon = PackedVector2Array(643, 349, 797, 418, 790, 91, 746, 22, 678, 18, 633, 46, 632, 108)
+polygon = PackedVector2Array(256, 656, 939, 532, 1191, 660)
+
+[node name="Coffre" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("3_8qo3i")
+timeline = "coffre"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Coffre"]
+polygon = PackedVector2Array(308, 221, 287, 239, 297, 297, 510, 282, 509, 232, 459, 214)
+
+[node name="Tableau" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("4_gwqqp")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.medaillon_decouvert"])
+
+[node name="Tableau" type="Area2D" parent="CanvasLayer/Tableau"]
+script = ExtResource("3_8qo3i")
+timeline = "tableau"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Tableau/Tableau"]
+polygon = PackedVector2Array(879, -52, 1118, 323, 1176, 325, 1168, -47)
+
+[node name="Carnet" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("4_gwqqp")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.tableau_decouvert"])
+
+[node name="Carnet" type="Area2D" parent="CanvasLayer/Carnet"]
+script = ExtResource("3_8qo3i")
+timeline = "journal_intime"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Carnet/Carnet"]
+polygon = PackedVector2Array(16, 568, 26, 541, 52, 523, 97, 513, 148, 515, 190, 528, 196, 557, 180, 584, 148, 600, 98, 603, 59, 597, 28, 584)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck" to="CanvasLayer/Door_To_Deck" method="_on_input_event"]
