@@ -1,5 +1,127 @@
-Capitaine: Le jeu commence ici
-Cuistot: Là on a un deuxième texte
+# #Possible de mettre un écran noir ?
+[background arg="res://Textures/Narration/Prologue_Black_screen.jpg" fade="0.0"]
+Trempé jusqu'à l’os, les muscles courbaturés, un corsaire passe la porte de la première taverne sur son chemin.
+PJPensif: Soupir
+PJPensif: Enfin un endroit chaud où je peux trouver un semblant de réconfort.
+Le tonnerre gronde dehors, accompagné par la violente averse qui lacérait toutes âmes qui osaient s'y confronter.
+PJPensif: Cette satanée tempête m’a fait perdre mon bateau et mon équipage.
+Corsaire: Quelle journée de merde...
+PJPensif: Je n’ai qu’une seule envie \: me poser, m’asseoir et prendre une bonne bouteille de gnôle, au moins pour panser la douleur des pertes de la journée.
+Avec un pas las, il se fraie un chemin dans l’amas de pochtrons, jusqu'au comptoir. Le bruit ambiant couplé du brouhaha était particulièrement bruyant.
+PJPensif: J’ai bien d'autres chats à fouetter ce soir que ces vulgaires soûlards.
+Une fois assis, il a l’impression qu’un poids énorme est retombé.
+Qu’est ce que je te sers ?
+Corsaire: Pff… Servez-moi votre meilleur rhum arrangé…. la plus chargée possible. Que je puisse au moins noyer autre chose que mon bateau ou mon équipage.
+Le tintement des glaçons dans le verre lui laisse un sourire amer sur les lèvres.
+PJPensif: Finalement, la soirée ne se finit pas si mal.
+Le barman pose le verre sur le comptoir et le fait glisser jusqu’au corsaire.
+Une fois dans sa main, il le lève jusqu’à son nez. La bonne odeur du liquide cristallin l'enivre alors qu’il le fait tourner dans le verre.
+En une gorgée, il le bois.
+
+# #Illus qui s’affiche maintenant ?
+[background arg="res://Textures/Narration/illu_prologue_capitaine_flirt.jpg" fade="2.0"]
+Capitaine: Joli cul-sec !
+Surpris, il se retourne, se confrontant à une magnifique femme au large chapeau vert.
+Capitaine: C’est la première fois que je te vois, ici. T’es nouveau ?
+Elle le dévisage de haut en bas, semblant le juger en effleurant du bout des doigts le goulot de verre dans un mouvement circulaire.
+Corsaire: Merci…
+Il souffle en passant une main fatiguée sur son visage.
+Corsaire: Ouais, c’est la première fois que je viens ici, plutôt que j'atterris ici.
+Elle se penche sur le bar nonchalamment, toujours en fixant le corsaire, une lueur d’intérêt pétillant dans ses yeux menthe.
+Une odeur d’épices et de cannelle se dégage de ses cheveux lorsqu’elle les fait voler d’un vif geste de main.
+PJPensif: C’est qu’elle est vraiment belle cette pirate.
+Elle porte son verre à ses lèvres et le descend d’une traite avant de le reposer avec fracas.
+PJPensif: Wow, je suis pas le seul à avoir une belle descente !
+Capitaine: Je sais, ça c’est le vrai pouvoir d’un habitué.
+Un sourire sur ses lèvres, elle lève les bras pour s’étirer.
+Elle vacille un peu, même beaucoup.
+Lorsqu’elle se penche en arrière, il ne peut s'empêcher de mettre une main dans son dos pour éviter qu’elle ne chute.
+PJPensif: Elle n’en est pas à son premier verre, pour sûr.
+Cette fois, c’est au tour du corsaire de la dévisager.
+Un ample manteau vert d’eau drape ses épaules, bien draché.
+De ses longs cheveux châtains perlent de grosses gouttes, alors que son chapeau luit à cause de l’eau qui le recouvre.
+De tout évidence, elle aussi avait été victime de ce maudit orage.
+Il se penche à son tour vers elle, posant un bras près de son verre pour se soutenir.
+Corsaire: Longue nuit ?
+Il questionne, une pointe de cynisme dans sa voix. La réponse du capitaine est un rire venant du cœur.
+PJPensif: Je suis soit particulièrement drôle ce soir, soit c’est l’alcool monté à sa tête.
+En soufflant du nez, elle enchaîne.
+Capitaine: Bahaha ! Entre nous deux, je suis celle qui a la meilleure mine.
+Capitaine: T’as vraiment l’air pathétique !
+PJPensif: Elle n'a pas tort.
+Capitaine: S’tu veux, je te paye ton prochain verre. Peu importe ce que tu veux commander.
+Capitaine: Comme ça tu peux passer un peu de temps avec une capitaine hyper sympa, plutôt que ruminer du noir.
+Corsaire: Avec plaisir !
+Avec entrain, la capitaine lève la main pour pouvoir commander deux autres verres. D’alcool évidemment.
+Le barman s’exécute.
+Capitaine: Alors… Qu’est ce que tu fais ici, perdu dans ce trou ? Enfin autre que la météo.
+Quelques secondes de silence s'écoulent.
+C’était une histoire de mariée disparue.
+PJPensif: En effet, si je suis ici ce n’est pas pour le plaisir de naviguer ni de perdre tout ses biens.
+PJPensif: *Soupire*
+Il saisit son insigne de corsaire sur le col de son uniforme sale et mouillé. Il esquisse un sourire et le détache pour le ranger dans le pochon de sa veste.
+PJPensif: Ce noble espagnol m’a certes bien payé, mais qu’est ce qu’une bourse d’or contre la vie de mon équipage ? Pas grand chose.
+Il se redresse, scrute le verre que le barman vient de déposer à son côté. Finalement, plus rien de tout ça ne l’importe.
+PJPensif: Ils finiront sûrement par me croire mort, après avoir appris la coulée de l’épave. Ils ne s'embetteront pas à envoyer une flotte à ma poursuite.
+Il prend une gorgée de son verre.
+Corsaire: Honnêtement, ça n’a plus d’importance.
+La capitaine lui donne une tape compatissante sur l’épaule.
+Capitaine: Les accidents ça arrive.  Même aux meilleurs.
+Corsaire: Et toi ? Un bateau coulé ? Une mutinerie impromptue ?
+Capitaine: Quelle bonne blague !
+Elle pose sa main sur sa hanche.
+Capitaine: Non, juste un petit accident. Rien de grave.
+Capitaine: A cause de la tempête, la coque de mon bébé a été endommagée. Les réparations n’devraient pas durer longtemps.
+Corsaire: Ton bébé ?
+Capitaine: Ouais mon Tiboat. Mon bateau… Mon bébé quoi… El amor de mi vida.
+Corsaire: Si tu veux réparer ton bébé mieux vaut éviter de payer des verres au pauvre marin échoué que je suis.
+Capitaine: Tu sais, ce sont pas deux trois verres qui vont me faucher.
+Capitaine: Et puis t’as une bonne tête. C’est qui ton petit nom ?
+Corsaire: Corsaire.
+Capitaine: Juste Corsaire ?
+Corsaire: Oui.
+Un silence s’installe entre les deux marins.
+Capitaine: BAHAHA ! T’es un drôle de bonhomme !
+Capitaine: Moi c’est Carmen, ravie que les flots t'aient ramené jusqu’ici !
+Capitaine: Pour fêter ça, laisses moi te payer un autre verre !
+Corsaire: Non non, cette fois c’est moi qui paye la tournée.
+La capitaine saisit son verre d’une poigne ferme et avale son contenu d’un seul coup.
+Capitaine: Une offre comme ça, ça ne se refuse jamais !
+Comme deux bon soulards qui se connaissent depuis des années, la Capitaine pirate et le Corsaire rigolent de bons cœurs.
+
+[background arg="res://Textures/Narration/Nuit_étoilée.jpg" fade="2.0"]
+[wait time="3.0"]
+La pluie passée depuis maintenant deux bonnes heures laisse place à un ciel couvert de milliers d’étoiles.
+join Capitaine (Rire) center
+
+# #sprite sourire 
+
+Capitaine: Eh bah tu vois, t’es quand même sympa !
+Capitaine: Je brûle d’envie de t’avouer un truc.
+
+Les deux, embrumés par l'alcool, se laissent tomber sur le sable humide.
+Riant à gorges déployées, ils se regardent, un brin de complicité dans les yeux.
+
+Corsaire: Ques’ki y’a ?
+
+La capitaine se tourne vers la lune et rit.
+
+PJPensif: Une crampe me saisit l’estomac.
+
+Il décide de se laisser tomber aux côtés de la capitaine, de s’allonger et de laisser le monde tanguer.
+
+Elle se tourne vers le corsaire, les yeux imbibés d’alcool et son cœur chute au fond de sa poitrine.
+
+Corsaire: Dis moi tout.
+# #sprite flirt 
+update Capitaine (Smirk) left [move_time="0.5"]
+Capitaine: J’ai un secret trop lourd à porter et je veux t’en parler… J’ai confiance en toi.. En fait-
+
+[background arg="res://Textures/Narration/Prologue_Black_screen.jpg" fade="1.0"]
+
+Malgré la douce voix de Carmen et sa brûlante envie d’apprendre à la connaître, Corsaire finit par s’endormir emporté par le marchand de sable.
+[wait time="3.0"]
+
 set {prologue_fini} = true
 set {Chapitre_1.RatEtFromage.quete_en_cours} = true
 [signal arg="variables_changed"]
