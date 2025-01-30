@@ -1,5 +1,168 @@
-chapitre 2
-ca chauffe
+[background arg="res://Textures/Locations/Placeholders/cale_background.jpg" fade="0.0"]
+# #Après manger, appel du second sur le pont, pré-quête de réparation du Tiboat
+
+join Medecin (Default) leftmost
+join Guet left
+join Cannonier center
+join mousse (Default) right
+Un pas lourd retentit dans le vieux bois du navire.
+Un jeune homme entre dans la cuisine alors que chacun débarasse son assiette.
+
+join Second rightmost
+Second: Tout le monde sur le pont, et que ça saute !
+leave Second
+
+Everett avale son verre d’une traite et s'empresse de sortir de la pièce, suivi de près par Orlagh.
+leave Guet
+leave Cannonier
+Calico quant à elle, ramasse ses affaires et sort dignement.
+leave Medecin
+Dans la précipitation, Allen renverse des assiettes par terre.
+
+
+# #sprite cuisinière mépris
+join Cuistot (Disregard) left
+Cuistot: Vas-y, Allen, je m’en occupe.
+mousse: Non, non, Murlock !! C’est moi qui…-
+# #sprite cuisinière énervée
+update Cuistot (Angry)
+Cuistot: Ne discute pas !
+# #sprite cuisinière énervée
+update Cuistot
+Cuistot: Déguerpis de là rapidement avant que ce soit moi qui te foute dehors !
+leave mousse
+# #sprite cuisinière rigole
+update Cuistot (Happy)
+Cuistot: Ahahahah ! Il faut qu’il se fasse violence ce petit.
+Cuistot (Default): Tu devrais te dépêcher toi aussi.
+Corsaire: Ah ! Oui, j’y vais.
+
+leave --All--
+[background arg="res://Textures/Locations/Placeholders/deck_1_background.jpg" fade="0.0"]
+# #sur le pont
+
+# a remplacer par une animation pour faire moins de texte
+A l’instant où je passe la porte, le second met ses bras dans l'encadrement de la porte et me surplombe.
+Un sourire en coin, il me scrute de haut en bas.
+# #sprite second flirt pendant tout l’échange
+join Second rightmost 
+Second: Alors c’est toi, Corsaire.
+- Bonjour ?
+	Le second prend notre main et l’embrasse délicatement.
+	Second: Millard. Seth Millard. Pour te servir mon joli.
+- On se connaît ?
+	Second: Pas encore. Moi c’est Millard. Seth Millard.
+	Le second prend notre main et l’embrasse délicatement.
+	Il me fait signe d’aller rejoindre les autres, et me laisse passer.
+
+update Second
+Second: Tout le monde est là ?
+Tout le monde acquiesce à l’unisson.
+Second: Vous avez sûrement tous constaté la tempête d’hier soir.
+join Cannonier leftmost
+Cannonier: Plus dévastatrice que mes p’tits bijoux.
+# #sprite second rigole / saoulé
+update Second
+Second: …Merci pour ton intervention Orlagh.
+# #sprite canonnier rigole
+update Cannonier
+Cannonier: Avec plaisir Millard.
+leave Cannonier
+Second: Cela étant, on doit réparer les dégâts avant ce soir.
+Second: Puisqu’on doit ABSOLUMENT partir demain matin à l’aube.
+Second: Notre informateur n’attendra pas plus longtemps avant de filer avec notre butin.
+Second: Donc tout le monde va mettre la main à la pâte et on va m’réparer cette épave.
+join Medecin leftmost
+Medecin: Quelle est l’étendue des dégâts ?
+leave Second
+join Capitaine rightmost
+Capitaine: La voile est déchirée, et la coque avant fissurée.
+Capitaine: Le reste attendra qu’on arrive à destination. Tous à vos postes.
+Les pupilles de Corsaire se dilatent, croyant reconnaître la femme qui vient de parler.
+PJPensif: Oui ! Capitaine Liestra !
+Corsaire: Capitaine.. Liestra ?
+leave Medecin
+# #sprite capitaine effrayée
+update Capitaine center
+PJPensif: \: Mais… c’est la femme du bar ! Je m’en rappelle maintenant !
+PJPensif: \: Une sensation amère me titille le fond de la gorge.
+PJPensif: \: J’ai ce sentiment horrible d’avoir oublié quelque chose. Mais quoi ?
+Au son de ma voix, la Capitaine me dévisage. Elle me regarde enfin.
+Tout le monde s’est tu et nous dévisagent.
+Sans en dire plus, elle me fait signe de la rejoindre dans sa cabine.
+leave --All--
+
+# #changement de fond / chambre de la capitaine
+[background fade="0.0"]
+PJPensif: Son odeur de cannelle et d’épices me reviennent en tête. Ses cheveux, ses lèvres.
+PJPensif: Comment ai-je pu oublier tout ça ?
+PJPensif: Mon cœur s’excite, ma tête me fait atrocement mal et les rayons du soleil semblent me brûler vif.
+join Capitaine center
+Capitaine: Attention à la porte, elle ne tient presque plus sur ses gonds.
+Capitaine: Un petit verre ?
+Corsaire: On sait comment ça a fini la dernière fois..
+# #sprite capitaine rigole
+update Capitaine
+Capitaine: C’est sûr, mais seulement un seul. S’il te plaît. Pour moi.
+Corsaire: Juste un seul, alors.
+
+- Un petit bourbon ?
+	La Capitaine prend la bouteille de bourbon et verse le liquide.
+	# #sprite capitaine flirty
+	update Capitaine
+	Capitaine: Tiens, c’est pour toi..Santé !
+- Du rhum arrangé ?
+	Capitaine: Très bon choix. Banane, ça te convient ?
+	Corsaire: Parfait.
+	La Capitaine prend la bouteille de rhum arrangé à la banane posée sur le bureau et verse le liquide ambré.
+	# #sprite capitaine flirty
+	update Capitaine
+	Capitaine: Tiens, c’est pour toi..Santé !
+- Ta meilleure eau de vie ?
+	La Capitaine prend la bouteille d’eau de vie poussiéreuse et verse le liquide.
+	# #sprite capitaine flirty
+	update Capitaine
+	Capitaine: Tiens, c’est pour toi..Santé !
+
+update Capitaine
+# #sprite capitaine side eye
+Ils boivent silencieusement leur verre en échangeant des regards.
+Les secondes de silence semblent durer des heures.
+
+# #sprite capitaine flirty
+Capitaine: Tu... veux bien nous aider pour les réparations ?
+Corsaire: Oui, oui, avec plaisir. J’adorerais.
+
+# #sprite capitaine flirty
+Le silence s’installe à nouveau.
+Leurs mains sont proches, si proches qu’elles pourraient se toucher.
+PJPensif: Mon cœur bat si vite qu’il me semble impossible de compter les battements.
+Corsaire: Tu sais, à propos d’hier soir-...
+# #sprite capitaine effrayée
+update Capitaine
+Capitaine: Ne dit rien, s’il te plait ! Pas maintenant...
+
+Elle baisse sa tête à son niveau et pose son front contre le sien.
+# #sprite capitaine apaisée
+update Capitaine
+PJPensif: Je sens son souffle chaud contre moi. Ses cheveux à l’odeur de cannelle envahissent mes narines.
+PJPensif: Ses lèvres perlées d’alcool me lancent des signaux, mais je me sens apaisé.
+PJPensif: Comme c’est agréable.
+
+Soudain, le Second toque ardemment à la porte. Celle-ci craque de plus belle.
+Surprise, la Capitaine se redresse d’un coup.
+join Second center
+# #sprite second surprit/mécontent
+Second: Ah… Heu, navré, je dérange peut-être…
+Second: Je venais simplement dire qu’on devait parler des réparations. Je vous attends dehors.
+# #sprite mécontente
+update Capitaine
+Capitaine: J’arrive.
+
+Elle lance un dernier regard avant de s’engouffrer sur le pont.
+PJPensif: Qu’est ce que j’ai bien pu oublier hier soir ?
+
+
 set {chapitre2_fini} = true
 set {Chapitre_1.ReparerLeBateau.quete_en_cours} = true
 [signal arg="variables_changed"]
