@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://bicfe6o7ysdev"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_xuakl"]
-[ext_resource type="Texture2D" uid="uid://cvqv173ll3fjh" path="res://Textures/Characters/mousse.png" id="2_ssu7r"]
+[ext_resource type="Texture2D" uid="uid://u2cyg1a5gcge" path="res://Textures/Characters/Mousse/Mousse_chibi.png" id="2_hbbpv"]
 
 [node name="Mousse" type="Area2D"]
 script = ExtResource("1_xuakl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ssu7r")
+texture = ExtResource("2_hbbpv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-98, -451, -164, -399, -152, -264, -125, -155, -176, -88, -260, 65, -260, 188, -115, 211, -221, 267, -250, 385, -139, 407, 21, 432, 113, 465, 201, 449, 256, 349, 193, 215, 236, 178, 277, 35, 275, -78, 267, -165, 278, -241, 297, -337, 245, -444, 177, -502, 102, -470, 95, -409)
+polygon = PackedVector2Array(-573, 742, -570, 931, -246, 970, -60, 868, 216, 871, 530, 892, 623, 682, 449, 613, 419, 436, 440, 221, 473, 14, 350, -34, 296, -316, 105, -325, -156, -259, -201, -43, -102, 137, -168, 355, -255, 544, -477, 649)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

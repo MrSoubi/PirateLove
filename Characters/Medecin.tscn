@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4w0ict66kxhl"]
 
-[ext_resource type="Texture2D" uid="uid://cvqv173ll3fjh" path="res://Textures/Characters/mousse.png" id="1_4orlw"]
+[ext_resource type="Texture2D" uid="uid://nexd22j7fxcv" path="res://Textures/Characters/Medecin/infirmiere_chibi.png" id="1_p85gm"]
 
 [node name="Medecin" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4orlw")
+texture = ExtResource("1_p85gm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(30, 36)
-polygon = PackedVector2Array(-300, 124, -288, 342, -80, 440, 234, 446, 306, 22, 270, -358, 206, -516, -56, -486, -238, -414)
+polygon = PackedVector2Array(-68, -893, -396, -907, -485, -853, -478, -600, -432, -390, -482, -166, -485, 27, -471, 216, -510, 465, -542, 683, -496, 918, -236, 936, -104, 868, 6, 911, 231, 946, 374, 928, 427, 775, 306, 633, 320, 419, 341, 266, 345, 77, 423, -19, 530, -141, 516, -258, 366, -297, 338, -390, 349, -543, 313, -775, 103, -910)

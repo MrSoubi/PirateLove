@@ -8,16 +8,43 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "standard",
+"default_portrait": "Default",
 "description": "",
 "display_name": "Allen - Mousse",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"standard": {
+"Default": {
 "export_overrides": {
-"image": "\"res://Textures/Characters/mousse.png\""
+"image": "\"res://Textures/Characters/Mousse/Mousse_neutre.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Pensif": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Mousse/Mousse_pensif.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sourire": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Mousse/Mousse_sourire.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Stress": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Mousse/Mousse_stress.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
