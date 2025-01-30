@@ -1,2 +1,4 @@
-*Je dois trouver un moyen d'ouvrir cette porte... Elle a l'air d'être lié à ce levier.*
+[style name="PJPensif"]
+Je dois trouver un moyen d'ouvrir cette porte... Elle a l'air d'être lié à ce levier.
+[style]
 [signal arg="variables_changed"]

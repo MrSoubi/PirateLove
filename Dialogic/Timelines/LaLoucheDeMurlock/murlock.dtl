@@ -5,7 +5,9 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 	*CRASH, WHAM, BLANG, BOUM*
 	join Cuistot (Angry) center [animation="Fade In Down"]
 	Cuistot (Angry): ELLE EST OU MA LOUCHE ?!
+	[style name="PJPensif"]
 	*Pas commode celle là...*
+	[style]
 	Cuistot (Default): T'es qui toi ? C'est pas le moment de venir me faire perdre mon temps !
 	Euh... Vous êtes la cuisinière n'est-ce pas ?
 	Cuistot: Murlock, cuistot de ce bateau. Qu'est-ce que tu me veux Corsaire ?
@@ -28,8 +30,11 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	*WHAM, BAM, CRACK*
+	join Cuistot center
 	Cuistot: JE VAIS FAIRE EXPLOSER CE BATEAU SI JE RETROUVE PAS MA LOUCHE !
+	[style name="PJPensif"]
 	*Il faut vraiment que je retrouve cette fichue louche*
+	[style]
 	[signal arg="variables_changed"]
 	[end_timeline]
 
@@ -39,13 +44,19 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false and {Chapitre_1.LaLouc
 # Quand le joueur rapporte la louche à Murlock.
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
+	join Cuistot center
 	Cuistot: MA LOUCHE ! Où est-ce que tu l'as trouvé ?
 	C'est... euh... elle était coincée entre 2 caisses de la cale !
 	Cuistot: Ouf ! J'ai dû la perdre en balançant mes ustensiles sur Orlagh l'autre jour. Il a osé ne pas finir ses légumes ce fumier !
+	[style name="PJPensif"]
 	*Note à moi-même, toujours finir mon assiette*
+	[style]
 	Cuistot: Merci beaucoup de me l'avoir ramené ! Tiens, prend ce plat et va leur servir. Et n'hésite pas à t'en prendre une part aussi 
 	Merci beaucoup Murlock !
+	[style name="ObjectDropped"]
+	# Mettre Plat Item
 	NOUVEL OBJET OBTENU : PLAT
+	[style]
 	set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = false
 	set {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} = true
 	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = true
@@ -56,6 +67,7 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 # Quand le joueur a les plats avec lui et ne les a pas ramenés à l'équipage
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
+	join Cuistot center
 	Cuistot: Va donc leur servir leur plat ! ça va refroidir.
 	[signal arg="variables_changed"]
 	[end_timeline]

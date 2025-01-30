@@ -1,4 +1,5 @@
 if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
+	join CadenasCode center 
 	Hmmm... Ce meuble est vérouillé par un cadenas à code.
 	- Partir
 		Il faut que je trouve un code quelque part.
@@ -11,15 +12,22 @@ if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 			Argh, C'est pas le bon code...
 else:
 	if {Chapitre_1.RatEtFromage.possede_fromage} == false:
+		join Fromage center 
+		[style name="PJPensif"]
 		*Un vieux fromage pourri boude au fond d'une étagère.*
 		*Il semble vivre ses derniers instants.*
 		*Il ne vous donne pas très envie, mais peut être que quelqu'un, ou quelque chose, en voudrait ?*
 		- Prendre le fromage
+			[style name="ObjectDropped"]
 			NOUVEL OBJET OBTENU : FROMAGE
+			[style]
 			set {Chapitre_1.RatEtFromage.possede_fromage} = true
 		- Laisser le fromage
+			[style]
 			Je risque d'attraper la mort si je touche ce truc...
 	else:
+		[style name="PJPensif"]
 		*L'odeur laisserait penser que quelque chose vit là dedans.*
 		*Pourtant c'est bel et bien vide.*
+		[style]
 [signal arg="variables_changed"]

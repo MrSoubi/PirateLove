@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://d12st8rhuc2t1"]
+
+[ext_resource type="Resource" uid="uid://dge22e1wxbq7f" path="res://Dialogic/Styles/DefaultStyle.tres" id="1_hptll"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_dfw1i"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_mi1uf"]
+
+[sub_resource type="Resource" id="Resource_e8wmo"]
+script = ExtResource("2_dfw1i")
+overrides = {
+"global_font_color": "Color(1, 0.73465, 0.277344, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_287wa"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_0vlov"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_2xueu"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_vacbv"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_ak0cn"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_c8cfd"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_463ar"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_i4dgu"]
+script = ExtResource("2_dfw1i")
+overrides = {}
+
+[resource]
+script = ExtResource("3_mi1uf")
+name = "ObjectDropped"
+inherits = ExtResource("1_hptll")
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_e8wmo"),
+"10": SubResource("Resource_287wa"),
+"11": SubResource("Resource_0vlov"),
+"12": SubResource("Resource_2xueu"),
+"13": SubResource("Resource_vacbv"),
+"14": SubResource("Resource_ak0cn"),
+"15": SubResource("Resource_c8cfd"),
+"16": SubResource("Resource_463ar"),
+"17": SubResource("Resource_i4dgu")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_dfw1i")]([])
+metadata/_latest_layer = ""

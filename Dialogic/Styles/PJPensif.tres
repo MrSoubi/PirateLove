@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://dthvdsjpsaqci"]
+
+[ext_resource type="Resource" uid="uid://dge22e1wxbq7f" path="res://Dialogic/Styles/DefaultStyle.tres" id="1_lcm02"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_xisnu"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_cbbyt"]
+
+[sub_resource type="Resource" id="Resource_ym1wd"]
+script = ExtResource("2_xisnu")
+overrides = {
+"global_font_color": "Color(0.589844, 0.817352, 1, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_gasqr"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_b0lxq"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_xjfac"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_ldjjh"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_uqlwd"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_ai0gr"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_7ncyl"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_mncjc"]
+script = ExtResource("2_xisnu")
+overrides = {}
+
+[resource]
+script = ExtResource("3_cbbyt")
+name = "PJPensif"
+inherits = ExtResource("1_lcm02")
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_ym1wd"),
+"10": SubResource("Resource_gasqr"),
+"11": SubResource("Resource_b0lxq"),
+"12": SubResource("Resource_xjfac"),
+"13": SubResource("Resource_ldjjh"),
+"14": SubResource("Resource_uqlwd"),
+"15": SubResource("Resource_ai0gr"),
+"16": SubResource("Resource_7ncyl"),
+"17": SubResource("Resource_mncjc")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_xisnu")]([])
+metadata/_latest_layer = "15"
