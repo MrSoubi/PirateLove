@@ -1,0 +1,15 @@
+#####
+# Parler avec les araignées si le joueur n'a pas de biscuit
+#####
+if {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
+	
+	[end_timeline]
+
+#####
+# Parler avec les araignées si le joueur a des biscuits
+#####
+if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true::
+	
+	set {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} = true
+	[signal arg="variables_changed"]
+	[end_timeline]

@@ -34,16 +34,26 @@ directories/dch_directory={
 "mousse": "res://Dialogic/Characters/mousse.dch"
 }
 directories/dtl_directory={
+"araignees": "res://Dialogic/Timelines/ReparerLeBateau/araignees.dtl",
+"capitaine_second": "res://Dialogic/Timelines/ReparerLeBateau/capitaine_second.dtl",
 "ch1_RatEtFromage_infirmerie_RatQuiMange": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_RatQuiMange.dtl",
 "ch1_RatEtFromage_infirmerie_bureau": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_bureau.dtl",
 "ch1_RatEtFromage_infirmerie_etagere": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_etagere.dtl",
 "ch1_RatEtFromage_infirmerie_levier": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_levier.dtl",
 "ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_mousse.dtl",
 "ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_porte.dtl",
+"cuistot": "res://Dialogic/Timelines/ReparerLeBateau/cuistot.dtl",
 "default_infirmerie_mousse": "res://Dialogic/Timelines/default_infirmerie_mousse.dtl",
 "discussion_murlock": "res://Dialogic/Timelines/LaLoucheDeMurlock/murlock.dtl",
 "discussion_trio": "res://Dialogic/Timelines/LaLoucheDeMurlock/premiere_conversation.dtl",
-"etageres_poudre": "res://Dialogic/Timelines/LaLoucheDeMurlock/etageres_poudre.dtl"
+"etageres_poudre": "res://Dialogic/Timelines/LaLoucheDeMurlock/etageres_poudre.dtl",
+"guet": "res://Dialogic/Timelines/ReparerLeBateau/guet.dtl",
+"mousse": "res://Dialogic/Timelines/ReparerLeBateau/mousse.dtl",
+"porte_cabine": "res://Dialogic/Timelines/ReparerLeBateau/porte_cabine.dtl",
+"trou_cale": "res://Dialogic/Timelines/ReparerLeBateau/trou_cale.dtl",
+"trou_cuisine": "res://Dialogic/Timelines/ReparerLeBateau/trou_cuisine.dtl",
+"trou_infirmerie": "res://Dialogic/Timelines/ReparerLeBateau/trou_infirmerie.dtl",
+"trou_voile": "res://Dialogic/Timelines/ReparerLeBateau/trou_voile.dtl"
 }
 variables={
 "Chapitre_1": {
@@ -68,6 +78,22 @@ variables={
 "quete_finie": false,
 "rat_parti": false,
 "rencontre_mousse": false
+},
+"ReparerLeBateau": {
+"araignees_apprivoisees": false,
+"discussion_capitaine_second_bois": false,
+"discussion_capitaine_second_debut": false,
+"discussion_guet_toile": false,
+"discussion_mousse_araignees": false,
+"porte_demantelee": false,
+"possede_biscuit": false,
+"possede_bois": false,
+"quete_en_cours": false,
+"quete_finie": false,
+"trou_cale_repare": false,
+"trou_cuisine_repare": false,
+"trou_infirmerie_repare": false,
+"voile_reparee": false
 }
 },
 "Var": ""

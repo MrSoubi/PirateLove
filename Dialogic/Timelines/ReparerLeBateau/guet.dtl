@@ -1,0 +1,17 @@
+# Premiere discussion, en boucle tant qu'on a pas apprivoisé les araignées
+if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:
+	il faut trouver de la toile, faut voir avec le Mousse
+	set {Chapitre_1.ReparerLeBateau.discussion_guet_toile} = true
+	[signal arg="variables_changed"]
+else:
+	on annonce avoir trouvé de la toile
+	le guet est content
+	set {Chapitre_1.ReparerLeBateau.voile_reparee} = true
+	[signal arg="variables_changed"]
+
+# Tous les travaux ont été réalisés
+if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true :
+	Bla bla de fin de quete
+	set {Chapitre_1.ReparerLeBateau.quete_finie} = true
+	set {Chapitre_1.ReparerLeBateau.quete_en_cours} = false
+	[signal arg="variables_changed"]
