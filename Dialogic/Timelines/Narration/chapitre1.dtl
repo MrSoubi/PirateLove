@@ -1,7 +1,72 @@
-[background arg="res://Textures/Locations/Placeholders/deck_2.png" fade="0.0"]
-la c'est le chapitre 1
-blop
-blup
+# #sortie de l’infirmerie, conversation de mise en contexte avec l’équipage
+[background arg="res://Textures/Locations/Placeholders/cale_background.jpg" fade="0.0"]
+Je peine à marcher droit tout en sortant de l’infirmerie accompagné du mousse. Ma tête me fait mal.
+On tombe nez à nez avec le guet, le canonnier et la médecin adossés sur les poutres de la calle.
+
+Le grand homme se tourne vers le mousse
+# #sprite canonnier intrigué
+join Cannonier left
+Cannonier: Qu’est-ce tu nous ramène d’beau aujourd’hui, Allen ?
+# #sprite mousse pensif
+join mousse (Pensif) right
+mousse: Il a perdu son bateau et son équipage dans la tempête d’hier soir. Il va rester un peu le temps de récupérer...
+
+# #le guet tire la gueule
+join Guet center
+Guet: A voir si Liestra l’y autorise.
+Guet: Errr Liestraaaaa..
+
+Cannonier: Everett. Sois sympa.
+Cannonier: On est désolés pour toi mon p’tit gars.
+# #sprite canonnier neutre/pensif 
+update Cannonier
+Cannonier: La tempête a aussi fait des ravages de notre côté.
+Il regarde la coque de son bateau d’un air contemplatif.
+# #le guet tire la gueule
+update Guet
+Guet: Pfff, à cause de cette maudite tempête, on va devoir réparer la coque et la voile qui sont complètement déchirés.
+Guet: Sans compter qu’on devait partir ce soir. On n’aura jamais fini à temps.
+Cannonier: Si on s’y met tous, ça d’vrait le faire, t’bile pas.
+# #sprite canonnier rigole
+update Cannonier
+Cannonier: Au moins il tient encore d’bout, contrairement au tien Corsaire.
+Le gros bonhomme s’exclaffe de rire.
+# #sprite médecin saoulée
+update Cannonier leftmost
+update Guet left
+update mousse center
+join Medecin right
+Medecin: Orlagh. Il y a des sujets où on ne rigole pas.
+Medecin: Celui-là en fait partie.
+Je ne peux m’empêcher de réprimer un rire.
+# #sprite canonnier neutre/pensif 
+update Cannonier
+Cannonier: Navré p’tit gars, j’aime bien rigoler voilà tout.
+Cannonier: J’espère que tu n’l’as pas trop mal pris.
+
+- Mon équipage est mort. Et mon bateau disparu.
+	Corsaire: Comment voudrais-tu que je le prenne ?
+	# #sprite canonnier neutre/pensif 
+	update Cannonier
+	Le Canonnier semble attristé. Il ne dit plus rien.
+- L’amour vache comme on dit…
+	Corsaire: Ca veut juste dire que tu m’aimes déjà.
+	#sprite canonnier rigole
+	update Cannonier
+	Cannonier: AHAHAHAHA !!
+	Cannonier: Je t’aime d’jà toi p’tit gars, viens-là !
+	Il plonge sa grosse paluche dans mes cheveux et les ébouriffe.
+
+La médecin nous interrompt.
+Medecin: Lui, c’est Orlagh. Le ptit gars avec sa serpillère là-bas, c’est Allen.
+Medecin: Le ronchon avec son perroquet, c’est Everett et moi c’est Calico.
+Medecin: Enchanté, Corsaire. Tâchons de bien nous entendre.
+
+Soudain, un énorme bruit d’estomac retentit.
+Corsaire: Désolé.. C’est-à-dire que je meurs de faim depuis tout à l’heure.
+Medecin: La cuisine est en face, va nous chercher à manger.
+Medecin: On a deux trois choses dont on doit parler.
+
 set {chapitre1_fini} = true
 set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = true
 [signal arg="variables_changed"]
