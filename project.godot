@@ -41,9 +41,9 @@ directories/dtl_directory={
 "ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_mousse.dtl",
 "ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_porte.dtl",
 "default_infirmerie_mousse": "res://Dialogic/Timelines/default_infirmerie_mousse.dtl",
-"etageres_poudre": "res://Dialogic/Timelines/LaLoucheDeMurlock/etageres_poudre.dtl",
-"premiere_conversation": "res://Dialogic/Timelines/LaLoucheDeMurlock/premiere_conversation.dtl",
-"premiere_discussion_cuistot": "res://Dialogic/Timelines/LaLoucheDeMurlock/premiere_discussion_cuistot.dtl"
+"discussion_murlock": "res://Dialogic/Timelines/LaLoucheDeMurlock/murlock.dtl",
+"discussion_trio": "res://Dialogic/Timelines/LaLoucheDeMurlock/premiere_conversation.dtl",
+"etageres_poudre": "res://Dialogic/Timelines/LaLoucheDeMurlock/etageres_poudre.dtl"
 }
 variables={
 "Chapitre_1": {
@@ -56,7 +56,7 @@ variables={
 "indice_poudre": false,
 "possede_louche": false,
 "possede_plats": false,
-"quete_en_cours": true,
+"quete_en_cours": false,
 "quete_finie": false
 },
 "RatEtFromage": {

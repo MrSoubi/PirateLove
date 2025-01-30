@@ -31,15 +31,11 @@ polygon = PackedVector2Array(241, 203, 241, 420, 388, 413, 395, 190)
 [node name="Cuisinier" parent="CanvasLayer/Default" instance=ExtResource("3_8pbwl")]
 position = Vector2(701, 358)
 scale = Vector2(0.20807, 0.20807)
+timeline = "discussion_murlock"
 
 [node name="LaLoucheDeMurlock" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("4_of5xr")
 hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_finie"])
-
-[node name="Cuisinier" parent="CanvasLayer/LaLoucheDeMurlock" instance=ExtResource("3_8pbwl")]
-position = Vector2(701, 358)
-scale = Vector2(0.20807, 0.20807)
-timeline = "premiere_discussion_cuistot"
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/LaLoucheDeMurlock"]
 script = ExtResource("2_mj3ii")
@@ -53,6 +49,11 @@ timeline = "etageres_poudre"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LaLoucheDeMurlock/Etageres"]
 polygon = PackedVector2Array(459, 231, 454, 306, 589, 294, 587, 247)
+
+[node name="Cuisinier" parent="CanvasLayer/LaLoucheDeMurlock" instance=ExtResource("3_8pbwl")]
+position = Vector2(701, 358)
+scale = Vector2(0.20807, 0.20807)
+timeline = "premiere_discussion_cuistot"
 
 [connection signal="input_event" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_mouse_entered"]

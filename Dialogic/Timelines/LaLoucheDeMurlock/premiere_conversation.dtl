@@ -1,12 +1,12 @@
-label premiere_rencontre
 join Guet left
 join Cannonier center
 join Medecin right
-if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == true:
-	leave --All--
-	join Medecin center
-	Medecin: La cuistot veut te voir.
-else:
+
+#####
+# Première discussion avec le médecin, le guet et le cannonier
+#####
+label premiere_discussion
+if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == false or {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false:
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false]
 		leave Medecin
 		leave Guet
@@ -36,6 +36,54 @@ else:
 		Guet: Bruits d'oiseau
 		Guet: Suce un furoncle, tête de pioche montée sur un manche à pelle !
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_guet} = true
+	jump premiere_discussion
+
+#####
+# Discussion de base, avant d'avoir discuté avec la cuisinière
+#####
+if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
+	Tu devrais aller voir Murlock, elle est dans la cuisine.
+	[end_timeline]
+
+# #####
+# Discussion après avoir discuté pour la première fois avec Murlock.
+# #####
+if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false:
+	- Parler au médecin
+		C'est le médecin qui parle ici
+	- Parler au guet
+		C'est le guet qui parle ici
+	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == false]
+		C'est le canonnier qui parle ici, mais il ne donnera pas la louche
+	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == true]
+		C'est le cannonier qui parle ici, il va rendre la louche car le joueur a trouvé l'indice
+		On trouve la louche sur le canonnier
+		set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = true
 		[signal arg="variables_changed"]
-	jump premiere_rencontre
-[signal arg="variables_changed"]
+	A plus
+	[end_timeline]
+
+#####
+# Discussion après avoir trouvé la louche sur le canonnier, mais avant d'avoir rendu la louche à Murlock
+#####
+if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
+	
+	[end_timeline]
+
+#####
+# Discussion après avoir rendu la louche à Murlock, mais seulement si le joueur n'a pas récupéré les plats
+#####
+if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
+	ON A FAIM
+	[end_timeline]
+
+#####
+# Discussion quand le joueur possède les plats
+# FIN DE QUETE
+#####
+if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
+	Miam miam miam
+	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = false
+	set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = false
+	set {Chapitre_1.LaLoucheDeMurlock.quete_finie} = true
+	[end_timeline]
