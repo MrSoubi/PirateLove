@@ -26,7 +26,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 # #####
 # Réponse de base quand le joueur n'a pas la louche
 # #####
-if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false:
+if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	*WHAM, BAM, CRACK*
 	Cuistot: JE VAIS FAIRE EXPLOSER CE BATEAU SI JE RETROUVE PAS MA LOUCHE !
 	*Il faut vraiment que je retrouve cette fichue louche*
@@ -48,14 +48,6 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 	NOUVEL OBJET OBTENU : PLAT
 	set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = false
 	set {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} = true
-	[signal arg="variables_changed"]
-	[end_timeline]
-
-# #####
-# Quand Murlock à récupéré sa louche et que le joueur n'a pas récupéré les plats pour l'équipage.
-# #####
-if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
-	Cuistot: Attrape les plats sur le comptoir et apporte leur.
 	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = true
 	[signal arg="variables_changed"]
 	[end_timeline]

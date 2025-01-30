@@ -24,6 +24,7 @@ hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cour
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/Default"]
 script = ExtResource("2_mj3ii")
+destination = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_ShipHold"]
 polygon = PackedVector2Array(241, 203, 241, 420, 388, 413, 395, 190)

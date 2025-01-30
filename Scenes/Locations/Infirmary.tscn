@@ -110,7 +110,7 @@ polygon = PackedVector2Array(930, 219, 933, 542, 1078, 641, 1079, 239)
 [node name="Mousse" parent="CanvasLayer/Default" instance=ExtResource("2_iqjt0")]
 position = Vector2(140, 368)
 scale = Vector2(0.377617, 0.377617)
-timeline = "default_infirmerie_mousse"
+timeline = "default_mousse"
 
 [connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_mouse_entered"]
