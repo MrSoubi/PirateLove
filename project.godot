@@ -24,13 +24,16 @@ CursorManager="*res://Scripts/cursor_manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"CadenasCode": "res://Dialogic/Items/RatFromageItem/CadenasCode.dch",
 "Cannonier": "res://Dialogic/Characters/Cannonier.dch",
 "Capitaine": "res://Dialogic/Characters/Capitaine.dch",
 "Cuistot": "res://Dialogic/Characters/Cuistot.dch",
+"Fromage": "res://Dialogic/Items/RatFromageItem/Fromage.dch",
 "Guet": "res://Dialogic/Characters/Guet.dch",
 "Medecin": "res://Dialogic/Characters/Medecin.dch",
+"Rat": "res://Dialogic/Items/RatFromageItem/Rat.dch",
 "Second": "res://Dialogic/Characters/Second.dch",
-"ch1_infirmerie_RatEtFromage_code": "res://Dialogic/Characters/ch1_infirmerie_RatEtFromage_code.dch",
+"ch1_infirmerie_RatEtFromage_code": "res://Dialogic/Items/RatFromageItem/ch1_infirmerie_RatEtFromage_code.dch",
 "mousse": "res://Dialogic/Characters/mousse.dch"
 }
 directories/dtl_directory={
@@ -139,8 +142,8 @@ save/encryption_on_exports_only=true
 save/autosave=true
 save/default_slot="Sauvegarde"
 text/autopauses={}
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Dialogic/Styles/DefaultStyle.tres", "res://Dialogic/Styles/PJPensif.tres", "res://Dialogic/Styles/ObjectDropped.tres"]
+layout/default_style="res://Dialogic/Styles/DefaultStyle.tres"
 glossary/default_case_sensitive=true
 
 [display]

@@ -1,5 +1,7 @@
 if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
-	*Le bureau est rempli de papiers avec une écriture illisible*
+	[style name="PJPensif"]
+	Le bureau est rempli de papiers avec une écriture illisible
+	[style]
 	Qui travaille ici ?
 	join mousse center 
 	mousse: La médecin du bateau, Calico !
@@ -9,5 +11,5 @@ if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 	join ch1_infirmerie_RatEtFromage_code right
 	Mais à quoi donc pourrait bien servir cette note ?
 else:
-	*Il n'y a rien sur ce bureau, à part quelques crouttes de fromage et des papiers en vrac.*
+	Il n'y a rien sur ce bureau, à part quelques crouttes de fromage et des papiers en vrac.
 [signal arg="variables_changed"]
