@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://7o4uug361i33"]
+[gd_scene load_steps=21 format=3 uid="uid://7o4uug361i33"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_51kkn"]
+[ext_resource type="Texture2D" uid="uid://74puukxtpdbi" path="res://Textures/illu.png" id="2_cxyf7"]
 [ext_resource type="Script" path="res://Scripts/fader.gd" id="2_nuqkf"]
 
 [sub_resource type="Gradient" id="Gradient_2o8fv"]
@@ -128,6 +129,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cxyf7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control"]
 layout_mode = 1
