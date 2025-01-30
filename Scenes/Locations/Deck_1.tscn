@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4al51kvbcv4c"]
+[gd_scene load_steps=4 format=3 uid="uid://b4al51kvbcv4c"]
 
 [ext_resource type="Texture2D" uid="uid://beo620dh1ulu8" path="res://Textures/Locations/Placeholders/deck_1_background.jpg" id="1_6hqek"]
+[ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="2_ppxru"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_wv11d"]
 
 [node name="Deck1" type="Node"]
@@ -15,6 +16,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_6hqek")
 expand_mode = 5
+
+[node name="Cannonier" parent="CanvasLayer" instance=ExtResource("2_ppxru")]
+position = Vector2(523, 327)
+scale = Vector2(0.334149, 0.334149)
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_wv11d")

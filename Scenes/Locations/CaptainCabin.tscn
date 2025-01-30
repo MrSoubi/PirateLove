@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://mfkweep0uqko"]
+[gd_scene load_steps=3 format=3 uid="uid://mfkweep0uqko"]
 
 [ext_resource type="Texture2D" uid="uid://dnpqp8dos0yeq" path="res://Textures/Locations/Placeholders/captain_cabin.png" id="1_3wa5r"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_y2d5c"]
-[ext_resource type="PackedScene" uid="uid://cu13foefgfwex" path="res://Characters/Cuisinier.tscn" id="4_4523r"]
 
 [node name="CaptainCabin" type="Node"]
 
@@ -23,10 +22,5 @@ destination = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck"]
 polygon = PackedVector2Array(643, 349, 797, 418, 790, 91, 746, 22, 678, 18, 633, 46, 632, 108)
-
-[node name="Cuisinier" parent="CanvasLayer" instance=ExtResource("4_4523r")]
-position = Vector2(299, 257)
-scale = Vector2(0.331866, 0.331866)
-timeline = "timeline_boucher"
 
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck" to="CanvasLayer/Door_To_Deck" method="_on_input_event"]

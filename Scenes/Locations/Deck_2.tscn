@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm3rnqwkf5jt3"]
+[gd_scene load_steps=7 format=3 uid="uid://dm3rnqwkf5jt3"]
 
 [ext_resource type="Texture2D" uid="uid://eru7yv614bsv" path="res://Textures/Locations/Placeholders/pont2_background.jpg" id="1_ipv72"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_3v7aa"]
+[ext_resource type="PackedScene" uid="uid://0vgrc2li3kgg" path="res://Characters/Captain.tscn" id="2_f82jl"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="4_0k3ab"]
+[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="4_pm0ef"]
+[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_q1mvx"]
 
 [node name="Deck2" type="Node"]
 
@@ -16,12 +20,10 @@ grow_vertical = 2
 texture = ExtResource("1_ipv72")
 expand_mode = 5
 
-[node name="Door_To_CaptainCabin" type="Area2D" parent="CanvasLayer"]
-script = ExtResource("2_3v7aa")
-destination = 5
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_CaptainCabin"]
-polygon = PackedVector2Array(459, 334, 461, 485, 563, 477, 563, 329)
+[node name="Captain" parent="CanvasLayer" instance=ExtResource("2_f82jl")]
+position = Vector2(300, 408)
+scale = Vector2(0.115325, 0.115325)
+timeline = "capitaine_second"
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_3v7aa")
@@ -37,6 +39,27 @@ destination = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck1"]
 polygon = PackedVector2Array(-38, 589, 554, 567, 766, 667, -69, 667)
 
-[connection signal="input_event" from="CanvasLayer/Door_To_CaptainCabin" to="CanvasLayer/Door_To_CaptainCabin" method="_on_input_event"]
+[node name="Door" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("4_pm0ef")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
+
+[node name="Door_To_CaptainCabin" type="Area2D" parent="CanvasLayer/Door"]
+script = ExtResource("2_3v7aa")
+destination = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door/Door_To_CaptainCabin"]
+polygon = PackedVector2Array(459, 334, 461, 485, 563, 477, 563, 329)
+
+[node name="DoorInteractible" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("5_q1mvx")
+hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/DoorInteractible"]
+script = ExtResource("4_0k3ab")
+timeline = "porte_cabine"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/DoorInteractible/Area2D"]
+
 [connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_input_event"]
+[connection signal="input_event" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_input_event"]

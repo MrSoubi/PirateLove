@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://uc7wiuquw018"]
+[gd_scene load_steps=7 format=3 uid="uid://uc7wiuquw018"]
 
 [ext_resource type="Texture2D" uid="uid://041jl8sf10kn" path="res://Textures/Locations/Placeholders/cuisine_background.jpg" id="1_3a0b6"]
+[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="2_4pbdh"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_mj3ii"]
 [ext_resource type="PackedScene" uid="uid://cu13foefgfwex" path="res://Characters/Cuisinier.tscn" id="3_8pbwl"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="4_of5xr"]
@@ -19,23 +20,31 @@ grow_vertical = 2
 texture = ExtResource("1_3a0b6")
 expand_mode = 3
 
-[node name="Default" type="Node2D" parent="CanvasLayer"]
-script = ExtResource("4_of5xr")
-hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
+[node name="ReparerBateau" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("2_4pbdh")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
 
-[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/Default"]
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/ReparerBateau"]
 script = ExtResource("2_mj3ii")
 destination = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Default/Door_To_ShipHold"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Door_To_ShipHold"]
 polygon = PackedVector2Array(243, 167, 241, 420, 401, 412, 399, 182)
 
-[node name="Cuisinier" parent="CanvasLayer/Default" instance=ExtResource("3_8pbwl")]
+[node name="Cuisinier" parent="CanvasLayer/ReparerBateau" instance=ExtResource("3_8pbwl")]
 position = Vector2(735, 381)
 scale = Vector2(0.20807, 0.20807)
-timeline = "discussion_murlock"
+timeline = "cuistot"
+
+[node name="Trou" type="Area2D" parent="CanvasLayer/ReparerBateau"]
+script = ExtResource("5_0eosh")
+timeline = "trou_cuisine"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Trou"]
+polygon = PackedVector2Array(463, 507, 402, 551, 488, 575, 508, 524)
 
 [node name="LaLoucheDeMurlock" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource("4_of5xr")
 hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_finie"])
 
@@ -58,9 +67,9 @@ position = Vector2(733, 382)
 scale = Vector2(0.20807, 0.20807)
 timeline = "discussion_murlock"
 
-[connection signal="input_event" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Default/Door_To_ShipHold" to="CanvasLayer/Default/Door_To_ShipHold" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/ReparerBateau/Door_To_ShipHold" to="CanvasLayer/ReparerBateau/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/ReparerBateau/Door_To_ShipHold" to="CanvasLayer/ReparerBateau/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ReparerBateau/Door_To_ShipHold" to="CanvasLayer/ReparerBateau/Door_To_ShipHold" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" to="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" to="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" to="CanvasLayer/LaLoucheDeMurlock/Door_To_ShipHold" method="_on_mouse_exited"]
