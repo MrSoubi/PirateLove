@@ -2,21 +2,21 @@ join Guet left
 join Cannonier center
 join Medecin right
 
-#####
+# #####
 # Première discussion avec le médecin, le guet et le cannonier
-#####
+# #####
 label premiere_discussion
 if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == false or {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false:
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false]
 		leave Medecin
 		leave Guet
 		update Cannonier center
-		Cannonier: Moi j'aurai bien fait péter la porte de l'infirmerie, on a plein de poudre sur le bateau.
+		Cannonier: Moi j'aurais bien fait péter la porte de l'infirmerie, on a plein d'poudre sur le bateau. J'en ai sur moi en c'moment même !
 		Cannonier: Mais apparemment c'était pas une bonne idée.
 		Cannonier: "Heu gneu gneu non Orlagh, fais pas ça Orlagh."
-		Cannonier: "Heu gneuuu, c'est tout le bateau qui risque de sauter Orlagh."
-		Cannonier: Ils savent pas de quoi ils parlent.
-		Cannonier: Moi je sais y faire avec la poudre. Les canons ça me connait !
+		Cannonier: "Heu gneuuu, c'est tout l'bateau qui risque de sauter Orlagh."
+		Cannonier: Ils savent pas d'quoi ils parlent.
+		Cannonier: Moi j'sais y faire avec la poudre. Les canons ça m'connait !
 		Cannonier: Et j'en ai vu des canons...
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} = true
 		[signal arg="variables_changed"]
@@ -24,65 +24,126 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 		leave Guet
 		leave Cannonier
 		update Medecin center
-		Medecin: On a une discussion à avoir tout les deux.
-		Medecin: J'espère que ça va, que vous tenez le coup.
-		Medecin: Bla bla bla, à remplir
+		Medecin: Pourquoi vous êtiez coincé dans l'infirmerie exactement ? Je n'arrivais pas à ouvrir la porte de mon côté.
+		Longue histoire, n'en faisons pas tout un fromage, eheh.
+		mousse: Ahah ! Elle est bien bonne celle là !
+		Mais ne vous inquiétez pas, vous n'avez rien RAT-TÉ !
+		mousse: AHAHAHAH !
+		Medecin: Ugh... Les hommes...
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} = true
 		[signal arg="variables_changed"]
 	- Parler au guet | [if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false]
 		leave Medecin
 		leave Cannonier
 		update Guet center
-		Guet: Bruits d'oiseau
-		Guet: Suce un furoncle, tête de pioche montée sur un manche à pelle !
+		Guet: Têteuh de noeeuuud ! Têteuh de noeeuuud !
+		*sympathique...*
+		Enchanté jeune homme ! Merci encore de m'avoir accueilli.
+		Guet: Je parle pas aux enflures comme toi.
+		*Ah ! Et pourtant tu viens de m'adresser la parole. Et toc !*
+		*Si seulement j'avais le courage de dire ça à haute voix...*
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_guet} = true
+		[signal arg="variables_changed"]
 	jump premiere_discussion
 
-#####
+# #####
 # Discussion de base, avant d'avoir discuté avec la cuisinière
-#####
+# #####
 if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
-	Tu devrais aller voir Murlock, elle est dans la cuisine.
+	Guet: Et si tu te rendais utile plutôt que de te tourner les pouces ?
+	Guet: Incâpaableuh ! Incâpaaableuh !
+	Medecin: C'est crûment dit, mais Everett n'a pas tord. On ne peut pas te loger gratuitement. On a bien besoin d'aide sur le bateau, surtout avec l'orage d'hier soir.
+	Bien sûr ! Dites moi simplement ce qu'il vous faut.
+	Cannonier: Moi j'ai faim ! J'ai rien avalé depuis 2h, je vais m'évanouir si ça continue !
+	Medecin: C'est inabituel que Murlock nous fasse attendre pour le repas. Tu devrais aller voir ce qui se passe en cuisine Corsaire.
+	Cannonier: Fait attention à toi gamin, elle est pas commode.
+	C'est rassurant...
 	[end_timeline]
 
 # #####
 # Discussion après avoir discuté pour la première fois avec Murlock.
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false:
+	*Qui je devrais interroger ?*
 	- Parler au médecin
-		C'est le médecin qui parle ici
+		Excuse moi Calico, mais est-ce que tu saurais où se trouve la louche de Murlock ?
+		Medecin: C'est sa louche qu'elle cherche ? Je n'y ai jamais touché.
+		Medecin: D'ailleurs, je ne touche à aucun de ses ustensiles, j'ai bien compris que c'était une mauvaise idée après qu'Orlagh ait confondu un de ses couteaux avec un sabre
+		Qu'est-ce qu'il s'est passé ?
+		Medecin: Disons qu'elle a finit par lui laisser le couteau, juste qu'il était planté entre ses côtes.
+		Cannonier: J'ai même pas eu mal !
+		Medecin: J'ai dû lui laisser la lame dans le corps pour ne pas aggraver l'hémoragie. Je ne sais pas comment ce gaillard est toujours en vie...
+		B-bien, merci pour l'information.
 	- Parler au guet
-		C'est le guet qui parle ici
+		Guet: Qu'est-ce que tu me veux ?
+		Guet: Imbécileuuuh ! Imbécileuuuh !
+		Simplement savoir où se trouve la louche de Murlock, tu saurais quelque chose à ce propos ?
+		Guet: Tu me traites de voleur ?
+		...
+		Guet: B-bref, de toute façon j'en ai rien à faire de ses machins et bidules qu'elle a en cuisine. C'est Orlagh qui va tout le temps voler de la bouffe là bas, moi je reste sur mon guet !
+		*Intéressant, Orlagh a sûrement touché à quelque chose dans la cuisine alors*
+		Merci beaucoup Everett !
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == false]
-		C'est le canonnier qui parle ici, mais il ne donnera pas la louche
+		Cannonier: Alors moussaillon, tu m'apportes mon manger ?
+		Pas encore, Murlock veut absolument savoir où se trouve sa louche. Tu saurais où elle se trouve ?
+		Cannonier: J'ai rien de tout ça moi ! La cuisine ça me connaît pas, donc j'en ai pas besoin. T'as cherché sur ses établis ?
+		Bonne idée, je vais aller voir ça.
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == true]
-		C'est le cannonier qui parle ici, il va rendre la louche car le joueur a trouvé l'indice
-		On trouve la louche sur le canonnier
+		Cannonier: Alors, il vient ce bon p'tit plat ou non ? Mon bide agonise !
+		Bientôt Murlock. J'ai simplement besoin de savoir, est-ce que tu as emprunté un ustensile sur l'établi de la cuisine ? J'ai retrouvé ta poudre à canon sur une des tables
+		Cannonier: Laisse moi réfléchir...
+		...
+		Cannonier: ...
+		...
+		Cannonier: ...
+		*Rien dans la tête, tout dans les muscles*
+		Cannonier: J'm'en souviens ! J'ai emprunté c'te gratte-dos ! Vachement pratique d'ailleurs.
+		*C'est... LA LOUCHE !*
+		Orlagh... Ce n'est pas un gratte-dos, c'est une louche.
+		Cannonier: Ah ? Moi je croyais qu'une louche c'était le truc quand tu regardais ton nez avec tes deux yeux.
+		C'est p-... Peu importe, Murlock cherche cette louche depuis longtemps, il faut que tu lui ramènes.
+		Cannonier: Ah ! Euh... Est-ce que tu peux lui dire que tu l'as trouvé par terre ?
+		Pourquoi ? C'est toi qui l'a volé !
+		Cannonier: Disons que c'est pas la première fois que je lui "emprunte" quelque chose, et ça a jamais bien fini pour moi... ça restera notre petit secret, hein ?
+		*Il a peut-être raison, Murlock lui réarrangera le visage si je lui dis la vérité*
+		C'est d'accord, j'espère qu'elle gobera ce que je lui dirai.
+		Cannonier: T'es un brave homme toi ! Je m'en souviendrai
+		NOUVEL OBJET OBTENU : LOUCHE
 		set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = true
 		[signal arg="variables_changed"]
-	A plus
 	[end_timeline]
 
-#####
+# #####
 # Discussion après avoir trouvé la louche sur le canonnier, mais avant d'avoir rendu la louche à Murlock
-#####
+# #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
-	
+	Cannonier: Tu ferais mieux d'aller lui rendre cette louche, j'ai faim moi !
 	[end_timeline]
 
-#####
+# #####
 # Discussion après avoir rendu la louche à Murlock, mais seulement si le joueur n'a pas récupéré les plats
-#####
+# #####
 if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
-	ON A FAIM
+	Medecin: Alors, où sont ces plats ?
+	Cannonier: J'AI FAAAIIIIIM !!!
 	[end_timeline]
 
-#####
+# #####
 # Discussion quand le joueur possède les plats
 # FIN DE QUETE
-#####
+# #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
-	Miam miam miam
+	Cannonier: HOURA ! NOTRE SAUVEUR EST ARRIVÉ !
+	Voici votre plat mes amis ! J'espère qu'il vous plaira, Murlock y a mis tout son amour.
+	Guet: Encore du poulpe ? C'est la 4ème fois cette semaine !
+	Guet: Dégueulaaaasseuh ! Dégueulaaaasseuh !
+	Medecin: Les temps sont durs Everett, la capitaine et le second ont déjà la bonté de nous laisser leur part, estime toi heureux.
+	Cannonier: DOUBLE RATION POUR MOI, YOUHOUUU !
+	Medecin: Et si vous veniez manger avec nous, Allen et Monseigneur Corsaire ?
+	Avec plaisir ! J'ai le ventre noué depuis hier soir, un petit plat m'aidera à me remettre les idées en places.
+	mousse: J'avoue que j'ai un petit creux ! Ça fait 3 jours que je me nourris uniquement de champignons qui poussent sur la coque.
+	Medecin: La sélection naturel a dû t'oublier...
+	Nom nom nom
 	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = false
 	set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = false
 	set {Chapitre_1.LaLoucheDeMurlock.quete_finie} = true
