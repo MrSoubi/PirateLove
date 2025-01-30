@@ -1,10 +1,33 @@
 join mousse center
-if {Chapitre_1.RatEtFromage.levier_active} == false:
-	mousse: Yo, on est bien dans la merde.
-	mousse: Le gros rat veut pas partir de ce levier, il a trouvé des crouttes de fromage coincés dans les rouages.
+if {Chapitre_1.RatEtFromage.rat_parti} == false:
+	# Faire ça pour l'intro
+	*Ma tête me fait atrocement mal...*
+	Aïeuh... Où est-ce que je suis ?
+	mousse: *BAM* Comment s'ouvre cette fichue porte ?!
+	Hein ? Qui est là ?
+	mousse: AAAAAAAAAAH !
+	AAAAH ! Qu'est-ce qui vous prend à crier comme ça ?!
+	mousse: Pardon vous m'avez fait peur. Je ne pensais pas vous voir vous réveiller de sitôt au vue de votre état hier soir.
+	Comment ça ? Qu'est-ce qu'il s'est passé hier soir ?
+	mousse: Je vous ai retrouvé tout titubant, rond comme un phoque, implorant pour un endroit où dormir. Je n'ai pas trouvé meilleur endroit que l'infirmerie pour vous coucher.
+	*Je me souviens avoir passé une soirée à la taverne, mais pourquoi aurais-je autant abusé de la boisson ? Ça ne me ressemble pas...*
+	mousse: Vous ressembliez à une épave ! Vous n'arrêtiez pas de parler de bateau coulé et de femme, j'avoue ne pas avoir tout suivi.
+	*...Mais bien sûr ! J'ai perdu mon bateau et mon équipage dans cette affreuse tempête et je me suis retrouvé échoué sur cette île. je suis allé à cette taverne et puis...*
+	*Bazard de zut ! Je ne me souviens plus de rien après ça, même plus de la raison de ma venue.*
+	*Je sais ! Mon ordre de mission était dans ma poche...*
+	...
+	Où est ma veste ?
+	mousse: Votre veste ? Je ne vous ai jamais vu avec une veste je crois.
+	Raaagh ! Comment faire ?! Il faut absolument que je trouve quelqu'un qui puisse me rafraîchir la mémoire.
+	mousse: Mon équipage pourrait bien vous aider, mais je crois bien que la porte de sortie refuse de bouger.
+	Hum... Comment vous appelez-vous ?
+	mousse: Allen ! Mousse professionnel de père en fils !
+	Eh bien mon cher Allen, je crois bien que nous allons devoir collaborer pour sortir d'ici !
+	
+	mousse: Ce gros rat veut pas partir de ce levier ! Il a trouvé des crouttes de fromage coincés dans les rouages.
 	mousse: Il va falloir trouver quelque chose pour le faire partir.
 else:
-	mousse: Heureusement que ce bon vieux médecin garde du fromage dans sa cabine.
+	mousse: Heureusement que cette bonne vieille médecin garde du fromage dans sa cabine.
 	Même si ça m'inquiète un peu...
-	Ca expliquerait peut être pourquoi je me sens toujours plus malade quand je viens le voir.
+	Ca expliquerait peut être pourquoi je me sens toujours plus malade quand je viens la voir.
 [signal arg="variables_changed"]
