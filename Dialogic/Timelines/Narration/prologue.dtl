@@ -1,0 +1,4 @@
+Le jeu commence ici
+Là on a un deuxième texte
+set {prologue_fini} = true
+[signal arg="variables_changed"]

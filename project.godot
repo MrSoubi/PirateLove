@@ -42,14 +42,22 @@ directories/dtl_directory={
 "ch1_RatEtFromage_infirmerie_levier": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_levier.dtl",
 "ch1_RatEtFromage_infirmerie_mousse": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_mousse.dtl",
 "ch1_RatEtFromage_infirmerie_porte": "res://Dialogic/Timelines/RatEtFromage/ch1_RatEtFromage_infirmerie_porte.dtl",
+"chapitre1": "res://Dialogic/Timelines/Narration/chapitre1.dtl",
+"chapitre2": "res://Dialogic/Timelines/Narration/chapitre2.dtl",
 "cuistot": "res://Dialogic/Timelines/ReparerLeBateau/cuistot.dtl",
 "default_infirmerie_mousse": "res://Dialogic/Timelines/default_infirmerie_mousse.dtl",
+"devenir_mousse": "res://Dialogic/Timelines/Narration/devenir_mousse.dtl",
 "discussion_murlock": "res://Dialogic/Timelines/LaLoucheDeMurlock/murlock.dtl",
 "discussion_trio": "res://Dialogic/Timelines/LaLoucheDeMurlock/premiere_conversation.dtl",
 "etageres_poudre": "res://Dialogic/Timelines/LaLoucheDeMurlock/etageres_poudre.dtl",
+"fin_depart": "res://Dialogic/Timelines/Narration/fin_depart.dtl",
 "guet": "res://Dialogic/Timelines/ReparerLeBateau/guet.dtl",
 "mousse": "res://Dialogic/Timelines/ReparerLeBateau/mousse.dtl",
 "porte_cabine": "res://Dialogic/Timelines/ReparerLeBateau/porte_cabine.dtl",
+"prologue": "res://Dialogic/Timelines/Narration/prologue.dtl",
+"smash_capitaine": "res://Dialogic/Timelines/Narration/smash_capitaine.dtl",
+"smash_second": "res://Dialogic/Timelines/Narration/smash_second.dtl",
+"test_du_second": "res://Dialogic/Timelines/Narration/test_du_second.dtl",
 "trou_cale": "res://Dialogic/Timelines/ReparerLeBateau/trou_cale.dtl",
 "trou_cuisine": "res://Dialogic/Timelines/ReparerLeBateau/trou_cuisine.dtl",
 "trou_infirmerie": "res://Dialogic/Timelines/ReparerLeBateau/trou_infirmerie.dtl",
@@ -74,7 +82,7 @@ variables={
 "code": "0",
 "levier_active": false,
 "possede_fromage": false,
-"quete_en_cours": true,
+"quete_en_cours": false,
 "quete_finie": false,
 "rat_parti": false,
 "rencontre_mousse": false
@@ -96,7 +104,12 @@ variables={
 "voile_reparee": false
 }
 },
-"Var": ""
+"chapitre1_fini": false,
+"chapitre2_fini": false,
+"prologue_fini": false,
+"secret_decouvert": false,
+"test_du_second_fini": false,
+"test_reussi": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

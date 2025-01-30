@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://7o4uug361i33"]
+[gd_scene load_steps=20 format=3 uid="uid://7o4uug361i33"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_51kkn"]
+[ext_resource type="Script" path="res://Scripts/fader.gd" id="2_nuqkf"]
 
 [sub_resource type="Gradient" id="Gradient_2o8fv"]
 offsets = PackedFloat32Array(0, 0.701068, 1)
@@ -35,11 +36,78 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqhub"]
 
+[sub_resource type="Animation" id="Animation_7h50t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hubg2"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ufote"]
+resource_name = "fade_to_normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78lvs"]
+_data = {
+"RESET": SubResource("Animation_7h50t"),
+"fade_to_black": SubResource("Animation_hubg2"),
+"fade_to_normal": SubResource("Animation_ufote")
+}
+
 [node name="Game" type="Node"]
 script = ExtResource("1_51kkn")
+prologue_timeline = "prologue"
+chapitre1_timeline = "chapitre1"
+chapitre2_timeline = "chapitre2"
+test_du_second_timeline = "test_du_second"
+fin_smash_capitaine_timeline = "smash_capitaine"
+fin_smash_second_timeline = "smash_second"
+fin_mousse_timeline = "devenir_mousse"
+fin_depart_timeline = "fin_depart"
+prologue_var = "prologue_fini"
+rat_et_fromage_var = "Chapitre_1.RatEtFromage.quete_finie"
+chapitre1_var = "chapitre1_fini"
+louche_de_murlock_var = "Chapitre_1.LaLoucheDeMurlock.quete_finie"
+chapitre2_var = "chapitre2_fini"
+reparer_bateau_var = "Chapitre_1.ReparerLeBateau.quete_finie"
+test_du_second_var = "test_du_second_fini"
 initial_scene = 2
 
-[node name="LocationContainer" type="Node" parent="."]
+[node name="LocationContainer" type="Node2D" parent="."]
 
 [node name="Vignette" type="CanvasLayer" parent="."]
 
@@ -116,6 +184,24 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_hxlg2")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_i0utc")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xqhub")
 text = "Continuer"
+
+[node name="NarrationContainer" type="Node2D" parent="."]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_nuqkf")
+
+[node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_78lvs")
+}
 
 [connection signal="pressed" from="MainMenu/Control/VBoxContainer/Button_NouvellePartie" to="." method="_on_button_nouvelle_partie_pressed"]
 [connection signal="pressed" from="MainMenu/Control/VBoxContainer/Button_Continuer" to="." method="_on_button_continuer_pressed"]
