@@ -1,13 +1,14 @@
+[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
 if {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == false:
 	PJPensif: Il y a un trou dans la coque. Il faut que je trouve un moyen de le boucher.
 
 if {Chapitre_1.ReparerLeBateau.possede_bois} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == false:
 	Je répare le trou
-	set {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true
+	set {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} = = true
 	[signal arg="variables_changed"]
 
 # Tous les travaux ont été réalisés
-if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true :
+if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true:
 	set {Chapitre_1.ReparerLeBateau.quete_finie} = true
 	set {Chapitre_1.ReparerLeBateau.quete_en_cours} = false
 	Bla bla de fin de quete

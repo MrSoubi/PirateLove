@@ -1,6 +1,7 @@
+[background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="0.0"]
 # Première discussion
-join Second right 
-join Capitaine left 
+join Second right
+join Capitaine left
 if {Chapitre_1.ReparerLeBateau.discussion_capitaine_second_debut} == false:
 	Second: Tu as bien compris ta mission Corsaire ?
 	Corsaire: Un petit rappel ne fera pas de mal.
