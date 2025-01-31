@@ -30,8 +30,8 @@
 "image": "\"res://Textures/Characters/Canonnier/CANNONIER_INTRIGUE.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 120),
-"scale": 1.2,
+"offset": Vector2(0, 0),
+"scale": 1.0,
 "scene": ""
 },
 "Pensif": {
@@ -39,8 +39,8 @@
 "image": "\"res://Textures/Characters/Canonnier/CANNONIER_PENSIF.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 120),
-"scale": 1.2,
+"offset": Vector2(0, 0),
+"scale": 1.0,
 "scene": ""
 },
 "Rigole": {
@@ -48,8 +48,8 @@
 "image": "\"res://Textures/Characters/Canonnier/CANNONIER_RIGOLE.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 120),
-"scale": 1.2,
+"offset": Vector2(0, 0),
+"scale": 1.0,
 "scene": ""
 }
 },
