@@ -144,7 +144,7 @@ PJPensif: Comme c’est agréable.
 
 Soudain, le Second toque ardemment à la porte. Celle-ci craque de plus belle.
 Surprise, la Capitaine se redresse d’un coup.
-update Capitaine right [move_time="0.4"]
+update Capitaine right
 join Second left
 # #sprite second surprit/mécontent
 Second (Malaise): Ah… Heu, navré, je dérange peut-être…

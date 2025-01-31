@@ -28,9 +28,9 @@ Guet: Sans compter qu’on devait partir ce soir. On n’aura jamais fini à tem
 Cannonier (Default): Si on s’y met tous, ça d’vrait le faire, t’bile pas.
 Cannonier (Rigole): Au moins il tient encore d’bout, contrairement au tien Corsaire.
 Le gros bonhomme s’exclaffe de rire.
-update Cannonier leftmost [move_time="0.4"]
-update Guet left [move_time="0.4"]
-update mousse center [move_time="0.4"]
+update Cannonier leftmost
+update Guet left
+update mousse center
 join Medecin right
 Medecin (Saoulee): Orlagh. Il y a des sujets où on ne rigole pas.
 Medecin (Saoulee): Celui-là en fait partie.

@@ -22,7 +22,7 @@
 "ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1.15,
 "scene": ""
 },
 "Intrigue": {
@@ -31,16 +31,17 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1.15,
 "scene": ""
 },
 "Pensif": {
 "export_overrides": {
 "image": "\"res://Textures/Characters/Canonnier/CANNONIER_PENSIF.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1.15,
 "scene": ""
 },
 "Rigole": {
@@ -49,7 +50,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1.1,
 "scene": ""
 }
 },

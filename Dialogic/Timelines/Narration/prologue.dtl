@@ -100,7 +100,7 @@ Elle se tourne vers le corsaire, les yeux imbibés d’alcool et son cœur chute
 update Capitaine (Default) center 
 Corsaire: Dis moi tout.
 # #sprite flirt 
-update Capitaine (Default) left [move_time="2.0"]
+update Capitaine (Default) left 
 Capitaine: J’ai un secret trop lourd à porter et je veux t’en parler… J’ai confiance en toi.. 
 Capitaine: En fait-
 leave --All-- [animation="Slide Out Down" length="2.0"]

@@ -7,11 +7,11 @@ if {Chapitre_1.RatEtFromage.levier_active} == false:
 			PJPensif: Il est ENOOORME.
 			Corsaire: Comment un rat peut trouver à se nourrir dans un bateau aussi pourri ?
 			Corsaire: Peu importe... Impossible de le bouger... Allen ?
-			update rat right [move_time="0.4"]
+			update rat right
 			join mousse (Stress) left
 			mousse: Ah non ! J'ai la phobie des rats ! J'essaye déjà de ne pas m'évanouir, donc débrouillez-vous !
 			leave mousse
-			update rat center [move_time="0.4"]
+			update rat center
 			Corsaire: J'avoue ne pas avoir envie de le toucher non plus. Il va falloir trouver une autre solution.
 		else:
 			join rat left
