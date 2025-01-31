@@ -1,5 +1,26 @@
+join carnet center 
 if {Chapitre_1.ReparerLeBateau.tableau_decouvert} == false:
+	PJPensif: C'est le fameux carnet de la capitaine Liestra. Il a l'air scellé par un cadenas.
+	PJPensif: Est-ce que je devrais vraiment chercher la clé ? Liestra va me détester si je l'ouvre.
 else:
+	PJPensif: J'ai la clé. Est-ce que j'ose ouvrir le livre ?
 	- Ouvrir
+		PJPensif: La clé rentre parfaitement dans la serrure.
+		*CLICK*
+		leave carnet
+		join carnet_ouvert center
+		PJPensif: Il y a une entrée de journal marquée par un petit bijou...
+		PJPensif: C'est la même peinture que le tableau que j'ai vu au mur ! Que fait-il dans ce carnet ?
+		"Mon père, le Comte Davólto, est une enflure."
+		"Il m’a marié de force à José Ramirez. A vendu tout au long de sa vie des esclaves, et m’a inculqué dans ce savoir et cette vie-là."
+		"J’ai donc, naturellement, lorsque je me suis enfuie, dirigée dans la même voie. Jusqu’à ce que j’obtienne assez d’argent pour acheter mon propre équipage et devenir indépendante. Je regrette."
+		PJPensif: ...
+		PJPensif: LIESTRA EST ISSU DE LA NOBLESSE ?! Une marchande d'esclave qui plus est ?!
+		PJPensif: Je me souviens maintenant, c'est ce secret qu'elle m'avait révélé à la taverne !
+		PJPensif: C'est impossible, ce que décrit ce journal correspond exactement...
+		PJPensif: Mon ordre de mission était de capturer une certaine Davólto, c'est le véritable prénom de Liestra...
+		PJPensif: Qu'est-ce que je dois faire maintenant que je sais ça ?
+		PJPensif: Faisons comme si de rien n'était, finissons de réparer le bateau tranquillement. Je lui mettrai face à cette vérité plus tard.
 		set {secret_decouvert} = true
 	- Ne pas ouvrir
+		PJPensif: Non, je ne peux pas faire ça. Je vais laisser ce livre tranquille et terminer la réparation de ce navire. Je ne veux pas trahir la confiance de Liestra.
