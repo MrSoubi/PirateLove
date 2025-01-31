@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://uc7wiuquw018"]
+[gd_scene load_steps=9 format=3 uid="uid://uc7wiuquw018"]
 
-[ext_resource type="Texture2D" uid="uid://041jl8sf10kn" path="res://Textures/Locations/Placeholders/cuisine_background.jpg" id="1_3a0b6"]
+[ext_resource type="Texture2D" uid="uid://rbjgr6ttyg8t" path="res://Textures/Locations/Cuisine/cuisine.png" id="1_jo5ep"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="2_4pbdh"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_mj3ii"]
 [ext_resource type="PackedScene" uid="uid://cu13foefgfwex" path="res://Characters/Cuisinier.tscn" id="3_8pbwl"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="4_of5xr"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="5_0eosh"]
+[ext_resource type="Texture2D" uid="uid://cvdcduejxiprq" path="res://Textures/Locations/Cuisine/trou_eau.png" id="6_yqg6p"]
+[ext_resource type="Texture2D" uid="uid://q7lisk5235r7" path="res://Textures/Locations/Cuisine/trace_poudre.png" id="7_dp8am"]
 
 [node name="Kitchen" type="Node"]
 
@@ -17,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_3a0b6")
+texture = ExtResource("1_jo5ep")
 expand_mode = 3
 
 [node name="ReparerBateau" type="Node2D" parent="CanvasLayer"]
@@ -41,7 +43,13 @@ script = ExtResource("5_0eosh")
 timeline = "trou_cuisine"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Trou"]
-polygon = PackedVector2Array(463, 507, 402, 551, 488, 575, 508, 524)
+position = Vector2(123, -510)
+polygon = PackedVector2Array(475, 491, 393, 554, 459, 583, 581, 504)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_yqg6p")
 
 [node name="LaLoucheDeMurlock" type="Node2D" parent="CanvasLayer"]
 visible = false
@@ -66,6 +74,11 @@ polygon = PackedVector2Array(427, 267, 422, 402, 466, 421, 566, 424, 567, 326, 5
 position = Vector2(733, 382)
 scale = Vector2(0.20807, 0.20807)
 timeline = "discussion_murlock"
+
+[node name="TracePoudre" type="Sprite2D" parent="CanvasLayer/LaLoucheDeMurlock"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_dp8am")
 
 [connection signal="input_event" from="CanvasLayer/ReparerBateau/Door_To_ShipHold" to="CanvasLayer/ReparerBateau/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ReparerBateau/Door_To_ShipHold" to="CanvasLayer/ReparerBateau/Door_To_ShipHold" method="_on_mouse_entered"]

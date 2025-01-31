@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4al51kvbcv4c"]
+[gd_scene load_steps=7 format=3 uid="uid://b4al51kvbcv4c"]
 
-[ext_resource type="Texture2D" uid="uid://beo620dh1ulu8" path="res://Textures/Locations/Placeholders/deck_1_background.jpg" id="1_6hqek"]
+[ext_resource type="Texture2D" uid="uid://cqmw4c74k0k2h" path="res://Textures/Locations/Deck_1/pont_2.png" id="1_vofhc"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="2_ppxru"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_wv11d"]
+[ext_resource type="PackedScene" uid="uid://bicfe6o7ysdev" path="res://Characters/Mousse.tscn" id="4_u3pih"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="5_6kkkj"]
+[ext_resource type="Texture2D" uid="uid://m3j3g5xsq4ux" path="res://Textures/Locations/Deck_1/toile.png" id="6_kve8e"]
 
 [node name="Deck1" type="Node"]
 
@@ -14,12 +17,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_6hqek")
+texture = ExtResource("1_vofhc")
 expand_mode = 5
 
 [node name="Cannonier" parent="CanvasLayer" instance=ExtResource("2_ppxru")]
-position = Vector2(523, 327)
-scale = Vector2(0.334149, 0.334149)
+position = Vector2(321, 374)
+scale = Vector2(0.125726, 0.125726)
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_wv11d")
@@ -33,7 +36,7 @@ script = ExtResource("2_wv11d")
 destination = 6
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Mast"]
-polygon = PackedVector2Array(679, 456, 972, 468, 890, -43, 760, -37)
+polygon = PackedVector2Array(679, 456, 885, 472, 879, 343, 876, -42, 793, -38, 788, 337, 694.785, 359.923)
 
 [node name="Door_To_Deck2" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_wv11d")
@@ -41,6 +44,23 @@ destination = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck2"]
 polygon = PackedVector2Array(702, 579, 455, 680, 1194, 677, 1197, 572)
+
+[node name="Mousse" parent="CanvasLayer" instance=ExtResource("4_u3pih")]
+position = Vector2(1025, 332)
+scale = Vector2(0.175626, 0.175626)
+timeline = "mousse"
+
+[node name="Araignees" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("5_6kkkj")
+timeline = "araignees"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Araignees"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_kve8e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Araignees"]
+polygon = PackedVector2Array(593, 278, 629, 307, 675, 288, 702, 326, 674, 367, 605, 365, 554, 356, 579, 287)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="input_event" from="CanvasLayer/Door_To_Mast" to="CanvasLayer/Door_To_Mast" method="_on_input_event"]
