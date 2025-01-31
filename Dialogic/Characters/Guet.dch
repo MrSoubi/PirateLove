@@ -32,6 +32,15 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
+},
+"Perroquet": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Guet/GUET_PERROQUET.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 "scale": 1.0

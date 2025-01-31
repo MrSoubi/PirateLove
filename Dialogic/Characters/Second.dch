@@ -24,9 +24,45 @@
 "scale": 1,
 "scene": ""
 },
+"Flirt": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_flirt.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"FlirtBlush": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_flirtblush.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Malaise": {
 "export_overrides": {
 "image": "\"res://Textures/Characters/Second/Second_experssion_malaisetv.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Malice": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_concept_malice.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Mecontent": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_concept_mecontent.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -45,6 +81,24 @@
 "Rire": {
 "export_overrides": {
 "image": "\"res://Textures/Characters/Second/Second_rire.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SideEye": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_concept_sideeye.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"SourireEnCoin": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_concept_sourire_en_coin.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
