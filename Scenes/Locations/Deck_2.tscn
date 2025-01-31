@@ -52,19 +52,23 @@ destination = 5
 polygon = PackedVector2Array(459, 334, 461, 485, 563, 477, 563, 329)
 
 [node name="DoorInteractible" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("4_pm0ef")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.discussion_capitaine_second_bois"])
+
+[node name="DoorInteractible" type="Node2D" parent="CanvasLayer/DoorInteractible"]
 script = ExtResource("5_q1mvx")
 hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/DoorInteractible"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/DoorInteractible/DoorInteractible"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_bdjlb")
 
-[node name="Area2D" type="Area2D" parent="CanvasLayer/DoorInteractible"]
+[node name="Area2D" type="Area2D" parent="CanvasLayer/DoorInteractible/DoorInteractible"]
 script = ExtResource("4_0k3ab")
 timeline = "porte_cabine"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/DoorInteractible/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/DoorInteractible/DoorInteractible/Area2D"]
 polygon = PackedVector2Array(459, 334, 560, 330, 562, 475, 458, 485)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
@@ -76,6 +80,6 @@ polygon = PackedVector2Array(459, 334, 560, 330, 562, 475, 458, 485)
 [connection signal="input_event" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/Area2D" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/Area2D" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/DoorInteractible/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/DoorInteractible/Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/DoorInteractible/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/DoorInteractible/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/DoorInteractible/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/DoorInteractible/Area2D" method="_on_mouse_exited"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4al51kvbcv4c"]
+[gd_scene load_steps=8 format=3 uid="uid://b4al51kvbcv4c"]
 
 [ext_resource type="Texture2D" uid="uid://cqmw4c74k0k2h" path="res://Textures/Locations/Deck_1/pont_2.png" id="1_vofhc"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="2_ppxru"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_wv11d"]
 [ext_resource type="PackedScene" uid="uid://bicfe6o7ysdev" path="res://Characters/Mousse.tscn" id="4_u3pih"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="5_6kkkj"]
+[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_toq6j"]
 [ext_resource type="Texture2D" uid="uid://m3j3g5xsq4ux" path="res://Textures/Locations/Deck_1/toile.png" id="6_kve8e"]
 
 [node name="Deck1" type="Node"]
@@ -51,16 +52,20 @@ position = Vector2(1025, 332)
 scale = Vector2(0.175626, 0.175626)
 timeline = "mousse"
 
-[node name="Araignees" type="Area2D" parent="CanvasLayer"]
+[node name="Araignees" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("5_toq6j")
+hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.araignees_apprivoisees"])
+
+[node name="Araignees" type="Area2D" parent="CanvasLayer/Araignees"]
 script = ExtResource("5_6kkkj")
 timeline = "araignees"
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Araignees"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Araignees/Araignees"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_kve8e")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Araignees"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Araignees/Araignees"]
 polygon = PackedVector2Array(593, 278, 629, 307, 675, 288, 702, 326, 674, 367, 605, 365, 554, 356, 579, 287)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
@@ -72,6 +77,6 @@ polygon = PackedVector2Array(593, 278, 629, 307, 675, 288, 702, 326, 674, 367, 6
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/Araignees" to="CanvasLayer/Araignees" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/Araignees" to="CanvasLayer/Araignees" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Araignees" to="CanvasLayer/Araignees" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/Araignees/Araignees" to="CanvasLayer/Araignees/Araignees" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Araignees/Araignees" to="CanvasLayer/Araignees/Araignees" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Araignees/Araignees" to="CanvasLayer/Araignees/Araignees" method="_on_mouse_exited"]
