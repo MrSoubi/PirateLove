@@ -1,0 +1,3 @@
+if {Chapitre_1.ReparerLeBateau.medaillon_decouvert} == false:
+else:
+	set {Chapitre_1.ReparerLeBateau.tableau_decouvert} = true

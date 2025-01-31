@@ -1,0 +1,5 @@
+if {Chapitre_1.ReparerLeBateau.tableau_decouvert} == false:
+else:
+	- Ouvrir
+		set {secret_decouvert} = true
+	- Ne pas ouvrir
