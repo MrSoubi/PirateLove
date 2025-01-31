@@ -1,5 +1,5 @@
 [music path="res://Music/chapitre_2.mp3" fade="3.0" volume="0.0"]
-[background arg="res://Textures/Locations/Placeholders/cale_background.jpg" fade="0.0"]
+[background arg="res://Textures/Locations/Cale/cale_fini.png" fade="2.0"]
 # #Après manger, appel du second sur le pont, pré-quête de réparation du Tiboat
 
 join Medecin (Default) leftmost
@@ -39,7 +39,7 @@ Cuistot (Default): Tu devrais te dépêcher toi aussi.
 Corsaire: Ah ! Oui, j’y vais.
 
 leave --All--
-[background arg="res://Textures/Locations/Placeholders/deck_1_background.jpg" fade="0.0"]
+[background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="2.0"]
 # #sur le pont
 
 # a remplacer par une animation pour faire moins de texte
@@ -57,6 +57,7 @@ Second: Alors c’est toi, Corsaire.
 	Il me fait signe d’aller rejoindre les autres, et me laisse passer.
 
 update Second
+[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
 Second: Tout le monde est là ?
 Tout le monde acquiesce à l’unisson.
 Second: Vous avez sûrement tous constaté la tempête d’hier soir.
@@ -94,7 +95,7 @@ Sans en dire plus, elle me fait signe de la rejoindre dans sa cabine.
 leave --All--
 
 # #changement de fond / chambre de la capitaine
-[background arg="res://Textures/Locations/Placeholders/captain_cabin.png" fade="0.0"]
+[background arg="res://Textures/Locations/CabineCapitaine/cabine.png" fade="2.0"]
 PJPensif: Son odeur de cannelle et d’épices me reviennent en tête. Ses cheveux, ses lèvres.
 PJPensif: Comment ai-je pu oublier tout ça ?
 PJPensif: Mon cœur s’excite, ma tête me fait atrocement mal et les rayons du soleil semblent me brûler vif.
