@@ -133,8 +133,8 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 		Corsaire: C'est d'accord, j'espère qu'elle gobera ce que je lui dirai.
 		Cannonier: T'es un brave homme toi ! Je m'en souviendrai
 		leave Cannonier
-		join louche center 
-		Item: NOUVEL OBJET OBTENU : LOUCHE
+		join louche center
+		Item: NOUVEL OBJET OBTENU \: LOUCHE
 		set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = true
 		[signal arg="variables_changed"]
 	[end_timeline]

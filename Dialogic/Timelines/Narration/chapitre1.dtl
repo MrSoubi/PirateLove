@@ -1,6 +1,6 @@
 # #sortie de l’infirmerie, conversation de mise en contexte avec l’équipage
 [music path="res://Music/chapitre_1.mp3" fade="3.0" volume="0.0"]
-[background arg="res://Textures/Locations/Placeholders/cale_background.jpg" fade="0.0"]
+[background arg="res://Textures/Locations/Cale/cale_fini.png" fade="0.0"]
 Je peine à marcher droit tout en sortant de l’infirmerie accompagné du mousse. Ma tête me fait mal.
 On tombe nez à nez avec le guet, le canonnier et la médecin adossés sur les poutres de la calle.
 
