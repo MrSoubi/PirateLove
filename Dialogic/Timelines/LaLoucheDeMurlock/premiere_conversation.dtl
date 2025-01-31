@@ -11,7 +11,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == false]
 		leave Medecin
 		leave Guet
-		update Cannonier center
+		update Cannonier center [move_time="0.4"]
 		Cannonier (Rigole): Moi j'aurais bien fait péter la porte de l'infirmerie, on a plein d'poudre sur le bateau. J'en ai sur moi en c'moment même !
 		Cannonier (Intrigue): Mais apparemment c'était pas une bonne idée.
 		Cannonier: "Heu gneu gneu non Orlagh, fais pas ça Orlagh."
@@ -24,7 +24,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 	- Parler au médecin | [if {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == false]
 		leave Guet
 		leave Cannonier
-		update Medecin center
+		update Medecin center [move_time="0.4"]
 		Medecin (Default): Pourquoi vous êtiez coincé dans l'infirmerie exactement ? Je n'arrivais pas à ouvrir la porte de mon côté.
 		Corsaire: Longue histoire, n'en faisons pas tout un fromage, eheh.
 		mousse (Sourire): Ahah ! Elle est bien bonne celle là !
@@ -36,7 +36,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 	- Parler au guet | [if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false]
 		leave Medecin
 		leave Cannonier
-		update Guet center
+		update Guet center [move_time="0.4"]
 		Guet (Perroquet): Têteuh de noeeuuud ! Têteuh de noeeuuud !
 		PJPensif: Sympathique...
 		Corsaire: Enchanté jeune homme ! Merci encore de m'avoir accueilli.
@@ -64,7 +64,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLouc
 	Cannonier (Pensif): Moi j'ai faim ! J'ai rien avalé depuis 2h, je vais m'évanouir si ça continue !
 	Medecin (Default): C'est inabituel que Murlock nous fasse attendre pour le repas. Tu devrais aller voir ce qui se passe en cuisine Corsaire.
 	leave Medecin
-	update Cannonier center
+	update Cannonier center [move_time="0.4"]
 	Cannonier (Default): Fait attention à toi gamin, elle est pas commode.
 	Corsaire: C'est rassurant...
 	leave Cannonier
@@ -78,7 +78,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 	- Parler au médecin
 		leave Guet
 		leave Cannonier
-		update Medecin center
+		update Medecin center [move_time="0.4"]
 		Corsaire: Excuse moi Calico, mais est-ce que tu saurais où se trouve la louche de Murlock ?
 		Medecin (Saoulee): C'est sa louche qu'elle cherche ? Je n'y ai jamais touché.
 		Medecin: D'ailleurs, je ne touche à aucun de ses ustensiles, j'ai bien compris que c'était une mauvaise idée après qu'Orlagh ait confondu un de ses couteaux avec un sabre
@@ -92,7 +92,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 	- Parler au guet
 		leave Medecin
 		leave Cannonier
-		update Guet (Fache) center
+		update Guet (Fache) center [move_time="0.4"]
 		Guet (Fache): Qu'est-ce que tu me veux ?
 		Guet (Perroquet): Imbécileuuuh ! Imbécileuuuh !
 		Corsaire: Simplement savoir où se trouve la louche de Murlock, tu saurais quelque chose à ce propos ?
@@ -104,7 +104,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == false]
 		leave Medecin
 		leave Guet
-		update Cannonier (Intrigue) center
+		update Cannonier (Intrigue) center [move_time="0.4"]
 		Cannonier (Rigole): Alors moussaillon, tu m'apportes mon manger ?
 		Corsaire: Pas encore, Murlock veut absolument savoir où se trouve sa louche. Tu saurais où elle se trouve ?
 		Cannonier (Intrigue): J'ai rien de tout ça moi ! La cuisine ça me connaît pas, donc j'en ai pas besoin. T'as cherché sur ses établis ?
@@ -112,7 +112,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == true]
 		leave Medecin
 		leave Guet
-		update Cannonier center
+		update Cannonier center [move_time="0.4"]
 		Cannonier (Rigole): Alors, il vient ce bon p'tit plat ou non ? Mon bide agonise !
 		Corsaire: Bientôt Orlagh. J'ai simplement besoin de savoir, est-ce que tu as emprunté un ustensile sur l'établi de la cuisine ? J'ai retrouvé ta poudre à canon sur une des tables
 		Cannonier (Intrigue): Laisse moi réfléchir...
@@ -145,7 +145,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 	leave Medecin
 	leave Guet
-	update Cannonier (Default) center
+	update Cannonier (Default) center [move_time="0.4"]
 	Cannonier (Rigole): Tu ferais mieux d'aller lui rendre cette louche, j'ai faim moi !
 	[end_timeline]
 
@@ -155,7 +155,7 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	leave Guet
 	update Medecin (Saoulee)
-	update Cannonier (Default) left
+	update Cannonier (Default) left [move_time="0.4"]
 	Medecin: Alors, où sont ces plats ?
 	Cannonier (Rigole): J'AI FAAAIIIIIM !!!
 	[end_timeline]
@@ -165,18 +165,13 @@ if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1
 # FIN DE QUETE
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
-	update Cannonier (Rigole)
 	Cannonier (Rigole): HOURA ! NOTRE SAUVEUR EST ARRIVÉ !
 	Corsaire: Voici votre plat mes amis ! J'espère qu'il vous plaira, Murlock y a mis tout son amour.
-	update Guet (Fache)
-	Guet: Encore du poulpe ? C'est la 4ème fois cette semaine !
-	update Guet (Perroquet)
-	Guet: Dégueulaaaasseuh ! Dégueulaaaasseuh !
-	update Medecin (Default)
-	Medecin: Les temps sont durs Everett, la capitaine et le second ont déjà la bonté de nous laisser leur part, estime toi heureux.
-	Cannonier: DOUBLE RATION POUR MOI, YOUHOUUU !
-	update Medecin (Sourire)
-	Medecin: Et si vous veniez manger avec nous, Allen et Monseigneur Corsaire ?
+	Guet (Fache): Encore du poulpe ? C'est la 4ème fois cette semaine !
+	Guet (Perroquet): Dégueulaaaasseuh ! Dégueulaaaasseuh !
+	Medecin (Default): Les temps sont durs Everett, la capitaine et le second ont déjà la bonté de nous laisser leur part, estime toi heureux.
+	Cannonier (Rigole): DOUBLE RATION POUR MOI, YOUHOUUU !
+	Medecin (Sourire): Et si vous veniez manger avec nous, Allen et Monseigneur Corsaire ?
 	Corsaire: Avec plaisir ! J'ai le ventre noué depuis hier soir, un petit plat m'aidera à me remettre les idées en places.
 	leave Cannonier
 	leave Medecin
