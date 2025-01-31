@@ -1,10 +1,10 @@
 [background arg="res://Textures/Locations/bg_infirmerie_vierge.png" fade="0.0"]
-join mousse center
+join mousse (Stress) center
 if {Chapitre_1.RatEtFromage.rat_parti} == false:
 	mousse: Ce gros rat veut pas partir de ce levier ! Il a trouvé des crouttes de fromage coincés dans les rouages.
-	mousse: Il va falloir trouver quelque chose pour le faire partir.
+	mousse (Pensif): Il va falloir trouver quelque chose pour le faire partir.
 else:
-	mousse: Heureusement que cette bonne vieille médecin garde du fromage dans sa cabine.
-	mousse: Même si ça m'inquiète un peu...
-	mousse: Ca expliquerait peut être pourquoi je me sens toujours plus malade quand je viens la voir.
+	mousse (Sourire): Heureusement que cette bonne vieille médecin garde du fromage dans sa cabine.
+	mousse (Pensif): Même si ça m'inquiète un peu...
+	mousse (Stress): Ca expliquerait peut être pourquoi je me sens toujours plus malade quand je viens la voir.
 [signal arg="variables_changed"]

@@ -1,7 +1,7 @@
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
 # #####
 # Parler avec les araignées si le joueur n'a pas de biscuit
-#####
+# #####
 join toile_araignee center
 if {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
 	PJPensif: Ces pestes grouillent de partout... Je les exterminerais à la flamme si ce bateau n'était pas fait en bois.
@@ -13,30 +13,30 @@ if {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
 # #####
 if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true::
 	PJPensif: Bon bah... Quand il faut y aller, il faut y aller
-	*sors le biscuit*
+	*sort  le biscuit*
 	Corsaire: Pssst, pssst, pssst... Venez là mes petites ! Regardez ces beaux biscuits !
 	PJPensif: ...
 	PJPensif: C'est moi ou... Elles me regardent sans bouger ?
-	...
+	Corsaire: ...
 	*CRASH*
 	Corsaire: AAAAAAAAH, ELLES ME MONTENT DESSUS !
 	Corsaire: J'EN AI DE PARTOUT, ELLES SONT DANS MES VÊTEMENTS, VIREZ LES DE LÀ ! AU SECOURS, AU SECOURS !...
 	Corsaire: ...
 	PJPensif: Elles ne me piquent pas ?...
 	update toile_araignee left
-	join Cannonier right 
-	Cannonier: Tout va bien matelos ? J'ai des entendu des cr-
-	Cannonier: OH MILLE SABORDS, TU TE FAIS BOUFFER TOUT CRU PAR CES BESTIOLES !
-	Cannonier: T'inquiète pas gamin, je vais les virer à gros coup de POUDRE A CANON DU TONTON ORLAGH !
+	join Cannonier right
+	Cannonier (Intrigue): Tout va bien matelos ? J'ai des entendu des cr-
+	Cannonier (Default): OH MILLE SABORDS, TU TE FAIS BOUFFER TOUT CRU PAR CES BESTIOLES !
+	Cannonier (Rigole): T'inquiète pas gamin, je vais les virer à gros coup de POUDRE A CANON DU TONTON ORLAGH !
 	Corsaire: N-NON ! Tout va bien ! Elles ne m'attaquent pas. Je crois que je les ai... apprivoisés ?
-	Cannonier: T'en es bien certain ? Parce que t'as l'air blanc comme une merde de laitier là...
+	Cannonier (Intrigue): T'en es bien certain ? Parce que t'as l'air blanc comme une merde de laitier là...
 	Corsaire: C'est juste que je suis sur le point de m'évanouir, mais tout va bien.
-	Cannonier: C'est que t'es vraiment un tombeur ! D'abord la capitaine, puis le second, et maintenant toutes ces demoiselles !
+	Cannonier (Rigole): C'est que t'es vraiment un tombeur ! D'abord la capitaine, puis le second, et maintenant toutes ces demoiselles !
 	Corsaire: J-je vois pas de quoi tu parles !
-	Cannonier: Bien sûr, bien sûr...
-	Cannonier: Bon c'est pas tout, mais j'ai un canon à aller lustrer moi !
+	Cannonier (Pensif): Bien sûr, bien sûr...
+	Cannonier (Rigole): Bon c'est pas tout, mais j'ai un canon à aller lustrer moi !
 	leave Cannonier
-	update toile_araignee center 
+	update toile_araignee center
 	Corsaire: ...
 	Corsaire: Bref, il faut que j'aille réparer cette voile moi maintenant...
 	PJPensif: Mon dos me gratte atrocement, mais j'ai peur de les brusquer.

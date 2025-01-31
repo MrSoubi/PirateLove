@@ -3,12 +3,12 @@
 join Second right
 join Capitaine left
 if {Chapitre_1.ReparerLeBateau.discussion_capitaine_second_debut} == false:
-	Second: Tu as bien compris ta mission Corsaire ?
+	Second (SourireEnCoin): Tu as bien compris ta mission Corsaire ?
 	Corsaire: Un petit rappel ne fera pas de mal.
-	Second: Tu es chargé de réparer la voile et les trous éparpillés dans la coque.
-	Second: Peut-être pourrais-je trouver de quoi te récompenser si tu réalises un travail satisfaisant, Corsaire.
+	Second (Default): Tu es chargé de réparer la voile et les trous éparpillés dans la coque.
+	Second (Flirt): Peut-être pourrais-je trouver de quoi te récompenser si tu réalises un travail satisfaisant, Corsaire.
 	Corsaire: O-oh ce ne sera pas nécessaire ! C'est déjà si aimable de m'accueillir sur votre bateau, c'est la moindre des choses de vous aider.
-	Capitaine: Alors ne perd pas plus de temps et va utiliser ces beaux bras pour remettre cette épave d'aplomb trésor.
+	Capitaine (Smirk): Alors ne perd pas plus de temps et va utiliser ces beaux bras pour remettre cette épave d'aplomb trésor.
 	Corsaire: À vos ordres Capitaine Liestra !
 	set {Chapitre_1.ReparerLeBateau.discussion_capitaine_second_debut} = true
 	[signal arg="variables_changed"]
@@ -18,18 +18,18 @@ label choix
 PJPensif: Je devrais pouvoir leur demander où trouver de quoi rafistoler le bateau.
 - Où trouver du bois ?
 	Corsaire: Sauriez-vous où trouver du bois par hasard ? Je n'ai vu aucun stock sur le bateau.
-	Second: Il est vrai que nos réserves s'amaigrissent récemment, notre équipage est trop petit pour espérer obtenir un quelconque butin.
-	Capitaine: Nous cherchons activement un nouveau membre à notre escouade, n'est-ce pas Seth ?
+	Second (Malaise): Il est vrai que nos réserves s'amaigrissent récemment, notre équipage est trop petit pour espérer obtenir un quelconque butin.
+	Capitaine (Rire): Nous cherchons activement un nouveau membre à notre escouade, n'est-ce pas Seth ?
 	PJPensif: ...
 	PJPensif: Les 2 me regardent intensément... Je suis censé comprendre quelque chose ?
 	Corsaire: ...Et en ce qui concerne les planches ?
-	Capitaine: Comme l'a suggéré Seth, nous n'avons pas de planche en rab' en ce moment. Il faudrait démanteler quelque chose pour espérer avoir des planches pour boucher les trous.
-	Second: Carmen, la porte de ta cabine a été durement endomagé par la tempête. Tu ne penses pas qu'on pourrait utiliser son bois pour réparer la coque ?
-	Capitaine: Hein ?! Mais tu sais très bien que je ne veux que personne n'y entre !
-	Second: Ne t'inquiète pas, je suis sûr que notre invité d'honneur se gardera de toute exploration indiscrète.
+	Capitaine (Doute): Comme l'a suggéré Seth, nous n'avons pas de planche en rab' en ce moment. Il faudrait démanteler quelque chose pour espérer avoir des planches pour boucher les trous.
+	Second (SideEye): Carmen, la porte de ta cabine a été durement endomagé par la tempête. Tu ne penses pas qu'on pourrait utiliser son bois pour réparer la coque ?
+	Capitaine (Enervee): Hein ?! Mais tu sais très bien que je ne veux que personne n'y entre !
+	Second (Malice): Ne t'inquiète pas, je suis sûr que notre invité d'honneur se gardera de toute exploration indiscrète.
 	PJPensif: ...Est-ce qu'il vient de me faire un clin d'oeil ?
-	Capitaine: ...
-	Capitaine: Bien, mais comprend que si tu oses toucher à quoique ce soit dans cette cabine, je te ferai marcher la planche Corsaire !
+	Capitaine (Mecontente): ...
+	Capitaine (Doute): Bien, mais comprend que si tu oses toucher à quoique ce soit dans cette cabine, je te ferai marcher la planche Corsaire !
 	PJPensif: Pas si terrible que ça, le supplice de la chambre sur un bateau à quai...
 	Corsaire: Démanteler la porte de la cabine, boucher les trous, et ne pas être indiscret. Compris !
 	PJPensif: Et voilà Millard qui me fait encore un clin d'oeil, décidément...
@@ -37,8 +37,8 @@ PJPensif: Je devrais pouvoir leur demander où trouver de quoi rafistoler le bat
 	[signal arg="variables_changed"]
 - Où trouver de la toile ?
 	Corsaire: Où est-ce que je pourrais trouver de quoi réparer la toile ? Je n'ai pas envie d'emprunter le drap d'un des membres de l'équipage sans le savoir.
-	Second: C'est bien mignon de ta part Corsaire, et je t'avoue ne pas avoir d'information à ce sujet.
-	Capitaine: Va voir le mousse, il saura probablement te guider ! C'est lui qui s'occupe de notre linge donc il doit bien avoir 2/3 tissus qui traînent à te prêter.
+	Second (Flirt): C'est bien mignon de ta part Corsaire, et je t'avoue ne pas avoir d'information à ce sujet.
+	Capitaine (Smirk): Va voir le mousse, il saura probablement te guider ! C'est lui qui s'occupe de notre linge donc il doit bien avoir 2/3 tissus qui traînent à te prêter.
 	Corsaire: C'est noté ! Je vais voir ça.
 - Partir
 	[end_timeline]

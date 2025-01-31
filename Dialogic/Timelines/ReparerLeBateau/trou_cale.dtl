@@ -9,7 +9,7 @@ if {Chapitre_1.ReparerLeBateau.possede_bois} == true and {Chapitre_1.ReparerLeBa
 	Corsaire: ...
 	Corsaire: Parfait, plus rien ne coule ! Ça fait un trou en moins.
 	leave planches
-	set {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true
+	set {Chapitre_1.ReparerLeBateau.trou_cale_repare} = = true
 	[signal arg="variables_changed"]
 
 # Tous les travaux ont été réalisés
@@ -17,8 +17,8 @@ if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeB
 	set {Chapitre_1.ReparerLeBateau.quete_finie} = true
 	set {Chapitre_1.ReparerLeBateau.quete_en_cours} = false
 	Corsaire: Voilà ! C'était le dernier ! Les réparations sont terminés.
-	join Medecin center 
-	Medecin: Tu mérites d'aller prendre un peu l'air sur le pont, Corsaire.
+	join Medecin center
+	Medecin (Sourire): Tu mérites d'aller prendre un peu l'air sur le pont, Corsaire.
 	Corsaire: Pas faux, j'ai bien besoin d'une petite pause au soleil...
 	[signal arg="variables_changed"]
 	[end_timeline]

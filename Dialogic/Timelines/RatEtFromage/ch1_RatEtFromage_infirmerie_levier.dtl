@@ -2,19 +2,19 @@
 if {Chapitre_1.RatEtFromage.levier_active} == false:
 	if {Chapitre_1.RatEtFromage.rat_parti} == false:
 		if {Chapitre_1.RatEtFromage.possede_fromage} == false:
-			join rat center 
+			join rat center
 			PJPensif: Un gros rat dégueulasse racle ses dents contre le levier.
 			PJPensif: Il est ENOOORME.
 			Corsaire: Comment un rat peut trouver à se nourrir dans un bateau aussi pourri ?
 			Corsaire: Peu importe... Impossible de le bouger... Allen ?
-			join mousse left 
-			update rat right 
+			join mousse (Stress) left
+			update rat right
 			mousse: Ah non ! J'ai la phobie des rats ! J'essaye déjà de ne pas m'évanouir, donc débrouillez-vous !
 			leave mousse
 			update rat center
 			Corsaire: J'avoue ne pas avoir envie de le toucher non plus. Il va falloir trouver une autre solution.
 		else:
-			join rat left 
+			join rat left
 			join fromage right
 			PJPensif: *Le rat vous regarde avec insistance.*
 			PJPensif: *Il est prêt à vous sauter dessus.*
@@ -35,11 +35,11 @@ if {Chapitre_1.RatEtFromage.levier_active} == false:
 			[signal arg="variables_changed"]
 			PJPensif: *Le levier s'abaisse sans problème.*
 			Corsaire: Je ferais mieux de me laver les mains quand même...
-			join mousse center
+			join mousse (Sourire) center
 			mousse: Sortons d'ici ! Je vais vous présenter au reste de l'équipage.
 		- Partir
 			Corsaire: Je ne sais pas pourquoi, mais j'ai une soudaine envie de ne pas baisser ce levier.
-			join mousse center
+			join mousse (Stress) center
 			mousse: Euh... Vous en êtes sûr ? Parce que j'ai bien envie de partir moi
 else:
 	PJPensif: Le levier est baissé.

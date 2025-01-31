@@ -3,6 +3,7 @@ if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 	PJPensif: Le bureau est rempli de papiers avec une écriture illisible
 	Corsaire: Qui travaille ici ?
 	join mousse center
+	update mousse
 	mousse: La médecin du bateau, Calico !
 	leave mousse
 	Corsaire: Ça explique l'écriture...

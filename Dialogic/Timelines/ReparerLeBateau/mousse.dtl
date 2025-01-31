@@ -1,31 +1,31 @@
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
-join mousse center 
+join mousse center
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false and {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
-	mousse: Le second et la capitaine doivent bien t'aimer pour vous faire confiance sur les réparations !
-	mousse: Il me demande plus ce genre de tâche depuis qu'ils ont compris que je créais plus de trous que je n'en réparais...
+	mousse (Sourire): Le second et la capitaine doivent bien t'aimer pour vous faire confiance sur les réparations !
+	mousse (Pensif): Il me demande plus ce genre de tâche depuis qu'ils ont compris que je créais plus de trous que je n'en réparais...
 	PJPensif: Je me demande sincèrement pourquoi ils ne t'ont pas encore fait marcher sur la planche.
-	mousse: Bref, j'imagine que tu cherches de quoi réparer cet épave, pas vrai ?
+	mousse (Default): Bref, j'imagine que tu cherches de quoi réparer cet épave, pas vrai ?
 	Exact ! Tu saurais m'indiquer où je pourrais trouver du bois et de la toile ?
-	mousse: Pour ce qui est du bois, je pense que tu peux demander à la capitaine ! C'est elle la plus au courant sur les ressources disponibles sur ce bateau.
-	mousse: En revanche, pour ce qui concerne la toile, je peux t'assurer qu'on en a aucune qui ne soit pas troué jusqu'à la moelle sur ce bateau. Faire le linge de tout l'équipage me l'a bien confirmé.
+	mousse (Default): Pour ce qui est du bois, je pense que tu peux demander à la capitaine ! C'est elle la plus au courant sur les ressources disponibles sur ce bateau.
+	mousse (Pensif): En revanche, pour ce qui concerne la toile, je peux t'assurer qu'on en a aucune qui ne soit pas troué jusqu'à la moelle sur ce bateau. Faire le linge de tout l'équipage me l'a bien confirmé.
 	Corsaire: Aucune solution en vue donc ?
-	mousse: Hum... Ça va te paraître fou, mais j'ai entendu dire que dans certains pays lointains, on utilisait la toile des araignées pour faire du tissu
+	mousse (Default): Hum... Ça va te paraître fou, mais j'ai entendu dire que dans certains pays lointains, on utilisait la toile des araignées pour faire du tissu
 	PJPensif: Beurk...
-	mousse: Il s'avère qu'on grouille d'araignées sur ce bateau ! Everett m'a dit qu'il a réussi à en apprivoiser en utilisant les biscuits de Murlock, elles en raffoleraient apparement.
+	mousse (Sourire): Il s'avère qu'on grouille d'araignées sur ce bateau ! Everett m'a dit qu'il a réussi à en apprivoiser en utilisant les biscuits de Murlock, elles en raffoleraient apparement.
 	Corsaire: Les biscuits de Murlock ? Je vais voir si je ne peux pas lui en emprunter quelques uns.
-	mousse: Ça vaut toujours le coup d'essayer !
+	mousse (Sourire): Ça vaut toujours le coup d'essayer !
 	set {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} = true
 	[signal arg="variables_changed"]
 	[end_timeline]
 
 if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true:
-	mousse: Oh tu as réussis à avoir les biscuits ! Je pense que tu réussiras à trouver des araignées sur le pont avant.
-	mousse: Ça fait 2 semaines que je dois virer cette toile, mais elles étaient trop nombreuses donc je n'ai pas osé...
-	mousse: Maintenant, elles sont encore plus nombreuses, donc j'ai encore moins envie de les virer.
+	mousse (Sourire): Oh tu as réussis à avoir les biscuits ! Je pense que tu réussiras à trouver des araignées sur ce pont avant.
+	mousse (Stress): Ça fait 2 semaines que je dois virer cette toile, mais elles étaient trop nombreuses donc je n'ai pas osé...
+	mousse (Stress): Maintenant, elles sont encore plus nombreuses, donc j'ai encore moins envie de les virer.
 	[end_timeline]
 
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == true:
-	mousse: AAAAAAAAAAAAAH !!! T'AS DES ARAIGNÉES DANS TON FROC !
+	mousse (Stress): AAAAAAAAAAAAAH !!! T'AS DES ARAIGNÉES DANS TON FROC !
 	Corsaire: Par pitié, ne crie pas aussi fort. Tu risques de les faire paniquer et je ne veux pas savoir comment elles réagissent à la panique...
 	*BOUM*
 	PJPensif: Il vient de s'évanouir...

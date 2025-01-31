@@ -1,7 +1,7 @@
 [background arg="res://Textures/Locations/Cale/cale_fini.png" fade="0.0"]
-join Guet left
-join Cannonier center
-join Medecin right
+join Guet (Default) left
+join Cannonier (Default) center
+join Medecin (Default) right
 
 # #####
 # Première discussion avec le médecin, le guet et le cannonier
@@ -12,12 +12,12 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 		leave Medecin
 		leave Guet
 		update Cannonier center
-		Cannonier: Moi j'aurais bien fait péter la porte de l'infirmerie, on a plein d'poudre sur le bateau. J'en ai sur moi en c'moment même !
-		Cannonier: Mais apparemment c'était pas une bonne idée.
+		Cannonier (Rigole): Moi j'aurais bien fait péter la porte de l'infirmerie, on a plein d'poudre sur le bateau. J'en ai sur moi en c'moment même !
+		Cannonier (Intrigue): Mais apparemment c'était pas une bonne idée.
 		Cannonier: "Heu gneu gneu non Orlagh, fais pas ça Orlagh."
 		Cannonier: "Heu gneuuu, c'est tout l'bateau qui risque de sauter Orlagh."
-		Cannonier: Ils savent pas d'quoi ils parlent.
-		Cannonier: Moi j'sais y faire avec la poudre. Les canons ça m'connait !
+		Cannonier (Default): Ils savent pas d'quoi ils parlent.
+		Cannonier (Rigole): Moi j'sais y faire avec la poudre. Les canons ça m'connait !
 		Cannonier: Et j'en ai vu des canons...
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} = true
 		[signal arg="variables_changed"]
@@ -25,22 +25,22 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 		leave Guet
 		leave Cannonier
 		update Medecin center
-		Medecin: Pourquoi vous êtiez coincé dans l'infirmerie exactement ? Je n'arrivais pas à ouvrir la porte de mon côté.
+		Medecin (Default): Pourquoi vous êtiez coincé dans l'infirmerie exactement ? Je n'arrivais pas à ouvrir la porte de mon côté.
 		Corsaire: Longue histoire, n'en faisons pas tout un fromage, eheh.
-		mousse: Ahah ! Elle est bien bonne celle là !
+		mousse (Sourire): Ahah ! Elle est bien bonne celle là !
 		Corsaire: Mais ne vous inquiétez pas, vous n'avez rien RAT-TÉ !
-		mousse: AHAHAHAH !
-		Medecin: Ugh... Les hommes...
+		mousse (Sourire): AHAHAHAH !
+		Medecin (Saoulee): Ugh... Les hommes...
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} = true
 		[signal arg="variables_changed"]
 	- Parler au guet | [if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false]
 		leave Medecin
 		leave Cannonier
 		update Guet center
-		Guet: Têteuh de noeeuuud ! Têteuh de noeeuuud !
+		Guet (Perroquet): Têteuh de noeeuuud ! Têteuh de noeeuuud !
 		PJPensif: Sympathique...
 		Corsaire: Enchanté jeune homme ! Merci encore de m'avoir accueilli.
-		Guet: Je parle pas aux enflures comme toi.
+		Guet (Fache): Je parle pas aux enflures comme toi.
 		PJPensif: Ah ! Et pourtant tu viens de m'adresser la parole. Et toc !
 		PJPensif: Si seulement j'avais le courage de dire ça à haute voix...
 		set {Chapitre_1.LaLoucheDeMurlock.discussion_guet} = true
@@ -55,17 +55,17 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 	leave Cannonier
-	Guet: Et si tu te rendais utile plutôt que de te tourner les pouces ?
-	Guet: Incâpaableuh ! Incâpaaableuh !
-	Medecin: C'est crûment dit, mais Everett n'a pas tord. On ne peut pas te loger gratuitement. On a bien besoin d'aide sur le bateau, surtout avec l'orage d'hier soir.
+	Guet (Default): Et si tu te rendais utile plutôt que de te tourner les pouces ?
+	Guet (Perroquet): Incâpaableuh ! Incâpaaableuh !
+	Medecin (SourireSideEye): C'est crûment dit, mais Everett n'a pas tord. On ne peut pas te loger gratuitement. On a bien besoin d'aide sur le bateau, surtout avec l'orage d'hier soir.
 	Corsaire: Bien sûr ! Dites moi simplement ce qu'il vous faut.
 	leave Guet
-	join Cannonier left
-	Cannonier: Moi j'ai faim ! J'ai rien avalé depuis 2h, je vais m'évanouir si ça continue !
-	Medecin: C'est inabituel que Murlock nous fasse attendre pour le repas. Tu devrais aller voir ce qui se passe en cuisine Corsaire.
+	join Cannonier (Pensif) left
+	Cannonier (Pensif): Moi j'ai faim ! J'ai rien avalé depuis 2h, je vais m'évanouir si ça continue !
+	Medecin (Default): C'est inabituel que Murlock nous fasse attendre pour le repas. Tu devrais aller voir ce qui se passe en cuisine Corsaire.
 	leave Medecin
 	update Cannonier center
-	Cannonier: Fait attention à toi gamin, elle est pas commode.
+	Cannonier (Default): Fait attention à toi gamin, elle est pas commode.
 	Corsaire: C'est rassurant...
 	leave Cannonier
 	[end_timeline]
@@ -80,23 +80,23 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 		leave Cannonier
 		update Medecin center
 		Corsaire: Excuse moi Calico, mais est-ce que tu saurais où se trouve la louche de Murlock ?
-		Medecin: C'est sa louche qu'elle cherche ? Je n'y ai jamais touché.
+		Medecin (Saoulee): C'est sa louche qu'elle cherche ? Je n'y ai jamais touché.
 		Medecin: D'ailleurs, je ne touche à aucun de ses ustensiles, j'ai bien compris que c'était une mauvaise idée après qu'Orlagh ait confondu un de ses couteaux avec un sabre
 		Corsaire: Qu'est-ce qu'il s'est passé ?
-		Medecin: Disons qu'elle a finit par lui laisser le couteau, juste qu'il était planté entre ses côtes.
-		join Cannonier rightmost
-		Cannonier: J'ai même pas eu mal !
-		Medecin: J'ai dû lui laisser la lame dans le corps pour ne pas aggraver l'hémoragie. Je ne sais pas comment ce gaillard est toujours en vie...
+		Medecin (Default): Disons qu'elle a finit par lui laisser le couteau, juste qu'il était planté entre ses côtes.
+		join Cannonier (Rigole) right
+		Cannonier (Rigole): J'ai même pas eu mal !
+		Medecin (Saoulee): J'ai dû lui laisser la lame dans le corps pour ne pas aggraver l'hémoragie. Je ne sais pas comment ce gaillard est toujours en vie...
 		leave Cannonier
-		B-bien, merci pour l'information.
+		Corsaire: B-bien, merci pour l'information.
 	- Parler au guet
 		leave Medecin
 		leave Cannonier
-		update Guet center
-		Guet: Qu'est-ce que tu me veux ?
-		Guet: Imbécileuuuh ! Imbécileuuuh !
+		update Guet (Fache) center
+		Guet (Fache): Qu'est-ce que tu me veux ?
+		Guet (Perroquet): Imbécileuuuh ! Imbécileuuuh !
 		Corsaire: Simplement savoir où se trouve la louche de Murlock, tu saurais quelque chose à ce propos ?
-		Guet: Tu me traites de voleur ?
+		Guet (Default): Tu me traites de voleur ?
 		Corsaire: ...
 		Guet: B-bref, de toute façon j'en ai rien à faire de ses machins et bidules qu'elle a en cuisine. C'est Orlagh qui va tout le temps voler de la bouffe là bas, moi je reste sur mon guet !
 		PJPensif: Intéressant, Orlagh a sûrement touché à quelque chose dans la cuisine alors
@@ -104,34 +104,34 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == false]
 		leave Medecin
 		leave Guet
-		update Cannonier center
-		Cannonier: Alors moussaillon, tu m'apportes mon manger ?
+		update Cannonier (Intrigue) center
+		Cannonier (Rigole): Alors moussaillon, tu m'apportes mon manger ?
 		Corsaire: Pas encore, Murlock veut absolument savoir où se trouve sa louche. Tu saurais où elle se trouve ?
-		Cannonier: J'ai rien de tout ça moi ! La cuisine ça me connaît pas, donc j'en ai pas besoin. T'as cherché sur ses établis ?
+		Cannonier (Intrigue): J'ai rien de tout ça moi ! La cuisine ça me connaît pas, donc j'en ai pas besoin. T'as cherché sur ses établis ?
 		Corsaire: Bonne idée, je vais aller voir ça.
 	- Parler au canonnier | [if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == true]
 		leave Medecin
 		leave Guet
 		update Cannonier center
-		Cannonier: Alors, il vient ce bon p'tit plat ou non ? Mon bide agonise !
+		Cannonier (Rigole): Alors, il vient ce bon p'tit plat ou non ? Mon bide agonise !
 		Corsaire: Bientôt Orlagh. J'ai simplement besoin de savoir, est-ce que tu as emprunté un ustensile sur l'établi de la cuisine ? J'ai retrouvé ta poudre à canon sur une des tables
-		Cannonier: Laisse moi réfléchir...
+		Cannonier (Intrigue): Laisse moi réfléchir...
 		Corsaire: ...
 		Cannonier: ...
 		Corsaire: ...
 		Cannonier: ...
 		PJPensif: Rien dans la tête, tout dans les muscles
-		Cannonier: J'm'en souviens ! J'ai emprunté c'te gratte-dos ! Vachement pratique d'ailleurs.
+		Cannonier (Rigole): J'm'en souviens ! J'ai emprunté c'te gratte-dos ! Vachement pratique d'ailleurs.
 		PJPensif: C'est... LA LOUCHE !
 		Corsaire: Orlagh... Ce n'est pas un gratte-dos, c'est une louche.
-		Cannonier: Ah ? Moi je croyais qu'une louche c'était le truc quand tu regardais ton nez avec tes deux yeux.
+		Cannonier (Intrigue): Ah ? Moi je croyais qu'une louche c'était le truc quand tu regardais ton nez avec tes deux yeux.
 		Corsaire: C'est p-... Peu importe, Murlock cherche cette louche depuis longtemps, il faut que tu lui ramènes.
-		Cannonier: Ah ! Euh... Est-ce que tu peux lui dire que tu l'as trouvé par terre ?
+		Cannonier (Pensif): Ah ! Euh... Est-ce que tu peux lui dire que tu l'as trouvé par terre ?
 		Corsaire: Pourquoi ? C'est toi qui l'a volé !
-		Cannonier: Disons que c'est pas la première fois que je lui "emprunte" quelque chose, et ça a jamais bien fini pour moi... ça restera notre petit secret, hein ?
+		Cannonier (Default): Disons que c'est pas la première fois que je lui "emprunte" quelque chose, et ça a jamais bien fini pour moi... ça restera notre petit secret, hein ?
 		PJPensif: Il a peut-être raison, Murlock lui réarrangera le visage si je lui dis la vérité
 		Corsaire: C'est d'accord, j'espère qu'elle gobera ce que je lui dirai.
-		Cannonier: T'es un brave homme toi ! Je m'en souviendrai
+		Cannonier (Default): T'es un brave homme toi ! Je m'en souviendrai
 		leave Cannonier
 		join louche center
 		Item: NOUVEL OBJET OBTENU \: LOUCHE
@@ -145,8 +145,8 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 	leave Medecin
 	leave Guet
-	update Cannonier center
-	Cannonier: Tu ferais mieux d'aller lui rendre cette louche, j'ai faim moi !
+	update Cannonier (Default) center
+	Cannonier (Rigole): Tu ferais mieux d'aller lui rendre cette louche, j'ai faim moi !
 	[end_timeline]
 
 # #####
@@ -154,10 +154,10 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	leave Guet
-	update Medecin
-	update Cannonier left
+	update Medecin (Saoulee)
+	update Cannonier (Default) left
 	Medecin: Alors, où sont ces plats ?
-	Cannonier: J'AI FAAAIIIIIM !!!
+	Cannonier (Rigole): J'AI FAAAIIIIIM !!!
 	[end_timeline]
 
 # #####
@@ -165,20 +165,25 @@ if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1
 # FIN DE QUETE
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
-	Cannonier: HOURA ! NOTRE SAUVEUR EST ARRIVÉ !
+	update Cannonier (Rigole)
+	Cannonier (Rigole): HOURA ! NOTRE SAUVEUR EST ARRIVÉ !
 	Corsaire: Voici votre plat mes amis ! J'espère qu'il vous plaira, Murlock y a mis tout son amour.
+	update Guet (Fache)
 	Guet: Encore du poulpe ? C'est la 4ème fois cette semaine !
+	update Guet (Perroquet)
 	Guet: Dégueulaaaasseuh ! Dégueulaaaasseuh !
+	update Medecin (Default)
 	Medecin: Les temps sont durs Everett, la capitaine et le second ont déjà la bonté de nous laisser leur part, estime toi heureux.
 	Cannonier: DOUBLE RATION POUR MOI, YOUHOUUU !
+	update Medecin (Sourire)
 	Medecin: Et si vous veniez manger avec nous, Allen et Monseigneur Corsaire ?
 	Corsaire: Avec plaisir ! J'ai le ventre noué depuis hier soir, un petit plat m'aidera à me remettre les idées en places.
 	leave Cannonier
 	leave Medecin
 	leave Guet
-	join mousse center
+	join mousse (Sourire) center
 	mousse: J'avoue que j'ai un petit creux ! Ça fait 3 jours que je me nourris uniquement de champignons qui poussent sur la coque.
-	join Medecin rightmost
+	join Medecin (Saoulee) rightmost
 	Medecin: La sélection naturel a dû t'oublier...
 	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = false
 	set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = false
