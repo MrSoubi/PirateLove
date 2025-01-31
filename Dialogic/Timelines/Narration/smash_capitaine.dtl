@@ -16,6 +16,7 @@ Capitaine: Appelle-moi Carmen, dorénavant.
 Corsaire: ...merci, Carmen.
 
 # #illu capitaine smash
+leave Capitaine
 [background arg="res://Textures/Narration/illu capitaine fin .jpg" fade="2.0"]
 Carmen pose son coude sur le rebord du bateau.
 Elle contemple l’horizon, les vagues frétillantes et les rayons de fin de journée.
@@ -25,15 +26,12 @@ PJPensif: Elle est si belle. Si confiante. Si douce.
 Je prends tout mon courage et avoue.
 Corsaire: Je me sens bien avec toi.
 Carmen se tourne enfin vers moi. Pose sa main sur la mienne.
-# #sprite capitaine triste
-update Capitaine
 Capitaine: Tu te souviens de la plage.. ?
 Corsaire: ...
 Capitaine: De ce dont on a parlé ? Ce que je t’ai confié.
 Corsaire: ...
 Corsaire: Je t’avoue avoir complètement oublié.
 # #sprite capitaine rit
-update Capitaine
 Capitaine: J’aime ton honnêteté.
 Capitaine: J’aurais préféré te dire cela sans être sous emprise d’alcool.
 Corsaire: Et j’aurais préféré être suffisamment sobre pour m’en souvenir.
@@ -46,16 +44,10 @@ C’est bien elle. La mariée en fuite que je devais retrouver.
 Corsaire: Pardon ?
 Capitaine: C’est un vendeur d’esclaves notoire en Espagne. Mon vrai nom ce n’est pas Carmen Liestra mais bien Carmen Davólto.
 Corsaire: ... et tu es promise contre ton gré à José Ramirèz.
-# #sprite capitaine effrayée
-update Capitaine
 Carmen recule, la main sur son épée, prête à dégainer.
 Corsaire: J’ai eu un ordre de mission. De ton père.
-# #sprite capitaine énervée
-update Capitaine
 Capitaine: Comment ça ?!
 Corsaire: De te ramener. Pour que tu sois mariée.
-# #sprite capitaine effrayée
-update Capitaine
 Corsaire: Mais il y a eu la tempête. Le bar. Le Tiboat, l’équipage. Et toi.
 Corsaire: Tout le monde me croit mort, je pourrais tout recommencer si je le veux !
 Capitaine: ...
