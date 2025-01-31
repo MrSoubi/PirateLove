@@ -1,5 +1,5 @@
 if {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == false:
-	Il y a un trou dans la coque.
+	PJPensif: Il y a un trou dans la coque. Il faut que je trouve un moyen de le boucher.
 
 if {Chapitre_1.ReparerLeBateau.possede_bois} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == false:
 	Je répare le trou

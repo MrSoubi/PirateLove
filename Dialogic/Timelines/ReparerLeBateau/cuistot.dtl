@@ -1,11 +1,29 @@
 if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == false:
-	bla bla, on a pas encore accès aux biscuits
+	Cuistot: Qu'est-ce que tu me veux encore ?
+	Corsaire: Euh... je voulais savoir si tu sais où on peut trouver de la toile ou des planches.
+	Cuistot: J'ai l'air d'avoir une gueule de brocantiste ? Va voir ailleurs si j'y suis et laisse moi faire mon boulot !
+	PJPensif: Je sais que je suis idiot mais pas besoin d'être aussi méchant...
+	Cuistot: Oh, et attrappe toi un truc à grignoter avant de partir, t'as l'air d'avoir faim bonhomme.
+	PJPensif: Je ne la comprendrai jamais décidemment.
 
 if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == true and {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
-	bla bla, on a récupère les biscuits
+	Cuistot: Pourquoi t'es là ? T'as encore faim ? J'ai des restes de poulpe de ce midi si tu veux.
+	Corsaire: C'est gentil de ta part, mais j'aurais besoin de te prendre quelques biscuits. Les araignées en raffollent de ce qu'on m'a dit.
+	Cuistot: Ah ! Ces fameux biscuits ! J'ai fini par les sceller dans un coffre, ma cuisine grouillait de ces bestioles autrement !
+	PJPensif: Le contrôle hygiènique n'aurait pas laissé passé ça. Heureusement qu'on est au XVIIème siècle...
+	Cuistot: Je peux t'en passer quelques uns, mais fait attention, c'est très TRÈS efficace.
+	Corsaire: Comment ça ?
+	Cuistot: Tu verras bien quand tu leur donneras.
+	PJPensif: Pourquoi tout le monde sur ce bateau est aussi peu rassurant ?
+	Cuistot: Tiens, c'est pour toi !
+	Corsaire: C'est vrai qu'ils ont l'air appétissants.
+	Cuistot: TOUT DANS CETTE CUISINE EST APPÉTISSANT !
+	NOUVEL OBJET OBTENU : BISCUITS
 	set {Chapitre_1.ReparerLeBateau.possede_biscuit} = true
 	[signal arg="variables_changed"]
 	[end_timeline]
 
 if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true:
-	bla bla, on a déjà les biscuits
+	Cuistot: Quoi ? Me dis pas que t'as mangé les biscuits et que t'en veux encore ?
+	Corsaire: N-Non ! Ils sont pour les araignées, pas pour moi !
+	Cuistot: Dommage. T'en aurais bien besoin, maigrichon comme tu es.

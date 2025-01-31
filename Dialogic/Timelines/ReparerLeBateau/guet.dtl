@@ -1,6 +1,6 @@
 # Premiere discussion, en boucle tant qu'on a pas apprivoisé les araignées
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:
-	il faut trouver de la toile, faut voir avec le Mousse
+	Guet: Faut 
 	set {Chapitre_1.ReparerLeBateau.discussion_guet_toile} = true
 	[signal arg="variables_changed"]
 else:
