@@ -1,5 +1,5 @@
 # #Possible de mettre un écran noir ?
-[music path="res://Music/bathroom-chill-background-music-14977.mp3" fade="5.0" volume="0.0"]
+[music path="res://Music/prologue_music.mp3" fade="5.0" volume="0.0"]
 [background arg="res://Textures/Narration/Prologue_Black_screen.jpg" fade="0.0"]
 Trempé jusqu'à l’os, les muscles courbaturés, un corsaire passe la porte de la première taverne sur son chemin.
 PJPensif: Soupir

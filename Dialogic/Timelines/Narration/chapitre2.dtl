@@ -1,3 +1,4 @@
+[music path="res://Music/chapitre_2.mp3" fade="3.0" volume="0.0"]
 [background arg="res://Textures/Locations/Placeholders/cale_background.jpg" fade="0.0"]
 # #Après manger, appel du second sur le pont, pré-quête de réparation du Tiboat
 
@@ -161,6 +162,7 @@ Capitaine: J’arrive.
 
 Elle lance un dernier regard avant de s’engouffrer sur le pont.
 PJPensif: Qu’est ce que j’ai bien pu oublier hier soir ?
+[music fade="2.0" volume="0.0"]
 
 
 set {chapitre2_fini} = true

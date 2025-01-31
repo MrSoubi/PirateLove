@@ -1,3 +1,5 @@
+[music fade="3.0" volume="0.0"]
 la c'est le test du second
 set {test_du_second_fini} = true
 [signal arg="variables_changed"]
+[music fade="2.0" volume="0.0"]
