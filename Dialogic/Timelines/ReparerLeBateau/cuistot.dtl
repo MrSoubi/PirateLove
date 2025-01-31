@@ -1,3 +1,4 @@
+leave --All-- 
 [background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="2.0"]
 join Cuistot center
 if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == false:
@@ -17,10 +18,11 @@ if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == true and {Chapitr
 	Corsaire: Comment ça ?
 	Cuistot (Happy): Tu verras bien quand tu leur donneras.
 	PJPensif: Pourquoi tout le monde sur ce bateau est aussi peu rassurant ?
+	join biscuit rightmost 
 	Cuistot (Happy): Tiens, c'est pour toi !
 	Corsaire: C'est vrai qu'ils ont l'air appétissants.
 	Cuistot (Angry): TOUT DANS CETTE CUISINE EST APPÉTISSANT !
-	NOUVEL OBJET OBTENU \: BISCUITS
+	Item: NOUVEL OBJET OBTENU : BISCUITS
 	set {Chapitre_1.ReparerLeBateau.possede_biscuit} = true
 	[signal arg="variables_changed"]
 	[end_timeline]

@@ -1,5 +1,5 @@
 [music path="res://Music/fin_capitaine.mp3" fade="3.0" volume="0.0"]
-
+leave --All-- 
 # #fond pont 2
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
 

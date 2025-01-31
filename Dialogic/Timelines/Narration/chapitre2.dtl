@@ -1,7 +1,7 @@
 [music path="res://Music/chapitre_2.mp3" fade="3.0" volume="0.0"]
 [background arg="res://Textures/Locations/Cale/cale_fini.png" fade="2.0"]
 # #Après manger, appel du second sur le pont, pré-quête de réparation du Tiboat
-
+leave --All-- 
 join Medecin (Default) leftmost
 join Guet left
 join Cannonier center

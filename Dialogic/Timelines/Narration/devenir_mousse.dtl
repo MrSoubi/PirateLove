@@ -1,6 +1,6 @@
 [music path="res://Music/fin_mousse.mp3" fade="3.0" volume="0.0"]
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
-
+leave --All-- 
 # #sprite second + capitaine confus
 join Second center
 join Capitaine left

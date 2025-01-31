@@ -1,8 +1,8 @@
 [music path="res://Music/fin_second.mp3" fade="3.0" volume="0.0"]
-
+leave --All-- 
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
 # #sprite second flirt sprite capitaine mécontent
-join Second (Oeil_ferme) center
+join Second (Oeil_ferme) right 
 join Capitaine (Enervee) left
 La capitaine passe une main vive dans ses longs cheveux bruns.
 # #sprite capitaine yeux mi-clos

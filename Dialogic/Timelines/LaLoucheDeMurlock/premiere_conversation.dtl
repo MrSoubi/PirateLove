@@ -1,3 +1,5 @@
+
+leave --All-- 
 [background arg="res://Textures/Locations/Cale/cale_fini.png" fade="0.0"]
 join Guet (Default) left
 join Cannonier (Default) center

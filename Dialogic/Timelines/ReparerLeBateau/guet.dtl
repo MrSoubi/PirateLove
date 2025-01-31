@@ -1,3 +1,4 @@
+leave --All-- 
 [background arg="res://Textures/Locations/Placeholders/mat_background.jpg" fade="2.0"]
 # Premiere discussion, en boucle tant qu'on a pas apprivoisé les araignées
 join Guet center
@@ -28,6 +29,7 @@ else:
 	Corsaire: C'est que tu t'y connais drôlement bien en animaux !
 	Guet (Perroquet): J'adore les animaux ! Contrairement aux humains, ils sont incapables de mentir, donc quand on apprend à les comprendre, on peut leur faire confiance.
 	PJPensif: C'est une belle leçon de vie.
+	leave --All-- 
 	set {Chapitre_1.ReparerLeBateau.voile_reparee} = true
 	[signal arg="variables_changed"]
 

@@ -1,3 +1,4 @@
+leave --All-- 
 [background arg="res://Textures/Locations/CabineCapitaine/cabine.png" fade="2.0"]
 join carnet center
 if {Chapitre_1.ReparerLeBateau.tableau_decouvert} == false:

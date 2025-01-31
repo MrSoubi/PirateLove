@@ -1,3 +1,4 @@
+leave --All-- 
 [background arg="res://Textures/Locations/Cale/cale_fini.png" fade="2.0"]
 if {Chapitre_1.ReparerLeBateau.trou_cale_repare} == false:
 	PJPensif: Il y a un trou dans la coque. Il faut que je trouve un moyen de le boucher si je ne veux pas que le bateau touche les fonds marins d'ici cette nuit.
@@ -20,6 +21,7 @@ if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeB
 	join Medecin center
 	Medecin (Sourire): Tu mérites d'aller prendre un peu l'air sur le pont, Corsaire.
 	Corsaire: Pas faux, j'ai bien besoin d'une petite pause au soleil...
+	leave --All-- 
 	[signal arg="variables_changed"]
 	[end_timeline]
 

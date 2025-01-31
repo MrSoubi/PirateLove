@@ -1,3 +1,4 @@
+leave --All-- 
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
 join mousse center
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false and {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:

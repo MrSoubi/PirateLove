@@ -3,7 +3,7 @@
 Un silence s’installe dans la pièce.
 Un silence drôlement pesant.
 La capitaine se lève brusquement, tapant sur la première chose à sa portée de ses deux mains.
-
+leave --All-- 
 # #sprite énervé second + capitaine
 join Capitaine (Enervee) left
 join Second (Malaise) center

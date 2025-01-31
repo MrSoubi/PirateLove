@@ -1,6 +1,6 @@
 [music path="res://Music/test_du_second.mp3" fade="3.0" volume="0.0"]
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
-
+leave --All-- 
 # #bateau réparé, le second nous interpelle / pont
 PJPensif: Les manches retroussées, le corps et les cheveux luisant de ma transpiration et j’atteins le pont.
 PJPensif: Le soleil faiblit en cette fin de journée, et je ne demande qu’à prendre un bon verre et à me poser en bonne compagnie.

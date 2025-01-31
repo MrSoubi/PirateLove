@@ -1,3 +1,4 @@
+leave --All-- 
 [background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="2.0"]
 # Première discussion
 join Second right

@@ -21,7 +21,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.95,
 "scene": ""
 },
 "Saoulee": {
@@ -30,7 +30,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.95,
 "scene": ""
 },
 "Sourire": {
@@ -39,7 +39,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.95,
 "scene": ""
 },
 "SourireSideEye": {
@@ -48,7 +48,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.95,
 "scene": ""
 }
 },
