@@ -1,3 +1,15 @@
+join portrait center 
 if {Chapitre_1.ReparerLeBateau.medaillon_decouvert} == false:
+	PJPensif: C'est le tableau d'un noble de grande famille. Qu'est-ce que ce tableau fait ici ?
+	PJPensif: Beau gosse ceci dit.
 else:
+	PJPensif: Ce tableau fait tâche comparé à tout ce qu'il y a sur ce bateau. C'est trop... propre maintenant que je le regarde.
+	PJPensif: Mais... Cette emblême sur ce bouton... Ne serait-ce pas le même que celui du médaillon du coffre ?
+	*CLICK*
+	PJPensif: Le bouton de la chemise... EST UN VRAI BOUTON !
+	PJPensif: Le tableau s'est ouvert, il y a quelque chose derrière.
+	leave portrait
+	join cle_carnet center
+	PJPensif: C'est... Une clé ! Probablement celle qui permet d'ouvrir le cadenas du journal.
+	Item: NOUVEL OBJET OBTENU : CARNET
 	set {Chapitre_1.ReparerLeBateau.tableau_decouvert} = true
