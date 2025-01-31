@@ -29,7 +29,7 @@
 "image": "\"res://Textures/Characters/Mousse/Mousse_pensif.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 150),
+"offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
@@ -38,7 +38,7 @@
 "image": "\"res://Textures/Characters/Mousse/Mousse_sourire.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 150),
+"offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
@@ -47,7 +47,7 @@
 "image": "\"res://Textures/Characters/Mousse/Mousse_stress.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 150),
+"offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 }
