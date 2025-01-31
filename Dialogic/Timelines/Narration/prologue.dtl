@@ -110,7 +110,7 @@ Malgré la douce voix de Carmen et sa brûlante envie d’apprendre à la conna�
 [wait time="3.0"]
 
 # Faire ça pour l'intro
-[background]
+[background arg="res://Textures/Locations/bg_infirmerie_vierge.png" fade="0.0"]
 join mousse center
 PJPensif: Ma tête me fait atrocement mal...
 Corsaire: Aïeuh... Où est-ce que je suis ?
@@ -126,8 +126,8 @@ mousse: Vous ressembliez à une épave ! Vous n'arrêtiez pas de parler de batea
 PJPensif: ...Mais bien sûr ! J'ai perdu mon bateau et mon équipage dans cette affreuse tempête et je me suis retrouvé échoué sur cette île. je suis allé à cette taverne et puis...
 PJPensif: Bazard de zut ! Je ne me souviens plus de rien après ça, même plus de la raison de ma venue.
 PJPensif: Je sais ! Mon ordre de mission était dans ma poche...
-Corsaire:...
-Corsaire:Où est ma veste ?
+Corsaire: ...
+Corsaire: Où est ma veste ?
 mousse: Votre veste ? Je ne vous ai jamais vu avec une veste je crois.
 Corsaire: Raaagh ! Comment faire ?! Il faut absolument que je trouve quelqu'un qui puisse me rafraîchir la mémoire.
 mousse: Mon équipage pourrait bien vous aider, mais je crois bien que la porte de sortie refuse de bouger.
