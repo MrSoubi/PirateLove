@@ -9,7 +9,7 @@ if {Chapitre_1.ReparerLeBateau.possede_bois} == true and {Chapitre_1.ReparerLeBa
 	Corsaire: ...
 	Corsaire: Parfait, plus rien ne coule ! Ça fait un trou en moins.
 	leave planches
-	set {Chapitre_1.ReparerLeBateau.trou_cale_repare} = = true
+	set {Chapitre_1.ReparerLeBateau.trou_cale_repare} = true
 	[signal arg="variables_changed"]
 
 # Tous les travaux ont été réalisés

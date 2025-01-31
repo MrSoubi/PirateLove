@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4al51kvbcv4c"]
+[gd_scene load_steps=19 format=3 uid="uid://b4al51kvbcv4c"]
 
 [ext_resource type="Texture2D" uid="uid://cqmw4c74k0k2h" path="res://Textures/Locations/Deck_1/pont_2.png" id="1_vofhc"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="2_ppxru"]
@@ -7,6 +7,179 @@
 [ext_resource type="Script" path="res://Scripts/item.gd" id="5_6kkkj"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_toq6j"]
 [ext_resource type="Texture2D" uid="uid://m3j3g5xsq4ux" path="res://Textures/Locations/Deck_1/toile.png" id="6_kve8e"]
+
+[sub_resource type="Gradient" id="Gradient_48s1c"]
+offsets = PackedFloat32Array(0, 0.72949)
+colors = PackedColorArray(1, 1, 0.580392, 0.486275, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_puwew"]
+gradient = SubResource("Gradient_48s1c")
+width = 1000
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_gbpcr"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 512), Vector2(1000, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(440, 482), Vector2(484, 619)]
+}
+
+[sub_resource type="Animation" id="Animation_7ylyt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(440, 482)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrhat"]
+_data = {
+"RESET": SubResource("Animation_7ylyt"),
+"default": SubResource("Animation_gbpcr")
+}
+
+[sub_resource type="Animation" id="Animation_qy032"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 512), Vector2(1000, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(584, 173), Vector2(602, -21.0001)]
+}
+
+[sub_resource type="Animation" id="Animation_vaye0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(578, 449)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wocjv"]
+_data = {
+"RESET": SubResource("Animation_vaye0"),
+"default": SubResource("Animation_qy032")
+}
+
+[sub_resource type="Animation" id="Animation_xgnc7"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-358, 764), Vector2(-786, 976)]
+}
+
+[sub_resource type="Animation" id="Animation_al8i2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-358, 764)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w7vdb"]
+_data = {
+"RESET": SubResource("Animation_al8i2"),
+"new_animation": SubResource("Animation_xgnc7")
+}
 
 [node name="Deck1" type="Node"]
 
@@ -20,6 +193,48 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vofhc")
 expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 440.0
+offset_top = 482.0
+offset_right = 1440.0
+offset_bottom = 994.0
+texture = SubResource("GradientTexture2D_puwew")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect2"]
+libraries = {
+"": SubResource("AnimationLibrary_wrhat")
+}
+autoplay = "default"
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+offset_left = 578.0
+offset_top = 449.0
+offset_right = 1578.0
+offset_bottom = 961.0
+rotation = -1.53778
+texture = SubResource("GradientTexture2D_puwew")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect3"]
+libraries = {
+"": SubResource("AnimationLibrary_wocjv")
+}
+autoplay = "default"
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
+offset_left = -358.0
+offset_top = 764.0
+offset_right = 642.0
+offset_bottom = 1276.0
+rotation = -0.52323
+scale = Vector2(0.674515, 0.524519)
+texture = SubResource("GradientTexture2D_puwew")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect4"]
+libraries = {
+"": SubResource("AnimationLibrary_w7vdb")
+}
+autoplay = "new_animation"
 
 [node name="Cannonier" parent="CanvasLayer" instance=ExtResource("2_ppxru")]
 position = Vector2(321, 374)
@@ -45,7 +260,7 @@ script = ExtResource("2_wv11d")
 destination = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck2"]
-polygon = PackedVector2Array(702, 579, 455, 680, 1194, 677, 1197, 572)
+polygon = PackedVector2Array(763, 536, 455, 680, 1194, 677, 1192, 531)
 
 [node name="Mousse" parent="CanvasLayer" instance=ExtResource("4_u3pih")]
 position = Vector2(1025, 332)
