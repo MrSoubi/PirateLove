@@ -6,35 +6,27 @@ join Medecin (Default) leftmost
 join Guet left
 join Cannonier center
 join mousse (Default) right
-Un pas lourd retentit dans le vieux bois du navire.
-Un jeune homme entre dans la cuisine alors que chacun débarasse son assiette.
+*CRACK, CRACK, CRACK*
+PJPensif: Quelqu'un arrive du pont ?
 
 join Second rightmost
-Second: Tout le monde sur le pont, et que ça saute !
+Second (Default): Tout le monde sur le pont, et que ça saute !
 leave Second
-
-Everett avale son verre d’une traite et s'empresse de sortir de la pièce, suivi de près par Orlagh.
+Cannonier (Rigole): Oulah ! Finissez vite vos assiettes ! Faut y aller !
 leave Guet
 leave Cannonier
-Calico quant à elle, ramasse ses affaires et sort dignement.
+Medecin (SourireSideEye): Toujours aussi pressé ces gars là...
 leave Medecin
-Dans la précipitation, Allen renverse des assiettes par terre.
-
-
-# #sprite cuisinière mépris
+*CRASH*
+mousse (Stress): MORTIBOUSE ! J'ai fait tombé mon assiette !
 join Cuistot (Disregard) left
-Cuistot: Vas-y, Allen, je m’en occupe.
+Cuistot (Disregard): Vas-y, Allen, je m’en occupe.
 mousse: Non, non, Murlock !! C’est moi qui…-
 # #sprite cuisinière énervée
-update Cuistot (Angry)
-Cuistot: Ne discute pas !
-# #sprite cuisinière énervée
-update Cuistot
-Cuistot: Déguerpis de là rapidement avant que ce soit moi qui te foute dehors !
+Cuistot (Angry): Ne discute pas !
+Cuistot (Angry): Déguerpis de là rapidement avant que ce soit moi qui te foute dehors !
 leave mousse
-# #sprite cuisinière rigole
-update Cuistot (Happy)
-Cuistot: Ahahahah ! Il faut qu’il se fasse violence ce petit.
+Cuistot (Happy): Ahahahah ! Il faut qu’il se fasse violence ce petit.
 Cuistot (Default): Tu devrais te dépêcher toi aussi.
 Corsaire: Ah ! Oui, j’y vais.
 
@@ -43,23 +35,22 @@ leave --All--
 # #sur le pont
 
 # a remplacer par une animation pour faire moins de texte
-A l’instant où je passe la porte, le second met ses bras dans l'encadrement de la porte et me surplombe.
-Un sourire en coin, il me scrute de haut en bas.
+PJPensif: A l’instant où je passe la porte, le second met ses bras dans l'encadrement de la porte et me surplombe.
+PJPensif: Un sourire en coin, il me scrute de haut en bas.
 # #sprite second flirt pendant tout l’échange
 join Second rightmost
-Second: Alors c’est toi, Corsaire.
+Second (Malice): Alors c’est toi, Corsaire.
 - Bonjour ?
 	Le second prend notre main et l’embrasse délicatement.
-	Second: Millard. Seth Millard. Pour te servir mon joli.
+	Second (FlirtBlush): Millard. Seth Millard. Pour te servir mon joli.
 - On se connaît ?
-	Second: Pas encore. Moi c’est Millard. Seth Millard.
-	Le second prend notre main et l’embrasse délicatement.
-	Il me fait signe d’aller rejoindre les autres, et me laisse passer.
+	Second (SourireEnCoin): Pas encore. Moi c’est Millard. Seth Millard.
+	PJPensif: Le second prend ma main et l’embrasse délicatement.
+	PJPensif: Il me fait signe d’aller rejoindre les autres, et me laisse passer.
 
 update Second
 [background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
-Second: Tout le monde est là ?
-Tout le monde acquiesce à l’unisson.
+Second: Tout le monde est là ? Parfait.
 Second: Vous avez sûrement tous constaté la tempête d’hier soir.
 join Cannonier leftmost
 Cannonier: Plus dévastatrice que mes p’tits bijoux.
@@ -153,9 +144,10 @@ PJPensif: Comme c’est agréable.
 
 Soudain, le Second toque ardemment à la porte. Celle-ci craque de plus belle.
 Surprise, la Capitaine se redresse d’un coup.
-join Second center
+update Capitaine right [move_time="0.4"]
+join Second left
 # #sprite second surprit/mécontent
-Second: Ah… Heu, navré, je dérange peut-être…
+Second (Malaise): Ah… Heu, navré, je dérange peut-être…
 Second: Je venais simplement dire qu’on devait parler des réparations. Je vous attends dehors.
 # #sprite mécontente
 update Capitaine (Enervee)
