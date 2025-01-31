@@ -25,6 +25,7 @@ texture = ExtResource("1_uhbtq")
 expand_mode = 3
 
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource("6_8py5v")
 hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
@@ -61,7 +62,6 @@ destination = 1
 polygon = PackedVector2Array(159, 565, 288, 705, 1099, 655, 596, 527)
 
 [node name="ReparerBateau" type="Node2D" parent="CanvasLayer"]
-visible = false
 script = ExtResource("6_8py5v")
 hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
 
@@ -99,6 +99,13 @@ texture = ExtResource("9_ddee4")
 script = ExtResource("6_8py5v")
 hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
 
+[node name="Door_To_Infirmary" type="Area2D" parent="CanvasLayer/ReparerBateau"]
+script = ExtResource("2_46xdj")
+destination = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Door_To_Infirmary"]
+polygon = PackedVector2Array(159, 565, 288, 705, 1099, 655, 596, 527)
+
 [connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_mouse_exited"]
@@ -114,3 +121,6 @@ hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repa
 [connection signal="input_event" from="CanvasLayer/ReparerBateau/Trou" to="CanvasLayer/ReparerBateau/Trou" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ReparerBateau/Trou" to="CanvasLayer/ReparerBateau/Trou" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ReparerBateau/Trou" to="CanvasLayer/ReparerBateau/Trou" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/ReparerBateau/Door_To_Infirmary" to="CanvasLayer/ReparerBateau/Door_To_Infirmary" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/ReparerBateau/Door_To_Infirmary" to="CanvasLayer/ReparerBateau/Door_To_Infirmary" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ReparerBateau/Door_To_Infirmary" to="CanvasLayer/ReparerBateau/Door_To_Infirmary" method="_on_mouse_exited"]
