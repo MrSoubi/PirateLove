@@ -39,6 +39,7 @@ directories/dch_directory={
 "Second": "res://Dialogic/Characters/Second.dch",
 "biscuit": "res://Dialogic/Items/biscuit.dch",
 "cadenas": "res://Dialogic/Items/cadenas.dch",
+"carnet_ouvert": "res://Dialogic/Items/carnet_ouvert.dch",
 "cle": "res://Dialogic/Items/cle.dch",
 "cle_carnet": "res://Dialogic/Items/cle_carnet.dch",
 "fromage": "res://Dialogic/Items/fromage.dch",
