@@ -31,6 +31,7 @@ directories/dch_directory={
 "Cuistot": "res://Dialogic/Characters/Cuistot.dch",
 "Fromage": "res://Dialogic/Items/RatFromageItem/Fromage.dch",
 "Guet": "res://Dialogic/Characters/Guet.dch",
+"Item": "res://Dialogic/Items/Item.dch",
 "Medecin": "res://Dialogic/Characters/Medecin.dch",
 "PJPensif": "res://Dialogic/Characters/PJPensif.dch",
 "Rat": "res://Dialogic/Items/RatFromageItem/Rat.dch",
