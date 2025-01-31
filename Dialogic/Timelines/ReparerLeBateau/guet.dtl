@@ -1,4 +1,4 @@
-[background arg="res://Textures/Locations/Placeholders/mat_background.jpg" fade="0.0"]
+[background arg="res://Textures/Locations/Placeholders/mat_background.jpg" fade="2.0"]
 # Premiere discussion, en boucle tant qu'on a pas apprivoisé les araignées
 join Guet center
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:
@@ -32,7 +32,7 @@ else:
 	[signal arg="variables_changed"]
 
 # Tous les travaux ont été réalisés
-if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true :
+if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true:
 	Guet: On a fini de tout réparer. Tu peux retourner te reposer sur le pont ! Je reste ici pour sonder l'horizon.
 	Corsaire: Merci Everett.
 	set {Chapitre_1.ReparerLeBateau.quete_finie} = true

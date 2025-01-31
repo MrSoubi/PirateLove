@@ -1,4 +1,4 @@
-[background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="0.0"]
+[background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="2.0"]
 
 PJPensif: Bon... Comment je fais pour démanteler cette porte moi ?
 PJPensif: Peut-être que si je tire fort de ce côté ça va se disloquer ?
@@ -6,7 +6,7 @@ Corsaire: À la une, à la deux à la trooOOOIIIIS GNNNNNNNN...
 Corsaire: Huff... Huff... GRRRHHHH !
 *BAM*
 PJPensif: Aïe... Je crois que c'est mon épaule que j'ai disloqué.
-join Cannonier center 
+join Cannonier center
 Cannonier: Bah ? Qu'est-ce que tu fous par terre moussaillon ?
 Corsaire: J'essaye de déboiter cette porte pour m'en servir pour reboucher les trous de la coque...
 Cannonier: Oh ! T'as p'tet besoin d'aide ?
@@ -20,7 +20,7 @@ Cannonier: Aucun soucis, n'hésite pas à me rappeler si t'as besoin d'un coup d
 leave Cannonier
 PJPensif: ...Bon, me voilà avec mes planches
 PJPensif: Oh ? C'est la cabine de la capitaine Liestra derrière. Peut-être que je devrais...
-join Medecin center 
+join Medecin center
 Medecin: Qu'est-ce que tu regardes, Corsaire ?
 Corsaire: AAAAAAAAAAAAAH !... Oh c'est toi Calico, tu m'as fait peur !
 Medecin: Oh, la porte de la cabine de Carmen a disparu tiens ! J'imagine qu'elle est au courant, mais c'est curieux.
@@ -34,7 +34,7 @@ Corsaire: Peut-être que c'est mieux de ne pas aller voir alors.
 Medecin: Peu m'importe ! Tu fais ce que tu veux Corsaire, c'est ta vie. Adieu !
 leave Medecin
 PJPensif: ...Que faire ?
-Item: NOUVEL OBJET OBTENU : PLANCHES
+Item: NOUVEL OBJET OBTENU \: PLANCHES
 set {Chapitre_1.ReparerLeBateau.porte_demantelee} = true
 set {Chapitre_1.ReparerLeBateau.possede_bois} = true
 [signal arg="variables_changed"]

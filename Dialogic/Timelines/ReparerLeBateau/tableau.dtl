@@ -1,4 +1,5 @@
-join portrait center 
+[background arg="res://Textures/Locations/CabineCapitaine/cabine.png" fade="2.0"]
+join portrait center
 if {Chapitre_1.ReparerLeBateau.medaillon_decouvert} == false:
 	PJPensif: C'est le tableau d'un noble de grande famille. Qu'est-ce que ce tableau fait ici ?
 	PJPensif: Beau gosse ceci dit.
@@ -11,5 +12,5 @@ else:
 	leave portrait
 	join cle_carnet center
 	PJPensif: C'est... Une clé ! Probablement celle qui permet d'ouvrir le cadenas du journal.
-	Item: NOUVEL OBJET OBTENU : CARNET
+	Item: NOUVEL OBJET OBTENU \: CARNET
 	set {Chapitre_1.ReparerLeBateau.tableau_decouvert} = true
