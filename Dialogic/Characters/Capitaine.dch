@@ -15,6 +15,33 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"Apaisee_yeux_clos": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Capitaine/capitaine_apaisée_yeux_clos.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Apaisee_yeux_mi_clos": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Capitaine/capitaine_apaisée_yeux_mi_clos.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Blush": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Capitaine/capitaine_blush.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Default": {
 "export_overrides": {
 "image": "\"res://Textures/Characters/Capitaine/capitaine_neutre.png\""
@@ -60,9 +87,27 @@
 "scale": 1,
 "scene": ""
 },
+"Mecontente": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Capitaine/capitaine_mécontente.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Rire": {
 "export_overrides": {
 "image": "\"res://Textures/Characters/Capitaine/capitaine_rire.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Side_eye": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Capitaine/capitaine_side_eye.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce07qfncfb66l"]
+[gd_scene load_steps=9 format=3 uid="uid://ce07qfncfb66l"]
 
 [ext_resource type="Texture2D" uid="uid://rbfetri0gcyh" path="res://Textures/Locations/bg_infirmerie_vierge.png" id="1_6oxw4"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_5f6go"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="3_rvsmg"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_edijj"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="8_302bf"]
-[ext_resource type="Script" path="res://Scripts/character.gd" id="9_4d31j"]
 
 [node name="Infirmary" type="Node"]
 
@@ -115,7 +114,6 @@ polygon = PackedVector2Array(439, 203, 437, 442, 590, 442, 589, 203)
 [node name="Medecin" parent="CanvasLayer/ReparerLeBateau" instance=ExtResource("8_302bf")]
 position = Vector2(353, 371)
 scale = Vector2(0.156291, 0.156291)
-script = ExtResource("9_4d31j")
 timeline = "default_medecin"
 
 [node name="Trou" type="Area2D" parent="CanvasLayer/ReparerLeBateau"]

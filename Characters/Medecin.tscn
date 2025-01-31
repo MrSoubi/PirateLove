@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4w0ict66kxhl"]
+[gd_scene load_steps=3 format=3 uid="uid://b4w0ict66kxhl"]
 
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_jglu2"]
 [ext_resource type="Texture2D" uid="uid://nexd22j7fxcv" path="res://Textures/Characters/Medecin/infirmiere_chibi.png" id="1_p85gm"]
 
 [node name="Medecin" type="Area2D"]
+script = ExtResource("1_jglu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p85gm")
@@ -10,3 +12,7 @@ texture = ExtResource("1_p85gm")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(30, 36)
 polygon = PackedVector2Array(-68, -893, -396, -907, -485, -853, -478, -600, -432, -390, -482, -166, -485, 27, -471, 216, -510, 465, -542, 683, -496, 918, -236, 936, -104, 868, 6, 911, 231, 946, 374, 928, 427, 775, 306, 633, 320, 419, 341, 266, 345, 77, 423, -19, 530, -141, 516, -258, 366, -297, 338, -390, 349, -543, 313, -775, 103, -910)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

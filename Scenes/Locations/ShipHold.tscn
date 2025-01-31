@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsj8adenv17b6"]
+[gd_scene load_steps=9 format=3 uid="uid://dsj8adenv17b6"]
 
 [ext_resource type="Texture2D" uid="uid://bddyugvgptiid" path="res://Textures/Locations/Placeholders/cale_background.jpg" id="1_qcgb0"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_46xdj"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="3_a6lkd"]
-[ext_resource type="Script" path="res://Scripts/character.gd" id="3_rt2fs"]
 [ext_resource type="PackedScene" uid="uid://hvuusqysuf45" path="res://Characters/Guet.tscn" id="4_drmdt"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="5_p4q6l"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_8py5v"]
@@ -41,19 +40,16 @@ polygon = PackedVector2Array(148, 341, 148, 436, 208, 435, 209, 343)
 [node name="Cannonier" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("3_a6lkd")]
 position = Vector2(353, 381)
 scale = Vector2(0.2, 0.2)
-script = ExtResource("3_rt2fs")
 timeline = "discussion_trio"
 
 [node name="Guet" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("4_drmdt")]
 position = Vector2(470, 416)
 scale = Vector2(0.105378, 0.105378)
-script = ExtResource("3_rt2fs")
 timeline = "discussion_trio"
 
 [node name="Medecin" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("5_p4q6l")]
 position = Vector2(761, 399)
 scale = Vector2(0.0926031, 0.0926031)
-script = ExtResource("3_rt2fs")
 timeline = "discussion_trio"
 
 [node name="Door_To_Infirmary" type="Area2D" parent="CanvasLayer/NourrirEquipage"]
@@ -100,15 +96,6 @@ timeline = "araignees"
 [connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Cannonier" to="CanvasLayer/NourrirEquipage/Cannonier" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Cannonier" to="CanvasLayer/NourrirEquipage/Cannonier" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Cannonier" to="CanvasLayer/NourrirEquipage/Cannonier" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Guet" to="CanvasLayer/NourrirEquipage/Guet" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Guet" to="CanvasLayer/NourrirEquipage/Guet" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Guet" to="CanvasLayer/NourrirEquipage/Guet" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/NourrirEquipage/Medecin" to="CanvasLayer/NourrirEquipage/Medecin" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Medecin" to="CanvasLayer/NourrirEquipage/Medecin" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Medecin" to="CanvasLayer/NourrirEquipage/Medecin" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door_To_Infirmary" to="CanvasLayer/NourrirEquipage/Door_To_Infirmary" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door_To_Infirmary" to="CanvasLayer/NourrirEquipage/Door_To_Infirmary" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/NourrirEquipage/Door_To_Infirmary" to="CanvasLayer/NourrirEquipage/Door_To_Infirmary" method="_on_mouse_exited"]

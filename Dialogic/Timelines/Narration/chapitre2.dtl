@@ -45,7 +45,7 @@ leave --All--
 A l’instant où je passe la porte, le second met ses bras dans l'encadrement de la porte et me surplombe.
 Un sourire en coin, il me scrute de haut en bas.
 # #sprite second flirt pendant tout l’échange
-join Second rightmost 
+join Second rightmost
 Second: Alors c’est toi, Corsaire.
 - Bonjour ?
 	Le second prend notre main et l’embrasse délicatement.
@@ -93,44 +93,44 @@ Sans en dire plus, elle me fait signe de la rejoindre dans sa cabine.
 leave --All--
 
 # #changement de fond / chambre de la capitaine
-[background fade="0.0"]
+[background arg="res://Textures/Locations/Placeholders/captain_cabin.png" fade="0.0"]
 PJPensif: Son odeur de cannelle et d’épices me reviennent en tête. Ses cheveux, ses lèvres.
 PJPensif: Comment ai-je pu oublier tout ça ?
 PJPensif: Mon cœur s’excite, ma tête me fait atrocement mal et les rayons du soleil semblent me brûler vif.
-join Capitaine center
+join Capitaine (Default) center
 Capitaine: Attention à la porte, elle ne tient presque plus sur ses gonds.
 Capitaine: Un petit verre ?
 Corsaire: On sait comment ça a fini la dernière fois..
 # #sprite capitaine rigole
-update Capitaine
+update Capitaine (Rire)
 Capitaine: C’est sûr, mais seulement un seul. S’il te plaît. Pour moi.
 Corsaire: Juste un seul, alors.
 
 - Un petit bourbon ?
 	La Capitaine prend la bouteille de bourbon et verse le liquide.
 	# #sprite capitaine flirty
-	update Capitaine
+	update Capitaine (Smirk)
 	Capitaine: Tiens, c’est pour toi..Santé !
 - Du rhum arrangé ?
 	Capitaine: Très bon choix. Banane, ça te convient ?
 	Corsaire: Parfait.
 	La Capitaine prend la bouteille de rhum arrangé à la banane posée sur le bureau et verse le liquide ambré.
 	# #sprite capitaine flirty
-	update Capitaine
+	update Capitaine (Smirk)
 	Capitaine: Tiens, c’est pour toi..Santé !
 - Ta meilleure eau de vie ?
 	La Capitaine prend la bouteille d’eau de vie poussiéreuse et verse le liquide.
 	# #sprite capitaine flirty
-	update Capitaine
+	update Capitaine (Smirk)
 	Capitaine: Tiens, c’est pour toi..Santé !
 
-update Capitaine
+update Capitaine (Default)
 # #sprite capitaine side eye
 Ils boivent silencieusement leur verre en échangeant des regards.
 Les secondes de silence semblent durer des heures.
 
 # #sprite capitaine flirty
-Capitaine: Tu... veux bien nous aider pour les réparations ?
+Capitaine (Smirk): Tu... veux bien nous aider pour les réparations ?
 Corsaire: Oui, oui, avec plaisir. J’adorerais.
 
 # #sprite capitaine flirty
@@ -139,12 +139,12 @@ Leurs mains sont proches, si proches qu’elles pourraient se toucher.
 PJPensif: Mon cœur bat si vite qu’il me semble impossible de compter les battements.
 Corsaire: Tu sais, à propos d’hier soir-...
 # #sprite capitaine effrayée
-update Capitaine
+update Capitaine (Effrayee)
 Capitaine: Ne dit rien, s’il te plait ! Pas maintenant...
 
 Elle baisse sa tête à son niveau et pose son front contre le sien.
 # #sprite capitaine apaisée
-update Capitaine
+update Capitaine (Default)
 PJPensif: Je sens son souffle chaud contre moi. Ses cheveux à l’odeur de cannelle envahissent mes narines.
 PJPensif: Ses lèvres perlées d’alcool me lancent des signaux, mais je me sens apaisé.
 PJPensif: Comme c’est agréable.
@@ -156,7 +156,7 @@ join Second center
 Second: Ah… Heu, navré, je dérange peut-être…
 Second: Je venais simplement dire qu’on devait parler des réparations. Je vous attends dehors.
 # #sprite mécontente
-update Capitaine
+update Capitaine (Enervee)
 Capitaine: J’arrive.
 
 Elle lance un dernier regard avant de s’engouffrer sur le pont.

@@ -1,11 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://hvuusqysuf45"]
+[gd_scene load_steps=3 format=3 uid="uid://hvuusqysuf45"]
 
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_sy40d"]
 [ext_resource type="Texture2D" uid="uid://hfbs1dqfk6ju" path="res://Textures/Characters/Guet/guet_chibi.png" id="1_yh2ue"]
 
 [node name="Guet" type="Area2D"]
+script = ExtResource("1_sy40d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yh2ue")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-155, -983, 55, -846, 250, -760, 445, -593, 440, -237, 340, -32, 297, 177, 283, 448, 345, 705, 364, 862, 159, 915, -136, 905, -321, 872, -364, 696, -350, 539, -435, 406, -440, 263, -340, 120, -278, -8, -369, -165, -488, -394, -412, -684, -278, -874)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
