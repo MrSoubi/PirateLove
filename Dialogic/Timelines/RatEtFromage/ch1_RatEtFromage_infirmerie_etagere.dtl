@@ -17,7 +17,8 @@ else:
 		PJPensif: *Il semble vivre ses derniers instants.*
 		PJPensif: *Il ne vous donne pas très envie, mais peut être que quelqu'un, ou quelque chose, en voudrait ?*
 		- Prendre le fromage
-			Fromage: NOUVEL OBJET OBTENU : FROMAGE
+			Item: NOUVEL OBJET OBTENU : FROMAGE
+			leave Fromage
 			set {Chapitre_1.RatEtFromage.possede_fromage} = true
 		- Laisser le fromage
 			Corsaire: Je risque d'attraper la mort si je touche ce truc...
