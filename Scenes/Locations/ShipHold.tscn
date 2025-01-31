@@ -25,7 +25,6 @@ texture = ExtResource("1_uhbtq")
 expand_mode = 3
 
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
-visible = false
 script = ExtResource("6_8py5v")
 hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
@@ -40,8 +39,8 @@ script = ExtResource("2_46xdj")
 polygon = PackedVector2Array(148, 341, 148, 436, 208, 435, 209, 343)
 
 [node name="Cannonier" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("3_a6lkd")]
-position = Vector2(353, 381)
-scale = Vector2(0.2, 0.2)
+position = Vector2(325, 391)
+scale = Vector2(0.085218, 0.085218)
 timeline = "discussion_trio"
 
 [node name="Guet" parent="CanvasLayer/NourrirEquipage" instance=ExtResource("4_drmdt")]
@@ -62,6 +61,7 @@ destination = 1
 polygon = PackedVector2Array(159, 565, 288, 705, 1099, 655, 596, 527)
 
 [node name="ReparerBateau" type="Node2D" parent="CanvasLayer"]
+visible = false
 script = ExtResource("6_8py5v")
 hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
 
