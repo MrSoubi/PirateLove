@@ -1,6 +1,7 @@
 # #####
 # Première discussion avec Murlock, n'apparaît qu'une seule fois
 # #####
+[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
 if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 	*CRASH, WHAM, BLANG, BOUM*
 	join Cuistot (Angry) center [animation="Fade In Down"]
@@ -51,11 +52,11 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 	[style name="PJPensif"]
 	*Note à moi-même, toujours finir mon assiette*
 	[style]
-	Cuistot: Merci beaucoup de me l'avoir ramené ! Tiens, prend ce plat et va leur servir. Et n'hésite pas à t'en prendre une part aussi 
+	Cuistot: Merci beaucoup de me l'avoir ramené ! Tiens, prend ce plat et va leur servir. Et n'hésite pas à t'en prendre une part aussi
 	Merci beaucoup Murlock !
 	[style name="ObjectDropped"]
 	# Mettre Plat Item
-	NOUVEL OBJET OBTENU : PLAT
+	NOUVEL OBJET OBTENU \: PLAT
 	[style]
 	set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = false
 	set {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} = true

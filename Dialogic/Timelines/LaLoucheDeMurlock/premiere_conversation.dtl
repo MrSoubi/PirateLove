@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/Cale/cale_fini.png" fade="0.0"]
 join Guet left
 join Cannonier center
 join Medecin right
@@ -149,7 +150,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 		C'est d'accord, j'espère qu'elle gobera ce que je lui dirai.
 		Cannonier: T'es un brave homme toi ! Je m'en souviendrai
 		[style name="ObjectDropped"]
-		Item: NOUVEL OBJET OBTENU : LOUCHE
+		Item: NOUVEL OBJET OBTENU \: LOUCHE
 		[style]
 		set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = true
 		[signal arg="variables_changed"]
@@ -170,7 +171,7 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	leave Guet
-	update  Medecin
+	update Medecin
 	update Cannonier left
 	Medecin: Alors, où sont ces plats ?
 	Cannonier: J'AI FAAAIIIIIM !!!
