@@ -7,31 +7,31 @@ Corsaire: Huff... Huff... GRRRHHHH !
 *BAM*
 PJPensif: Aïe... Je crois que c'est mon épaule que j'ai disloqué.
 join Cannonier center
-Cannonier: Bah ? Qu'est-ce que tu fous par terre moussaillon ?
+Cannonier (Intrigue): Bah ? Qu'est-ce que tu fous par terre moussaillon ?
 Corsaire: J'essaye de déboiter cette porte pour m'en servir pour reboucher les trous de la coque...
-Cannonier: Oh ! T'as p'tet besoin d'aide ?
+Cannonier (Rigole): Oh ! T'as p'tet besoin d'aide ?
 Corsaire: Volontiers ! Mais je te préviens, elle ne veut pas bouger d'un pouce. Je pense que même à deux, ça risque d'êtr-
 *CRACK*
-Cannonier: Tiens !
+Cannonier (Rigole): Tiens !
 PJPensif: ...
 PJPensif: Est-ce qu'il vient vraiment d'arracher la porte à une main ?
 Corsaire: M-Merci Orlagh.
-Cannonier: Aucun soucis, n'hésite pas à me rappeler si t'as besoin d'un coup de main ! Je retrourne lustrer mon canon !
+Cannonier (Default): Aucun soucis, n'hésite pas à me rappeler si t'as besoin d'un coup de main ! Je retrourne lustrer mon canon !
 leave Cannonier
 PJPensif: ...Bon, me voilà avec mes planches
 PJPensif: Oh ? C'est la cabine de la capitaine Liestra derrière. Peut-être que je devrais...
 join Medecin center
-Medecin: Qu'est-ce que tu regardes, Corsaire ?
+Medecin (Default): Qu'est-ce que tu regardes, Corsaire ?
 Corsaire: AAAAAAAAAAAAAH !... Oh c'est toi Calico, tu m'as fait peur !
-Medecin: Oh, la porte de la cabine de Carmen a disparu tiens ! J'imagine qu'elle est au courant, mais c'est curieux.
+Medecin (SourireSideEye): Oh, la porte de la cabine de Carmen a disparu tiens ! J'imagine qu'elle est au courant, mais c'est curieux.
 Corsaire: Pourquoi donc ?
-Medecin: Disons que je la connais depuis longtemps, et malgré ça elle a toujours refusé que j'entre ici. Si tu veux mon avis, elle y cache des choses.
+Medecin (Saoulee): Disons que je la connais depuis longtemps, et malgré ça elle a toujours refusé que j'entre ici. Si tu veux mon avis, elle y cache des choses.
 Corsaire: Comme quoi ?
-Medecin: Je la vois souvent passer avec un journal et je sais très peu de choses de son passé... Peut-être qu'il y a des choses intéressantes là dedans.
+Medecin (Default): Je la vois souvent passer avec un journal et je sais très peu de choses de son passé... Peut-être qu'il y a des choses intéressantes là dedans.
 Corsaire: Intéressant, je pourrai y jeter un oeil...
-Medecin: Fait attention à toi, parce qu'elle ne te le pardonnera jamais si tu lis ce journal. Je la connais assez bien pour prévoir ça.
+Medecin (Saoulee): Fait attention à toi, parce qu'elle ne te le pardonnera jamais si tu lis ce journal. Je la connais assez bien pour prévoir ça.
 Corsaire: Peut-être que c'est mieux de ne pas aller voir alors.
-Medecin: Peu m'importe ! Tu fais ce que tu veux Corsaire, c'est ta vie. Adieu !
+Medecin (Default): Peu m'importe ! Tu fais ce que tu veux Corsaire, c'est ta vie. Adieu !
 leave Medecin
 PJPensif: ...Que faire ?
 Item: NOUVEL OBJET OBTENU \: PLANCHES

@@ -7,15 +7,19 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 	join Cuistot (Angry) center [animation="Fade In Down"]
 	Cuistot (Angry): ELLE EST OU MA LOUCHE ?!
 	PJPensif: Pas commode celle là...
+	update Cuistot (Disregard)
 	Cuistot (Default): T'es qui toi ? C'est pas le moment de venir me faire perdre mon temps !
 	Corsaire: Euh... Vous êtes la cuisinière n'est-ce pas ?
+	update Cuistot (Default)
 	Cuistot: Murlock, cuistot de ce bateau. Qu'est-ce que tu me veux Corsaire ?
 	Corsaire: C'est les gentilhommes de la cale qui m'envoient. Ils attendent leur plat semble-t-il.
+	update Cuistot (Angry)
 	Cuistot: Tu insinues que je ne sers pas mes plats à l'heure ?
 	Corsaire: P-pas du tout ! Je voulais simplement savoir si je pouvais aider.
 	Cuistot: Je leur servirai leur plat quand j'aurai trouvé ma louche !
 	Corsaire: ...Ce serait pas une louche que vous avez à votre ceinture ?
 	Cuistot: Je veux ma GROSSE LOUCHE ! PAS MA PETITE LOUCHE !
+	update Cuistot (Default)
 	Cuistot: Bref, revient avec ma louche et ils auront leur plat.
 	Corsaire: C-compris !
 	set {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} = true
@@ -29,7 +33,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	*WHAM, BAM, CRACK*
-	join Cuistot center
+	join Cuistot (Angry) center
 	Cuistot: JE VAIS FAIRE EXPLOSER CE BATEAU SI JE RETROUVE PAS MA LOUCHE !
 	PJPensif: Il faut vraiment que je retrouve cette fichue louche
 	[signal arg="variables_changed"]
@@ -41,16 +45,16 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == false and {Chapitre_1.LaLouc
 # Quand le joueur rapporte la louche à Murlock.
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
-	join Cuistot center
+	join Cuistot (Happy) center
 	Cuistot: MA LOUCHE ! Où est-ce que tu l'as trouvé ?
 	Corsaire: C'est... euh... elle était coincée entre 2 caisses de la cale !
 	Cuistot: Ouf ! J'ai dû la perdre en balançant mes ustensiles sur Orlagh l'autre jour. Il a osé ne pas finir ses légumes ce fumier !
 	PJPensif: Note à moi-même, toujours finir mon assiette
-	Cuistot: Merci beaucoup de me l'avoir ramené ! Tiens, prend ce plat et va leur servir. Et n'hésite pas à t'en prendre une part aussi 
+	Cuistot: Merci beaucoup de me l'avoir ramené ! Tiens, prend ce plat et va leur servir. Et n'hésite pas à t'en prendre une part aussi
 	Corsaire: Merci beaucoup Murlock !
 	leave Cuistot
 	join plat center
-	Item: NOUVEL OBJET OBTENU : PLAT
+	Item: NOUVEL OBJET OBTENU \: PLAT
 	set {Chapitre_1.LaLoucheDeMurlock.possede_louche} = false
 	set {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} = true
 	set {Chapitre_1.LaLoucheDeMurlock.possede_plats} = true
@@ -61,7 +65,7 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 # Quand le joueur a les plats avec lui et ne les a pas ramenés à l'équipage
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
-	join Cuistot center
+	join Cuistot (Happy) center
 	Cuistot: Va donc leur servir leur plat ! ça va refroidir.
 	[signal arg="variables_changed"]
 	[end_timeline]

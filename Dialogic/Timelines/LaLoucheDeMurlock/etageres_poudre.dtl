@@ -1,15 +1,15 @@
 [background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
 if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == true:
 	jump indice
+	join Cuistot center 
 Cuistot (Disregard): C'est là que je range ma louche d'habitude.
 Cuistot: Pas la peine de regarde, j'ai déjà cherché.
+leave Cuistot
 label indice
-[style name="PJPensif"]
 PJPensif: Tous les ustensiles sont rangés à leur place sur cette table.
 PJPensif: Pourtant il y a un espace vide, certainement là où est censée se trouver la louche de Murlock.
 PJPensif: Tiens ? On dirait de la poudre noire par terre
 PJPensif: Est-ce que ça pourrait bien être celle de...
 PJPensif: il faut que j'aille parler à l'équipage pour en être sûr
-[style]
 set {Chapitre_1.LaLoucheDeMurlock.indice_poudre} = true
 [signal arg="variables_changed"]

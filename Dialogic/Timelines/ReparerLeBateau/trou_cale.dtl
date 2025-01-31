@@ -18,7 +18,7 @@ if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeB
 	set {Chapitre_1.ReparerLeBateau.quete_en_cours} = false
 	Corsaire: Voilà ! C'était le dernier ! Les réparations sont terminés.
 	join Medecin center
-	Medecin: Tu mérites d'aller prendre un peu l'air sur le pont, Corsaire.
+	Medecin (Sourire): Tu mérites d'aller prendre un peu l'air sur le pont, Corsaire.
 	Corsaire: Pas faux, j'ai bien besoin d'une petite pause au soleil...
 	[signal arg="variables_changed"]
 	[end_timeline]
