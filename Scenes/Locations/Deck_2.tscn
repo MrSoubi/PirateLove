@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm3rnqwkf5jt3"]
+[gd_scene load_steps=13 format=3 uid="uid://dm3rnqwkf5jt3"]
 
 [ext_resource type="Texture2D" uid="uid://dyrhdtupstwod" path="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" id="1_iyjvk"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_3v7aa"]
@@ -7,6 +7,79 @@
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="4_pm0ef"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_q1mvx"]
 [ext_resource type="Texture2D" uid="uid://dbeeaxqtdr0ic" path="res://Textures/Locations/Deck_2/pont_1_porte.png" id="7_bdjlb"]
+
+[sub_resource type="Gradient" id="Gradient_rhuuk"]
+offsets = PackedFloat32Array(0, 0.700665)
+colors = PackedColorArray(1, 1, 0.580392, 0.486275, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_31ku2"]
+gradient = SubResource("Gradient_rhuuk")
+width = 1000
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_bl5wm"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1000, 512), Vector2(1000, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-219, 477), Vector2(-262, 646)]
+}
+
+[sub_resource type="Animation" id="Animation_1fxog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-219, 477)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62qee"]
+_data = {
+"RESET": SubResource("Animation_1fxog"),
+"default": SubResource("Animation_bl5wm")
+}
 
 [node name="Deck2" type="Node"]
 
@@ -20,6 +93,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_iyjvk")
 expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = -219.0
+offset_top = 477.0
+offset_right = 781.0
+offset_bottom = 989.0
+texture = SubResource("GradientTexture2D_31ku2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureRect2"]
+libraries = {
+"": SubResource("AnimationLibrary_62qee")
+}
+autoplay = "default"
 
 [node name="Captain" parent="CanvasLayer" instance=ExtResource("2_f82jl")]
 position = Vector2(300, 408)
@@ -38,7 +124,7 @@ script = ExtResource("2_3v7aa")
 destination = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/Door_To_Deck1"]
-polygon = PackedVector2Array(-38, 589, 554, 567, 766, 667, -69, 667)
+polygon = PackedVector2Array(-34, 501, 562, 549, 811, 664, -69, 667)
 
 [node name="Door" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("4_pm0ef")
