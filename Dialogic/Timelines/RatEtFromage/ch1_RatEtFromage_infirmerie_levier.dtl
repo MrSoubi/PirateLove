@@ -1,26 +1,26 @@
 if {Chapitre_1.RatEtFromage.levier_active} == false:
 	if {Chapitre_1.RatEtFromage.rat_parti} == false:
 		if {Chapitre_1.RatEtFromage.possede_fromage} == false:
-			join Rat center 
+			join rat center 
 			PJPensif:*Un gros rat dégueulasse racle ses dents contre le levier.*
 			PJPensif:*Il est ENOOORME.*
 			Corsaire: Comment un rat peut trouver à se nourrir dans un bateau aussi pourri ?
 			Corsaire: Peu importe... Impossible de le bouger... Allen ?
 			join mousse left 
-			update Rat right 
+			update rat right 
 			mousse: Ah non ! J'ai la phobie des rats ! J'essaye déjà de ne pas m'évanouir, donc débrouillez-vous !
 			leave mousse
-			update Rat center
+			update rat center
 			Corsaire: J'avoue ne pas avoir envie de le toucher non plus. Il va falloir trouver une autre solution.
 		else:
-			join Rat left 
-			join Fromage right
+			join rat left 
+			join fromage right
 			PJPensif: *Le rat vous regarde avec insistance.*
 			PJPensif: *Il est prêt à vous sauter dessus.*
 			Corsaire: AAAAAAAAAAAH ! VA-T-EN SALE BÊTE !
 			PJPensif: *WHOOOSH, Vous jetez le fromage au bout de la cabine.*
-			leave Rat
-			leave Fromage
+			leave rat
+			leave fromage
 			PJPensif: *Le rat part à sa recherche.*
 			PJPensif: *Le levier est maintenant utilisable*
 			set {Chapitre_1.RatEtFromage.rat_parti} = true
