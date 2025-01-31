@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsj8adenv17b6"]
 
-[ext_resource type="Texture2D" uid="uid://bddyugvgptiid" path="res://Textures/Locations/Placeholders/cale_background.jpg" id="1_qcgb0"]
+[ext_resource type="Texture2D" uid="uid://8ilvjlb3yomn" path="res://Textures/Locations/Cale/cale_fini.png" id="1_uhbtq"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_46xdj"]
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="3_a6lkd"]
 [ext_resource type="PackedScene" uid="uid://hvuusqysuf45" path="res://Characters/Guet.tscn" id="4_drmdt"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="5_p4q6l"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_8py5v"]
-[ext_resource type="PackedScene" uid="uid://bicfe6o7ysdev" path="res://Characters/Mousse.tscn" id="8_dat6f"]
+[ext_resource type="Texture2D" uid="uid://b7yurrawak0uw" path="res://Textures/Locations/Cale/trou_test.png" id="8_7tuth"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="9_ab5xv"]
 
 [node name="ShipHold" type="Node"]
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_qcgb0")
+texture = ExtResource("1_uhbtq")
 expand_mode = 3
 
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
@@ -76,22 +76,17 @@ destination = 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Door_To_Deck2"]
 polygon = PackedVector2Array(824, 525, 1180, 577, 1157, -51)
 
-[node name="Mousse" parent="CanvasLayer/ReparerBateau" instance=ExtResource("8_dat6f")]
-position = Vector2(373, 375)
-scale = Vector2(0.144551, 0.144551)
-timeline = "mousse"
-
 [node name="Trou" type="Area2D" parent="CanvasLayer/ReparerBateau"]
 script = ExtResource("9_ab5xv")
 timeline = "trou_cale"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Trou"]
+polygon = PackedVector2Array(80, 448, 113, 437, 145, 440, 169, 449, 211, 446, 272, 455, 265, 484, 209, 503, 181, 529, 108, 537, 66, 510, 47, 482)
 
-[node name="Araignees" type="Area2D" parent="CanvasLayer/ReparerBateau"]
-script = ExtResource("9_ab5xv")
-timeline = "araignees"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Araignees"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_7tuth")
 
 [connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_mouse_entered"]

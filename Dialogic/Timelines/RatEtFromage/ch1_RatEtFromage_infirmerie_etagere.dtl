@@ -1,5 +1,5 @@
 if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
-	join CadenasCode center 
+	join cadenas center 
 	PJPensif: Hmmm... Ce meuble est vérouillé par un cadenas à code.
 	- Partir
 		PJPensif: Il faut que je trouve un code quelque part.
@@ -12,12 +12,13 @@ if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 			Corsaire: Argh, C'est pas le bon code...
 else:
 	if {Chapitre_1.RatEtFromage.possede_fromage} == false:
-		join Fromage center 
+		join fromage center 
 		PJPensif: *Un vieux fromage pourri boude au fond d'une étagère.*
 		PJPensif: *Il semble vivre ses derniers instants.*
 		PJPensif: *Il ne vous donne pas très envie, mais peut être que quelqu'un, ou quelque chose, en voudrait ?*
 		- Prendre le fromage
-			Fromage: NOUVEL OBJET OBTENU : FROMAGE
+			Item: NOUVEL OBJET OBTENU : FROMAGE
+			leave fromage
 			set {Chapitre_1.RatEtFromage.possede_fromage} = true
 		- Laisser le fromage
 			Corsaire: Je risque d'attraper la mort si je touche ce truc...

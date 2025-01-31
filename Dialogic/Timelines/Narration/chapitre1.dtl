@@ -1,4 +1,5 @@
 # #sortie de l’infirmerie, conversation de mise en contexte avec l’équipage
+[music path="res://Music/chapitre_1.mp3" fade="3.0" volume="0.0"]
 [background arg="res://Textures/Locations/Placeholders/cale_background.jpg" fade="0.0"]
 Je peine à marcher droit tout en sortant de l’infirmerie accompagné du mousse. Ma tête me fait mal.
 On tombe nez à nez avec le guet, le canonnier et la médecin adossés sur les poutres de la calle.
@@ -51,7 +52,7 @@ Cannonier: J’espère que tu n’l’as pas trop mal pris.
 	Le Canonnier semble attristé. Il ne dit plus rien.
 - L’amour vache comme on dit…
 	Corsaire: Ca veut juste dire que tu m’aimes déjà.
-	#sprite canonnier rigole
+	# #sprite canonnier rigole
 	update Cannonier
 	Cannonier: AHAHAHAHA !!
 	Cannonier: Je t’aime d’jà toi p’tit gars, viens-là !
@@ -66,6 +67,7 @@ Soudain, un énorme bruit d’estomac retentit.
 Corsaire: Désolé.. C’est-à-dire que je meurs de faim depuis tout à l’heure.
 Medecin: La cuisine est en face, va nous chercher à manger.
 Medecin: On a deux trois choses dont on doit parler.
+[music fade="2.0" volume="0.0"]
 
 set {chapitre1_fini} = true
 set {Chapitre_1.LaLoucheDeMurlock.quete_en_cours} = true

@@ -1,3 +1,167 @@
-la c'est le test du second
+[music path="res://Music/test_du_second.mp3" fade="3.0" volume="0.0"]
+[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
+
+# #bateau réparé, le second nous interpelle / pont
+Les manches retroussées, le corps et les cheveux luisant de ma transpiration et j’atteins le pont.
+Le soleil faiblit en cette fin de journée, et je ne demande qu’à prendre un bon verre et à me poser en bonne compagnie.
+Je me fais siffler par Millard, qui m'interpelle.
+
+join Second right
+Second: Encore toi beau gosse, ça s’est bien passé ?
+
+Corsaire: Oui, plutôt bien.
+# #sprite second sourire
+update Second
+Second: Heureux de l’entendre !
+Ça aurait été encore mieux avec toi.
+# #sprite second flirt / blush
+update Second
+Second: On peut toujours rattraper ce temps perdu ce soir…
+
+Je souris malgré moi.
+PJPensif: Quel bout en train.
+Avant que je n’ai pu faire quoique ce soit, il prend ma main délicatement et la pose sur son torse.
+Il sent un mélange entre de l’eau de cologne au musc, du sable chaud et du sel marin.
+PJPensif: Ce qui n’est pas désagréable, je dois bien l’avouer.
+
+# #sprite flirty blush
+update Second
+Second: Regarde ce que tu me fais.
+
+Il plante ses perles bleutées dans les miens et me dévisage. Sans pudeur.
+Son cœur bat vite, les lèvres sont entrouvertes, humides, il halète presque.
+# mettre la capitaine et le second à côté jusqu’à la fin du test
+
+join Capitaine rightmost
+# #sprite capitaine mécontente
+Capitaine: Ça va, je ne vous dérange pas ?
+# #sprite second flirty
+update Second
+Second: Oups..!
+
+update Capitaine
+# #sprite capitaine side eye
+Liestra le dévisage, mécontente.
+Capitaine: On voulait te poser quelques questions, si ça ne te dérange pas ?
+update Second
+# #sprite second smirk
+Second: Oui, on fait passer ça à tout le monde ici. C’est un peu une tradition.
+Ils s’échangent des regards de défi.
+
+# #Au bout de trois bonnes réponses le test est validé 
+
+Qu’est ce qui t'amène sur ce bateau ?
+- Le hasard
+	# #sprite second mécontent
+	update Second
+	Second: D’accord…
+- La renommée
+	# #sprite capitaine mécontente
+	update Capitaine
+	Capitaine: Je ne te pensais pas comme ça.
+- Quelqu’un
+	set {score_test_second} = {score_test_second} + 1
+	# #sprite capitaine et second sourire
+	update Capitaine
+	update Second
+	Liestra et Millard sourient.
+	Second: Pourquoi tu souris !??
+	# #sprite capitaine blush
+	update Capitaine
+	Capitaine: Et toi alors ??!
+	Capitaine: Bon allez, Seth, on enchaîne, question suivante !
+- Ne pas répondre
+	# #sprite second et capitaine mécontents
+	update Capitaine
+	update Second
+	…
+
+Quelle valeur te semble plus importante ?
+- L’Alcoolisme
+	# #sprite capitaine rigole
+	update Capitaine
+	Capitaine: Dit bien.
+	# #sprite second mécontent
+	update Second
+	Second: Ne contribue pas encore plus à son alcoolisme, c’est déjà une pochtron.
+- Notoriété
+	# #sprite capitaine mécontente
+	update Capitaine
+	Liestra grimace.
+- Richesse
+	Millard ne dit rien.
+- Amour
+	set {score_test_second} = {score_test_second} + 1
+	update Capitaine
+	update Second
+	# #capitaine et second blush/flirt
+
+
+Combien de membres compte notre équipage ?
+- 5
+	# #sprite second et capitaine mécontents
+	update Second
+	update Capitaine
+	Capitaine: Je pensais que tu avais fait un peu plus attention à notre équipage...
+- 7
+	set {score_test_second} = {score_test_second} + 1
+	# #sprite sourire second capitaine
+	update Capitaine
+	update Second
+	Second: C’est bien cela !
+	Capitaine: Millard, Orlagh, Calico, Murlock, Everett, Allen et moi-même.
+- 9
+	# #sprite second et capitaine mécontents
+	update Second
+	update Capitaine
+	Capitaine: Je pensais que tu avais fait un peu plus attention à notre équipage...
+- 3
+	# #sprite second et capitaine mécontents
+	update Second
+	update Capitaine
+	Capitaine: Je pensais que tu avais fait un peu plus attention à notre équipage...
+
+Que t’inspire notre capitaine ?
+- Noblesse
+	# #sprite capitaine mécontente
+	update Capitaine
+	Elle ne dit rien.
+- Peur
+	# #sprite capitaine mécontente
+	update Capitaine
+	Capitaine: Je ne pensais pas, excuse-moi.
+- Liberté
+	set {score_test_second} = {score_test_second} + 1
+	# #sprite capitaine flirt/blush
+	update Capitaine
+	Elle me sourit et acquiesce de façon presque imperceptible.
+- Secret
+	# #sprite capitaine mécontente
+	update Capitaine
+	Capitaine: Je ne pensais pas, excuse-moi.
+
+Qu’est-ce que je t’inspire ?
+- Dégoût
+	# #sprite second mécontent
+	update Second
+	Second: Je le prends mal. Qu’est ce qui te fait dire ça..?
+- Curiosité
+	# #sprite second mécontent
+	update Second
+	Second: Je pensais avoir été suffisamment explicite plus tôt..
+- Sympathie
+	set {score_test_second} = {score_test_second} + 1
+	# #sprite second sourire en coin
+	update Second
+	Millard me fait un clin d'œil, visiblement touché.
+- Admiration
+	# #sprite second mécontent
+	update Second
+	Second: Je préfère qu’on soit au même niveau.
+
+if {score_test_second} > 2:
+	set {test_reussi} = true
+
 set {test_du_second_fini} = true
 [signal arg="variables_changed"]
+[music fade="2.0" volume="0.0"]

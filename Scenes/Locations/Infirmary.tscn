@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce07qfncfb66l"]
+[gd_scene load_steps=15 format=3 uid="uid://ce07qfncfb66l"]
 
 [ext_resource type="Texture2D" uid="uid://rbfetri0gcyh" path="res://Textures/Locations/bg_infirmerie_vierge.png" id="1_6oxw4"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_5f6go"]
@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://yj4vf5souc7b" path="res://Textures/Items/rat_sans_fromage.png" id="3_6v4ni"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="3_nuxq3"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="3_rvsmg"]
+[ext_resource type="Texture2D" uid="uid://u1q35aho185e" path="res://Textures/Locations/Infirmerie/inf_levier_haut.png" id="6_85y8w"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_edijj"]
+[ext_resource type="Texture2D" uid="uid://jjt1n01mu3vs" path="res://Textures/Locations/Infirmerie/inf_papier_bureau.png" id="7_njkp6"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="8_302bf"]
+[ext_resource type="Texture2D" uid="uid://drm0hd3l7unap" path="res://Textures/Locations/Infirmerie/inf_cadena.png" id="8_fbmnj"]
+[ext_resource type="Texture2D" uid="uid://vemthikobkn3" path="res://Textures/Locations/Infirmerie/inf_trou_petit.png" id="10_a3oe8"]
+[ext_resource type="Texture2D" uid="uid://bwk2mi3qpsemy" path="res://Textures/Locations/Infirmerie/inf_trou_gros_qui_coule.png" id="12_kvwdb"]
+[ext_resource type="Texture2D" uid="uid://bbfylhmpl67rk" path="res://Textures/Locations/Infirmerie/inf_planche_repare_trou.png" id="13_0dji4"]
 
 [node name="Infirmary" type="Node"]
 
@@ -24,78 +30,94 @@ expand_mode = 3
 
 [node name="RatEtFromage" type="Node2D" parent="CanvasLayer"]
 visible = false
-script = ExtResource("6_edijj")
-hide_if_one_is_false = Array[String](["Chapitre_1.RatEtFromage.quete_en_cours"])
-
-[node name="RatEtFromage" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 script = ExtResource("3_rvsmg")
 hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.quete_finie"])
 
-[node name="Mousse" parent="CanvasLayer/RatEtFromage/RatEtFromage" instance=ExtResource("2_iqjt0")]
+[node name="Mousse" parent="CanvasLayer/RatEtFromage" instance=ExtResource("2_iqjt0")]
 position = Vector2(333, 365)
 scale = Vector2(0.264435, 0.264435)
 timeline = "ch1_RatEtFromage_infirmerie_mousse"
 
-[node name="Levier" type="Area2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
+[node name="Levier" type="Area2D" parent="CanvasLayer/RatEtFromage"]
 script = ExtResource("3_nuxq3")
 timeline = "ch1_RatEtFromage_infirmerie_levier"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/Levier"]
-polygon = PackedVector2Array(648, 257, 648, 311, 685, 310, 685, 258)
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/Levier"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_85y8w")
 
-[node name="Bureau" type="Area2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Levier"]
+polygon = PackedVector2Array(648, 257, 648, 311, 685, 310, 685, 258, 669, 229)
+
+[node name="Bureau" type="Area2D" parent="CanvasLayer/RatEtFromage"]
 script = ExtResource("3_nuxq3")
 timeline = "ch1_RatEtFromage_infirmerie_bureau"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/Bureau"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/Bureau"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_njkp6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Bureau"]
 polygon = PackedVector2Array(193, 306, -110, 343, -73, 662, 260, 481, 287.855, 404.399, 260, 355, 270, 312)
 
-[node name="Placard" type="Area2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
+[node name="Placard" type="Area2D" parent="CanvasLayer/RatEtFromage"]
 script = ExtResource("3_nuxq3")
 timeline = "ch1_RatEtFromage_infirmerie_etagere"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/Placard"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/Placard"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_fbmnj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/Placard"]
 position = Vector2(102, -63)
 polygon = PackedVector2Array(615, 163, 614, 404, 828, 405, 825, 163)
 
-[node name="Rat" type="Node2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
+[node name="Rat" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 position = Vector2(-27, 11)
 script = ExtResource("3_rvsmg")
 hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
 
-[node name="Rat" type="Sprite2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/Rat"]
+[node name="Rat" type="Sprite2D" parent="CanvasLayer/RatEtFromage/Rat"]
 position = Vector2(769, 498)
 scale = Vector2(0.257782, 0.257782)
 texture = ExtResource("3_6v4ni")
 
-[node name="DoorInfo" type="Node2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
+[node name="DoorInfo" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 position = Vector2(-505, -140)
 script = ExtResource("3_rvsmg")
 hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.levier_active"])
 
-[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo"]
+[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/DoorInfo"]
 z_index = 1
 script = ExtResource("3_nuxq3")
 timeline = "ch1_RatEtFromage_infirmerie_porte"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/DoorInfo/Area2D"]
 polygon = PackedVector2Array(929, 337, 931, 452, 981.82, 492.058, 967, 582, 1101, 586, 1105, 339)
 
-[node name="RatQuiMange" type="Node2D" parent="CanvasLayer/RatEtFromage/RatEtFromage"]
+[node name="RatQuiMange" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 script = ExtResource("6_edijj")
 hide_if_one_is_false = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/RatQuiMange"]
 position = Vector2(259, 89)
 scale = Vector2(0.249578, 0.249578)
 texture = ExtResource("3_6v4ni")
 
-[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange"]
+[node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/RatQuiMange"]
 script = ExtResource("3_nuxq3")
 timeline = "ch1_RatEtFromage_infirmerie_RatQuiMange"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/RatEtFromage/RatQuiMange/Area2D"]
 polygon = PackedVector2Array(249, 36, 212, 86, 206, 141, 289, 154, 324, 84, 316, 25)
+
+[node name="Trou" type="Sprite2D" parent="CanvasLayer/RatEtFromage"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_a3oe8")
 
 [node name="ReparerLeBateau" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("6_edijj")
@@ -120,8 +142,23 @@ timeline = "default_medecin"
 script = ExtResource("3_nuxq3")
 timeline = "trou_infirmerie"
 
+[node name="TrouQuiCoule" type="Sprite2D" parent="CanvasLayer/ReparerLeBateau/Trou"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_kvwdb")
+script = ExtResource("3_rvsmg")
+hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.trou_infirmerie_repare"])
+
+[node name="TrouRepare" type="Sprite2D" parent="CanvasLayer/ReparerLeBateau/Trou"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_0dji4")
+script = ExtResource("6_edijj")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_infirmerie_repare"])
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerLeBateau/Trou"]
-polygon = PackedVector2Array(598, 514, 450, 586, 568, 632, 741, 589)
+position = Vector2(538, -424)
+polygon = PackedVector2Array(543, 532, 551, 671, 631, 668, 624, 529)
 
 [node name="LoucheMurlock" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("6_edijj")
@@ -137,21 +174,26 @@ destination = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold"]
 polygon = PackedVector2Array(439, 203, 437, 442, 590, 442, 589, 203)
 
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/RatEtFromage/Levier" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/RatEtFromage/Bureau" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/RatEtFromage/Placard" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/RatEtFromage/Placard" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/RatEtFromage/Placard" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/DoorInfo/Area2D" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatEtFromage/RatQuiMange/Area2D" method="_on_mouse_exited"]
+[node name="Trou" type="Sprite2D" parent="CanvasLayer/LoucheMurlock"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_a3oe8")
+
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/Levier" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/Levier" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/Levier" to="CanvasLayer/RatEtFromage/Levier" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/Bureau" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/Bureau" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/Bureau" to="CanvasLayer/RatEtFromage/Bureau" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/Placard" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/Placard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/Placard" to="CanvasLayer/RatEtFromage/Placard" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/DoorInfo/Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/DoorInfo/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/DoorInfo/Area2D" to="CanvasLayer/RatEtFromage/DoorInfo/Area2D" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" to="CanvasLayer/RatEtFromage/RatQuiMange/Area2D" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" to="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" to="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" to="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" method="_on_mouse_exited"]
