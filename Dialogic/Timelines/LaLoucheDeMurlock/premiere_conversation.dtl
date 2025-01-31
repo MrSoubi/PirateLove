@@ -37,7 +37,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 		leave Medecin
 		leave Cannonier
 		update Guet center [move_time="0.4"]
-		Guet (Perroquet): Têteuh de noeeuuud ! Têteuh de noeeuuud !
+		Guet (Perroquet): (Perroquet) Têteuh de noeeuuud ! Têteuh de noeeuuud !
 		PJPensif: Sympathique...
 		Corsaire: Enchanté jeune homme ! Merci encore de m'avoir accueilli.
 		Guet (Fache): Je parle pas aux enflures comme toi.
@@ -56,7 +56,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == false or {Chapitre_1.LaLouc
 if {Chapitre_1.LaLoucheDeMurlock.discussion_guet} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_medecin} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cannonier} == true and {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 	leave Cannonier
 	Guet (Default): Et si tu te rendais utile plutôt que de te tourner les pouces ?
-	Guet (Perroquet): Incâpaableuh ! Incâpaaableuh !
+	Guet (Perroquet): (Perroquet) Incâpaableuh ! Incâpaaableuh !
 	Medecin (SourireSideEye): C'est crûment dit, mais Everett n'a pas tord. On ne peut pas te loger gratuitement. On a bien besoin d'aide sur le bateau, surtout avec l'orage d'hier soir.
 	Corsaire: Bien sûr ! Dites moi simplement ce qu'il vous faut.
 	leave Guet
@@ -94,7 +94,7 @@ if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == true and {Chapitre_1.LaL
 		leave Cannonier
 		update Guet (Fache) center [move_time="0.4"]
 		Guet (Fache): Qu'est-ce que tu me veux ?
-		Guet (Perroquet): Imbécileuuuh ! Imbécileuuuh !
+		Guet (Perroquet): (Perroquet) Imbécileuuuh ! Imbécileuuuh !
 		Corsaire: Simplement savoir où se trouve la louche de Murlock, tu saurais quelque chose à ce propos ?
 		Guet (Default): Tu me traites de voleur ?
 		Corsaire: ...
@@ -168,7 +168,7 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_plats} == true:
 	Cannonier (Rigole): HOURA ! NOTRE SAUVEUR EST ARRIVÉ !
 	Corsaire: Voici votre plat mes amis ! J'espère qu'il vous plaira, Murlock y a mis tout son amour.
 	Guet (Fache): Encore du poulpe ? C'est la 4ème fois cette semaine !
-	Guet (Perroquet): Dégueulaaaasseuh ! Dégueulaaaasseuh !
+	Guet (Perroquet): (Perroquet) Dégueulaaaasseuh ! Dégueulaaaasseuh !
 	Medecin (Default): Les temps sont durs Everett, la capitaine et le second ont déjà la bonté de nous laisser leur part, estime toi heureux.
 	Cannonier (Rigole): DOUBLE RATION POUR MOI, YOUHOUUU !
 	Medecin (Sourire): Et si vous veniez manger avec nous, Allen et Monseigneur Corsaire ?
