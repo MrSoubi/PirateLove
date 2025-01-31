@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://7o4uug361i33"]
+[gd_scene load_steps=22 format=3 uid="uid://7o4uug361i33"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_51kkn"]
-[ext_resource type="Texture2D" uid="uid://74puukxtpdbi" path="res://Textures/illu.png" id="2_cxyf7"]
+[ext_resource type="Texture2D" uid="uid://cebfsuo4537kv" path="res://Textures/menu.png" id="2_dewbb"]
 [ext_resource type="Script" path="res://Scripts/fader.gd" id="2_nuqkf"]
+[ext_resource type="FontFile" uid="uid://dx5ai66d1rofu" path="res://Fonts/ELEGANT TYPEWRITER Bold.ttf" id="3_ouppi"]
 
 [sub_resource type="Gradient" id="Gradient_2o8fv"]
 offsets = PackedFloat32Array(0, 0.701068, 1)
@@ -137,7 +138,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_cxyf7")
+texture = ExtResource("2_dewbb")
+expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Control"]
 layout_mode = 1
@@ -165,7 +167,9 @@ theme_override_constants/margin_top = 300
 
 [node name="Button_NouvellePartie" type="Button" parent="MainMenu/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+theme_override_fonts/font = ExtResource("3_ouppi")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3xjow")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vtr7c")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ys7d3")
@@ -181,7 +185,9 @@ text = "Nouvelle partie"
 
 [node name="Button_Continuer" type="Button" parent="MainMenu/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+theme_override_fonts/font = ExtResource("3_ouppi")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3xjow")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vtr7c")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ys7d3")
@@ -198,6 +204,7 @@ text = "Continuer"
 [node name="NarrationContainer" type="Node2D" parent="."]
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("2_nuqkf")
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
