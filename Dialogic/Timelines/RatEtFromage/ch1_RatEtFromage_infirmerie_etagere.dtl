@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/bg_infirmerie_vierge.png" fade="0.0"]
 if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 	join cadenas center 
 	PJPensif: Hmmm... Ce meuble est vérouillé par un cadenas à code.

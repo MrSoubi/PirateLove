@@ -1,7 +1,8 @@
+[background arg="res://Textures/Locations/bg_infirmerie_vierge.png" fade="0.0"]
 if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 	PJPensif: Le bureau est rempli de papiers avec une écriture illisible
 	Corsaire: Qui travaille ici ?
-	join mousse center 
+	join mousse center
 	mousse: La médecin du bateau, Calico !
 	leave mousse
 	Corsaire: Ça explique l'écriture...

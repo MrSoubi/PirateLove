@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/bg_infirmerie_vierge.png" fade="0.0"]
 if {Chapitre_1.RatEtFromage.levier_active} == false:
 	if {Chapitre_1.RatEtFromage.rat_parti} == false:
 		if {Chapitre_1.RatEtFromage.possede_fromage} == false:
