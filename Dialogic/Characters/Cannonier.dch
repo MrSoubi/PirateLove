@@ -17,11 +17,39 @@
 "portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://Textures/Characters/Cuistot/cuisiniere_neutre.png\""
+"image": "\"res://Textures/Characters/Canonnier/CANNONIER_FINAL.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 120),
+"scale": 1.2,
+"scene": ""
+},
+"Intrigue": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Canonnier/CANNONIER_INTRIGUE.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(0, 120),
+"scale": 1.2,
+"scene": ""
+},
+"Pensif": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Canonnier/CANNONIER_PENSIF.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 120),
+"scale": 1.2,
+"scene": ""
+},
+"Rigole": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Canonnier/CANNONIER_RIGOLE.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 120),
+"scale": 1.2,
 "scene": ""
 }
 },

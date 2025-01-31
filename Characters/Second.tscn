@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://biijrjl0b3pia"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_igj1c"]
-[ext_resource type="Texture2D" uid="uid://dt607v2ldtth8" path="res://Textures/Characters/Canonnier/canonnier_chibi.png" id="2_c5bah"]
+[ext_resource type="Texture2D" uid="uid://d4i2xp5ntv7ix" path="res://Textures/Characters/Second/second_chibi.png" id="2_b1m2w"]
 
 [node name="Second" type="Area2D"]
 script = ExtResource("1_igj1c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c5bah")
+texture = ExtResource("2_b1m2w")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-322, -634, -56, -662, 179, -626, 309, -476, 363, -213, 343, -60, 301, 212, 267, 432, 309, 707, 456, 854, 436, 961, 159, 972, -73, 958, -302, 961, -432, 936, -424, 820, -438, 670, -421, 475, -353, 393, -384, 243, -347, 50, -370, -182, -435, -382, -401, -558)
+polygon = PackedVector2Array(-18, -730, -149, -667, -247, -539, -303, -443, -315, -254, -310, -50, -336, 132, -273, 295, -288, 563, -270, 764, -366, 830, -308, 946, -5, 971, 216, 953, 506, 948, 564, 862, 420, 706, 365, 600, 284, 363, 254, 202, 289, 41, 312, -198, 362, -393, 330, -559, 151, -723)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
