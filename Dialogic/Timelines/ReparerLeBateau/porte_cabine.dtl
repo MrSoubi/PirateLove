@@ -1,5 +1,5 @@
 [background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="0.0"]
-# Ecrire directement le texte, on peut intéragir qu'une seule fois avec la porte, après cette discussion il ne sera plus possible de "discuter" avec.
+
 PJPensif: Bon... Comment je fais pour démanteler cette porte moi ?
 PJPensif: Peut-être que si je tire fort de ce côté ça va se disloquer ?
 Corsaire: À la une, à la deux à la trooOOOIIIIS GNNNNNNNN...
@@ -36,4 +36,5 @@ leave Medecin
 PJPensif: ...Que faire ?
 Item: NOUVEL OBJET OBTENU : PLANCHES
 set {Chapitre_1.ReparerLeBateau.porte_demantelee} = true
+set {Chapitre_1.ReparerLeBateau.possede_bois} = true
 [signal arg="variables_changed"]
