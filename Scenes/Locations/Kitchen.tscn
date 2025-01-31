@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://uc7wiuquw018"]
+[gd_scene load_steps=10 format=3 uid="uid://uc7wiuquw018"]
 
 [ext_resource type="Texture2D" uid="uid://rbjgr6ttyg8t" path="res://Textures/Locations/Cuisine/cuisine.png" id="1_jo5ep"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="2_4pbdh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/item.gd" id="5_0eosh"]
 [ext_resource type="Texture2D" uid="uid://cvdcduejxiprq" path="res://Textures/Locations/Cuisine/trou_eau.png" id="6_yqg6p"]
 [ext_resource type="Texture2D" uid="uid://q7lisk5235r7" path="res://Textures/Locations/Cuisine/trace_poudre.png" id="7_dp8am"]
+[ext_resource type="Texture2D" uid="uid://3nmwvvxbmdlm" path="res://Textures/Locations/Cuisine/planche.png" id="7_t0dva"]
 
 [node name="Kitchen" type="Node"]
 
@@ -46,13 +47,21 @@ timeline = "trou_cuisine"
 position = Vector2(123, -510)
 polygon = PackedVector2Array(475, 491, 393, 554, 459, 583, 581, 504)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
+[node name="Trou" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_yqg6p")
+script = ExtResource("4_of5xr")
+hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.trou_cuisine_repare"])
+
+[node name="Planche" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_t0dva")
+script = ExtResource("2_4pbdh")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_cuisine_repare"])
 
 [node name="LaLoucheDeMurlock" type="Node2D" parent="CanvasLayer"]
-visible = false
 script = ExtResource("4_of5xr")
 hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_finie"])
 
