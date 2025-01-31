@@ -37,7 +37,20 @@ directories/dch_directory={
 "Rat": "res://Dialogic/Items/RatFromageItem/Rat.dch",
 "RatFromageItem/ch1_infirmerie_RatEtFromage_code": "res://Dialogic/Items/RatFromageItem/ch1_infirmerie_RatEtFromage_code.dch",
 "Second": "res://Dialogic/Characters/Second.dch",
-"mousse": "res://Dialogic/Characters/mousse.dch"
+"biscuit": "res://Dialogic/Items/biscuit.dch",
+"cadenas": "res://Dialogic/Items/cadenas.dch",
+"cle": "res://Dialogic/Items/cle.dch",
+"cle_carnet": "res://Dialogic/Items/cle_carnet.dch",
+"fromage": "res://Dialogic/Items/fromage.dch",
+"louche": "res://Dialogic/Items/louche.dch",
+"medaille": "res://Dialogic/Items/medaille.dch",
+"mousse": "res://Dialogic/Characters/mousse.dch",
+"planches": "res://Dialogic/Items/planches.dch",
+"plat": "res://Dialogic/Items/plat.dch",
+"portrait": "res://Dialogic/Items/portrait.dch",
+"rat": "res://Dialogic/Items/rat.dch",
+"rat_fromage": "res://Dialogic/Items/rat_fromage.dch",
+"toile_araignee": "res://Dialogic/Items/toile_araignee.dch"
 }
 directories/dtl_directory={
 "araignees": "res://Dialogic/Timelines/ReparerLeBateau/araignees.dtl",
