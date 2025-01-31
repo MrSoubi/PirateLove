@@ -1,4 +1,4 @@
-[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
+[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="2.0"]
 join Cuistot center
 if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == false:
 	Cuistot (Disregard): Qu'est-ce que tu me veux encore ?

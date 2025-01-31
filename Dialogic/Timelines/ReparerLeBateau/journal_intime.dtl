@@ -1,4 +1,5 @@
-join carnet center 
+[background arg="res://Textures/Locations/CabineCapitaine/cabine.png" fade="2.0"]
+join carnet center
 if {Chapitre_1.ReparerLeBateau.tableau_decouvert} == false:
 	PJPensif: C'est le fameux carnet de la capitaine Liestra. Il a l'air scellé par un cadenas.
 	PJPensif: Est-ce que je devrais vraiment chercher la clé ? Liestra va me détester si je l'ouvre.

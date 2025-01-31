@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/CabineCapitaine/cabine.png" fade="2.0"]
 if {Chapitre_1.ReparerLeBateau.medaillon_decouvert} == false:
 	PJPensif: Je m'en veux de fouiller dans ses affaires. Mais je dois découvrir qui est réellement la capitaine Liestra.
 	*FOUILLE FOUILLE*
@@ -5,7 +6,7 @@ if {Chapitre_1.ReparerLeBateau.medaillon_decouvert} == false:
 	join medaille center
 	PJPensif: Un médaillon ? Il porte un emblême étrange. Serait-ce un butin précieux que Liestra a volé avec une famille noble ?
 	PJPensif: Je vais garder ça de côté.
-	Item: NOUVEL OBJET OBTENU : MEDAILLON
+	Item: NOUVEL OBJET OBTENU \: MEDAILLON
 	set {Chapitre_1.ReparerLeBateau.medaillon_decouvert} = true
 else:
 	PJPensif: J'ai déjà trouvé le médaillon avec ce mystérieux emblême. Je pense que fouiller davantage ne ménera à rien.
