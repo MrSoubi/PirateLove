@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsj8adenv17b6"]
+[gd_scene load_steps=11 format=3 uid="uid://dsj8adenv17b6"]
 
 [ext_resource type="Texture2D" uid="uid://8ilvjlb3yomn" path="res://Textures/Locations/Cale/cale_fini.png" id="1_uhbtq"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_46xdj"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_8py5v"]
 [ext_resource type="Texture2D" uid="uid://b7yurrawak0uw" path="res://Textures/Locations/Cale/trou_test.png" id="8_7tuth"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="9_ab5xv"]
+[ext_resource type="Texture2D" uid="uid://vr11sa4ukvis" path="res://Textures/Locations/Cale/planche_cale.png" id="9_ddee4"]
+[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="9_h27mn"]
 
 [node name="ShipHold" type="Node"]
 
@@ -83,10 +85,19 @@ timeline = "trou_cale"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerBateau/Trou"]
 polygon = PackedVector2Array(80, 448, 113, 437, 145, 440, 169, 449, 211, 446, 272, 455, 265, 484, 209, 503, 181, 529, 108, 537, 66, 510, 47, 482)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
+[node name="trou" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_7tuth")
+script = ExtResource("9_h27mn")
+hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
+
+[node name="planche" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_ddee4")
+script = ExtResource("6_8py5v")
+hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
 
 [connection signal="input_event" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" to="CanvasLayer/NourrirEquipage/Door_To_Kitchen/Door_To_Kitchen" method="_on_mouse_entered"]

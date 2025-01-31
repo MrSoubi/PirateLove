@@ -167,14 +167,11 @@ visible = false
 script = ExtResource("6_edijj")
 hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
-[node name="Door" type="Node2D" parent="CanvasLayer/LoucheMurlock"]
-script = ExtResource("6_edijj")
-
-[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/LoucheMurlock/Door"]
+[node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/LoucheMurlock"]
 script = ExtResource("2_5f6go")
 destination = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/LoucheMurlock/Door_To_ShipHold"]
 polygon = PackedVector2Array(439, 203, 437, 442, 590, 442, 589, 203)
 
 [node name="Trou" type="Sprite2D" parent="CanvasLayer/LoucheMurlock"]
@@ -200,6 +197,6 @@ texture = ExtResource("10_a3oe8")
 [connection signal="input_event" from="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" to="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" method="_on_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" to="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" to="CanvasLayer/ReparerLeBateau/Door/Door_To_ShipHold" method="_on_mouse_exited"]
-[connection signal="input_event" from="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold" to="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold" method="_on_input_event"]
-[connection signal="mouse_entered" from="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold" to="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold" to="CanvasLayer/LoucheMurlock/Door/Door_To_ShipHold" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/LoucheMurlock/Door_To_ShipHold" to="CanvasLayer/LoucheMurlock/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/LoucheMurlock/Door_To_ShipHold" to="CanvasLayer/LoucheMurlock/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/LoucheMurlock/Door_To_ShipHold" to="CanvasLayer/LoucheMurlock/Door_To_ShipHold" method="_on_mouse_exited"]

@@ -23,6 +23,7 @@ expand_mode = 5
 [node name="Cannonier" parent="CanvasLayer" instance=ExtResource("2_ppxru")]
 position = Vector2(321, 374)
 scale = Vector2(0.125726, 0.125726)
+timeline = "default_canonnier"
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_wv11d")
