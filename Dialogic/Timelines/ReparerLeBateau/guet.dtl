@@ -1,18 +1,40 @@
 [background arg="res://Textures/Locations/Placeholders/mat_background.jpg" fade="0.0"]
 # Premiere discussion, en boucle tant qu'on a pas apprivoisé les araignées
+join Guet center
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:
-	Guet: Faut
+	Guet: La toile est complétement déchirée à cause de la tempête d'hier ! On pourra pas prendre le large sans la réparer.
+	Guet: Déchirééééé ! Déchiréééé !
+	Corsaire: Tu sais comment tu vas t'y prendre ?
+	Guet: Mêle toi de tes affaires ! Je peux me débrouiller tout seul !
+	Guet: ...
+	Guet: Mais essaye de trouver de la toile tant que t'y es. J'en ai besoin.
+	Corsaire: Et c'est quoi le mot magiiiique ?
+	Guet: Ragh ! Sérieusement ?!
+	Corsaire: C'est pas "Ragh" le mot magique !
+	Guet: Pfff... Ramène moi ces toiles "s'il te plaît"...
+	Corsaire: Ah ! C'est mieux comme ça ! Je vais en chercher de suite.
+	Guet: Fayoooot ! Fayoooot !
 	set {Chapitre_1.ReparerLeBateau.discussion_guet_toile} = true
 	[signal arg="variables_changed"]
 else:
-	on annonce avoir trouvé de la toile
-	le guet est content
+	Guet: Waouw ! C'est des araignées qui se baladent partout sur toi ?
+	Corsaire: Je t'en prie, débarasse m'en. Je voulais les apprivoiser pour les faire réparer la toile, mais je regrette.
+	Guet: Passe moi tes biscuits ! Je vais les faire partir
+	*CROUNCH*
+	PJPensif: Il balance les biscuits en miette sur la voile ? ...Mais, ÇA MARCHE !
+	Corsaire: Elles sont partis ! Bien joué Everett.
+	Guet: Et puis regarde sur la voile ! Elles sont en train de la réparer !
+	PJPensif: C'est pas croyable, elles sont vraiment en train de tisser une toile sur la voile...
+	Corsaire: C'est que tu t'y connais drôlement bien en animaux !
+	Guet: J'adore les animaux ! Contrairement aux humains, ils sont incapables de mentir, donc quand on apprend à les comprendre, on peut leur faire confiance.
+	PJPensif: C'est une belle leçon de vie.
 	set {Chapitre_1.ReparerLeBateau.voile_reparee} = true
 	[signal arg="variables_changed"]
 
 # Tous les travaux ont été réalisés
-if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true:
-	Bla bla de fin de quete
+if {Chapitre_1.ReparerLeBateau.voile_reparee} == true and {Chapitre_1.ReparerLeBateau.trou_cale_repare} == true and {Chapitre_1.ReparerLeBateau.trou_cuisine_repare} == true and {Chapitre_1.ReparerLeBateau.trou_infirmerie_repare} == true :
+	Guet: On a fini de tout réparer. Tu peux retourner te reposer sur le pont ! Je reste ici pour sonder l'horizon.
+	Corsaire: Merci Everett.
 	set {Chapitre_1.ReparerLeBateau.quete_finie} = true
 	set {Chapitre_1.ReparerLeBateau.quete_en_cours} = false
 	[signal arg="variables_changed"]

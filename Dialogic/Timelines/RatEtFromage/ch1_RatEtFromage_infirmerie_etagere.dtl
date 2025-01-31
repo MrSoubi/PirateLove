@@ -7,16 +7,17 @@ if {Chapitre_1.RatEtFromage.cadenas_ouvert} == false:
 	- Entrer le code
 		[text_input text="Entrer le code :" var="Chapitre_1.RatEtFromage.code" allow_empty="true"]
 		if {Chapitre_1.RatEtFromage.code} == "1312":
-			*CLICK* Le cadenas s'est ouvert !
+			*CLICK* 
+			Corsaire: Le cadenas s'est ouvert !
 			set {Chapitre_1.RatEtFromage.cadenas_ouvert} = true
 		else:
 			Corsaire: Argh, C'est pas le bon code...
 else:
 	if {Chapitre_1.RatEtFromage.possede_fromage} == false:
 		join fromage center 
-		PJPensif: *Un vieux fromage pourri boude au fond d'une étagère.*
-		PJPensif: *Il semble vivre ses derniers instants.*
-		PJPensif: *Il ne vous donne pas très envie, mais peut être que quelqu'un, ou quelque chose, en voudrait ?*
+		PJPensif: Un vieux fromage pourri boude au fond d'une étagère.
+		PJPensif: Il a l'air de vivre ses derniers instants.
+		PJPensif: Son odeur me tord l'estomac, mais peut être que quelqu'un, ou quelque chose, en voudrait ?
 		- Prendre le fromage
 			Item: NOUVEL OBJET OBTENU : FROMAGE
 			leave fromage
@@ -24,6 +25,6 @@ else:
 		- Laisser le fromage
 			Corsaire: Je risque d'attraper la mort si je touche ce truc...
 	else:
-		PJPensif: *L'odeur laisserait penser que quelque chose vit là dedans.*
-		PJPensif: *Pourtant c'est bel et bien vide.*
+		PJPensif: L'odeur laisserait penser que quelque chose vit là dedans.
+		PJPensif: Pourtant c'est bel et bien vide.
 [signal arg="variables_changed"]
