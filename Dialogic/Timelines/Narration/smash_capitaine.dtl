@@ -1,11 +1,11 @@
 [music path="res://Music/fin_capitaine.mp3" fade="3.0" volume="0.0"]
 
 # #fond pont 2
-[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
+[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
 
 # #sprite capitaine smirk flirt sprite second mécontent 
 join Capitaine center
-join Second center
+join Second left
 Le Second se lève, sans dire mot, et quitte le pont, visiblement mécontent ou insatisfait.
 leave Second
 Capitaine: Il n’a pas pour habitude qu’on résiste à son charme de serpent.
@@ -16,7 +16,7 @@ Capitaine: Appelle-moi Carmen, dorénavant.
 Corsaire: ...merci, Carmen.
 
 # #illu capitaine smash
-[background arg="res://Textures/Narration/illu capitaine fin .jpg" fade="0.0"]
+[background arg="res://Textures/Narration/illu capitaine fin .jpg" fade="2.0"]
 Carmen pose son coude sur le rebord du bateau.
 Elle contemple l’horizon, les vagues frétillantes et les rayons de fin de journée.
 Je ne peux m’empêcher de regarder ses cheveux virevoltant.

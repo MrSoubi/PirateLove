@@ -17,7 +17,34 @@
 "portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://Textures/Characters/Cuistot/cuisiniere_neutre.png\""
+"image": "\"res://Textures/Characters/Second/Second_neutre.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Malaise": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_experssion_malaisetv.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Oeil_ferme": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_neutre.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Rire": {
+"export_overrides": {
+"image": "\"res://Textures/Characters/Second/Second_rire.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

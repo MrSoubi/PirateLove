@@ -1,12 +1,12 @@
 [music path="res://Music/fin_celibat.mp3" fade="3.0" volume="0.0"]
-[background fade="0.0"]
+[background arg="res://Textures/Locations/CabineCapitaine/cabine.png" fade="0.0"]
 Un silence s’installe dans la pièce.
 Un silence drôlement pesant.
 La capitaine se lève brusquement, tapant sur la première chose à sa portée de ses deux mains.
 
 # #sprite énervé second + capitaine
-join Capitaine center
-join Second center
+join Capitaine (Enervee) left
+join Second (Malaise) center
 Capitaine: Assez !
 Capitaine: Je te laisse gérer ça, Seth !
 
@@ -18,7 +18,7 @@ PJPensif: Aïe !
 En face de moi le second ne bronche pas, toujours aussi insatisfait.
 
 # #sprite énervé second
-Second: Bon...
+Second (Oeil_ferme): Bon...
 
 ...
 
@@ -37,16 +37,17 @@ Second: Tu devrais éviter de faire ce genre de blague, surtout quand tu n’en 
 Corsaire: Bah super.
 
 # #enviro du pont
-[background fade="0.0"]
+[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
 Bredouille, le corsaire descend du bateau la queue entre les jambes.
 # #sprite équipage énervé ou confus/surpris en fonction des sprites dispos
-join Cannonier center
-join Cuistot center
-join mousse center
+join Cannonier (Intrigue) rightmost
+join Cuistot (Disregard) right
+join mousse (Stress) leftmost
 Les autres membres de l’équipage le regardent passer, mécontents. Les nouvelles vont vite, il semblerait.
 # #illus bateau au loin
 
 [background arg="res://Textures/Narration/illu_fin_échec.png" fade="0.0"]
+leave --All--
 Une fois les deux pieds sur terre, il regarde une dernière fois le bateau.
 Ce n’est ni la nostalgie, ni la tristesse qui se lit dans ses yeux plutôt du soulagement.
 

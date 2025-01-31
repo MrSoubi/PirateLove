@@ -1,5 +1,5 @@
 [music path="res://Music/test_du_second.mp3" fade="3.0" volume="0.0"]
-[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="0.0"]
+[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
 
 # #bateau réparé, le second nous interpelle / pont
 Les manches retroussées, le corps et les cheveux luisant de ma transpiration et j’atteins le pont.

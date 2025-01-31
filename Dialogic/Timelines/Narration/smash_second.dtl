@@ -1,3 +1,119 @@
 [music path="res://Music/fin_second.mp3" fade="3.0" volume="0.0"]
-on smash le second
+
+[background arg="res://Textures/Locations/Deck_1/pont_2.png" fade="2.0"]
+# #sprite second flirt sprite capitaine mécontent
+join Second (Oeil_ferme) center
+join Capitaine (Enervee) left
+La capitaine passe une main vive dans ses longs cheveux bruns.
+# #sprite capitaine yeux mi-clos
+update Capitaine (Apaisee_yeux_mi_clos)
+Elle soupire, croise les bras, hésite un instant puis soupire.
+
+# #sprite capitaine doute
+update Capitaine (Doute)
+Capitaine: Je vais y aller…
+
+D’un pas décidé, elle se retire dans sa cabine.
+leave Capitaine
+
+# #sprite second sourire en coin
+update Second (Rire)
+Le Second et l’ancien Corsaire échangent un rapide coup d'œil, l’un confus, l'autre avec un sourire sur les lèvres, les yeux remplis de malice.
+Corsaire: Je ne suis pas sûr de tout comprendre.
+Second: Je crois qu’elle se doute de quelque chose.
+…
+# #sprite second malice
+update Second (Oeil_ferme)
+Second: Tu as fouillé dans sa cabine, n’est ce pas ? Celle de Carmen.
+
+Ébranlé, le Corsaire fait un pas en arrière. Il avait peut-être dépassé les bornes en fouillant dans l'intimité de la Capitaine.
+
+PJPensif: Comment a-t-il pu savoir ?
+
+Mais il ne possédait plus d’armes et ne pouvait pas se battre.
+Son cœur battait dans sa poitrine si fort, et si pendant tout ce temps il le menait en bateau ?
+Peut-être que l'entièreté de l’équipage était déjà au courant de son ancienne mission.
+Peut-être qu’il voulait juste l'humilier et l'abattre ?
+
+PJPensif: Je dois me sortir de là, vite !
+
+Mais une main saisit son poignet.
+
+# #sprite rire second
+update Second (Rire)
+Second: Viens avec moi !
+PJPensif: Sa main est étrangement douce pour quelqu'un qui passe ses journées en mer.
+
+Il le prit à part de l’autre côté du pont
+# #illus pont 2 ? Genre l’autre illus de pont
+[background arg="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" fade="2.0"]
+Corsaire: Pourrais-je avoir des explications ? Juste un peu ? Ça me semble approprié.
+Il s’agenouille sur le pont, à mes pieds et plante ses yeux dans les miens.
+PJPensif: Je sens mon coeur faire un bond dans ma poitrine.
+# #sprite blush + flirt second
+update Second (Oeil_ferme)
+Il pose ma main sur sa joue en fermant les yeux.
+# #sprite blush + flirt second
+Lorsqu’il les rouvre, il pose un délicat baiser au creux de ma main.
+# #sprite blush + flirt second
+Second: Traites-moi d'imbécile, mais dès que j’ai posé les yeux sur toi j’ai été épris de jalousie.
+Second: Jaloux… de la Capitaine.
+Second: Ça va te paraître insensé mais est-ce que tu es prêt à devenir mon Second ?
+Corsaire: Second ?
+PJPensif: Je ne sais pas ce que tout cela signifie mais au fond de moi, je sais que j’avais envie de le suivre.
+PJPensif: Apprendre tout ça sur la Capitaine… Son passé d’esclavagiste. Ce n’était plus elle que j’avais envie de suivre au bout du monde.
+…
+Corsaire: Si tu es un imbécile alors je serais un fou.
+
+L’ancien Second se releva, les yeux humides, le regard plein d’espoir et les deux se prirent dans les bras.
+
+Corsaire: Alors, Capitaine ? Quel est le plan ?
+# #sprite blush + flirt second
+Second: Seth, pour toi ce sera juste Seth.
+Corsaire: Mais d’ailleurs, tu étais au courant de tout ça depuis le début ?
+# #sprite second mécontent
+update Second (Malaise)
+Second: …
+Second: J’avais un ami, il y a longtemps…
+Second: C’est Carmen qui l'a enlevée pour en faire un esclave. On était orphelin, c’était la seule personne de confiance dans ma vie.
+
+Un silence empli d’émotions s’installe pendant un instant.
+
+Second: J’ai décidé de le retrouver. Il était déjà mort lorsque j'ai rejoint l’équipage…
+Second: J’ai vu son cadavre se faire lancer dans l’eau comme un vulgaire déchet dont on n’avait plus besoin.
+Second: Depuis, j’ai juré de le venger.
+Second: Un simple retour de bâton
+Corsaire: Je comprends.
+
+Ils furent interrompus par des cris provenant de la cabine de la capitaine. Des cris furieux.
+La Capitaine en était sortie maintenue par la cuisinière et le canonnier.
+
+# #sprite capitaine énervé
+join Capitaine (Enervee) left
+Capitaine: Ça veut dire quoi tout ce bordel ?!
+Et si on la mettait dans le canon ?
+Second: C’est un peu trop… La planche suffira.
+Capitaine: Seth ! Espèce de.. !
+
+Il s’avança vers elle d'un pas confiant, le torse bombé.
+
+Second: C’était un plaisir Capitaine.
+
+# #illus fin mutinerie
+leave --All--
+[background arg="res://Textures/Narration/fin_mutinerie.png" fade="2.0"]
+Il lui prit son chapeau et le pose sur sa tête.
+Les autres membres de l’équipage se tiennent fièrement derrière le nouveau Capitaine.
+
+Seth se retourne vers moi et prend mes mains dans les siennes.
+Je ne peux pas m’empêcher de sourire, tellement que j’en ai mal aux joues.
+# #sprite blush + flirt second
+join Second (Rire) center
+Second: Tu as un adorable sourire, tu sais.
+Corsaire: Pas autant que le tien.
+Nos mains s'entrelacent comme deux fous liés perdus dans un sentiments plus fort que nous.
+Seth m’embrasse enfin, les joues mouillées de joie, nous sommes deux heureux sur le pont d’un navire en pleine mer.
+Finalement se sont ses lèvres qui ont le goût du rhum arrangé…
+
+
 [music fade="2.0" volume="0.0"]

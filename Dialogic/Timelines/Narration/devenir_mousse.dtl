@@ -3,7 +3,7 @@
 
 # #sprite second + capitaine confus
 join Second center
-join Capitaine center
+join Capitaine left
 Les deux commandants regardent l’ancien corsaire avec une moue plus que perplexe.
 Ils le dévisagent de haut en bas, comme s' ils regardaient un alien venu du ciel.
 
@@ -61,6 +61,7 @@ Capitaine: Bienvenue à bord, mousse !
 D’un coup de pied, elle le poussa sur le pont un grand sourire sur les lèvres.
 
 # #illus fin mousse
+leave --All--
 [background arg="res://Textures/Narration/illu_fin_mousse.png" fade="0.0"]
 PJPensif: Eh bien si j’avais su que je finirais à récurer le pont de pirate, j’aurais choisi une autre taverne que celle d' hier soir.
 PJPensif: Je jure de plus jamais accepter des missions de mariée disparue, plus jamais…
