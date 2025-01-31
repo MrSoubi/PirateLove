@@ -74,6 +74,7 @@ directories/dtl_directory={
 "smash_second": "res://Dialogic/Timelines/Narration/smash_second.dtl",
 "tableau": "res://Dialogic/Timelines/ReparerLeBateau/tableau.dtl",
 "test_du_second": "res://Dialogic/Timelines/Narration/test_du_second.dtl",
+"timeline_test": "res://Dialogic/Timelines/timeline_test.dtl",
 "trou_cale": "res://Dialogic/Timelines/ReparerLeBateau/trou_cale.dtl",
 "trou_cuisine": "res://Dialogic/Timelines/ReparerLeBateau/trou_cuisine.dtl",
 "trou_infirmerie": "res://Dialogic/Timelines/ReparerLeBateau/trou_infirmerie.dtl",
@@ -157,7 +158,6 @@ glossary/default_case_sensitive=true
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
