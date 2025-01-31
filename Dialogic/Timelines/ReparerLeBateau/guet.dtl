@@ -3,7 +3,7 @@
 join Guet center
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:
 	Guet (Fache): La toile est complétement déchirée à cause de la tempête d'hier ! On pourra pas prendre le large sans la réparer.
-	Guet (Perroquet): Déchirééééé ! Déchiréééé !
+	Guet (Perroquet): (Perroquet) Déchirééééé ! Déchiréééé !
 	Corsaire: Tu sais comment tu vas t'y prendre ?
 	Guet (Fache): Mêle toi de tes affaires ! Je peux me débrouiller tout seul !
 	Guet: ...
@@ -13,7 +13,7 @@ if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:
 	Corsaire: C'est pas "Ragh" le mot magique !
 	Guet (Default): Pfff... Ramène moi ces toiles "s'il te plaît"...
 	Corsaire: Ah ! C'est mieux comme ça ! Je vais en chercher de suite.
-	Guet (Perroquet): Fayoooot ! Fayoooot !
+	Guet (Perroquet): (Perroquet) Fayoooot ! Fayoooot !
 	set {Chapitre_1.ReparerLeBateau.discussion_guet_toile} = true
 	[signal arg="variables_changed"]
 else:
