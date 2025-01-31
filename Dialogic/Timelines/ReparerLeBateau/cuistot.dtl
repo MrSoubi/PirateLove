@@ -1,4 +1,4 @@
-join Cuistot center
+[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
 if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == false:
 	Cuistot: Qu'est-ce que tu me veux encore ?
 	Corsaire: Euh... je voulais savoir si tu sais où on peut trouver de la toile ou des planches.
@@ -19,7 +19,7 @@ if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == true and {Chapitr
 	Cuistot: Tiens, c'est pour toi !
 	Corsaire: C'est vrai qu'ils ont l'air appétissants.
 	Cuistot: TOUT DANS CETTE CUISINE EST APPÉTISSANT !
-	NOUVEL OBJET OBTENU : BISCUITS
+	NOUVEL OBJET OBTENU \: BISCUITS
 	set {Chapitre_1.ReparerLeBateau.possede_biscuit} = true
 	[signal arg="variables_changed"]
 	[end_timeline]

@@ -30,3 +30,5 @@ destination = 3
 polygon = PackedVector2Array(253, 526, 375, 594, 403, 683, 24, 713, -101, 571)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_mouse_exited"]

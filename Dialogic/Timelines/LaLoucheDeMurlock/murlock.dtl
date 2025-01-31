@@ -1,6 +1,7 @@
 # #####
 # Première discussion avec Murlock, n'apparaît qu'une seule fois
 # #####
+[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
 if {Chapitre_1.LaLoucheDeMurlock.discussion_cuistot} == false:
 	*CRASH, WHAM, BLANG, BOUM*
 	join Cuistot (Angry) center [animation="Fade In Down"]

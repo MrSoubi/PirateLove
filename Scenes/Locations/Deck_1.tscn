@@ -23,6 +23,7 @@ expand_mode = 5
 [node name="Cannonier" parent="CanvasLayer" instance=ExtResource("2_ppxru")]
 position = Vector2(321, 374)
 scale = Vector2(0.125726, 0.125726)
+timeline = "default_canonnier"
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_wv11d")
@@ -63,5 +64,14 @@ texture = ExtResource("6_kve8e")
 polygon = PackedVector2Array(593, 278, 629, 307, 675, 288, 702, 326, 674, 367, 605, 365, 554, 356, 579, 287)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Door_To_Mast" to="CanvasLayer/Door_To_Mast" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door_To_Mast" to="CanvasLayer/Door_To_Mast" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door_To_Mast" to="CanvasLayer/Door_To_Mast" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door_To_Deck2" to="CanvasLayer/Door_To_Deck2" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/Araignees" to="CanvasLayer/Araignees" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Araignees" to="CanvasLayer/Araignees" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Araignees" to="CanvasLayer/Araignees" method="_on_mouse_exited"]

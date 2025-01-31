@@ -45,6 +45,7 @@ directories/dch_directory={
 "louche": "res://Dialogic/Items/louche.dch",
 "medaille": "res://Dialogic/Items/medaille.dch",
 "mousse": "res://Dialogic/Characters/mousse.dch",
+"parchemin": "res://Dialogic/Items/parchemin.dch",
 "planches": "res://Dialogic/Items/planches.dch",
 "plat": "res://Dialogic/Items/plat.dch",
 "portrait": "res://Dialogic/Items/portrait.dch",

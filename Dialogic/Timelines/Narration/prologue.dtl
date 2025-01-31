@@ -2,31 +2,23 @@
 [music path="res://Music/prologue_music.mp3" fade="5.0" volume="0.0"]
 [background arg="res://Textures/Narration/Prologue_Black_screen.jpg" fade="0.0"]
 Trempé jusqu'à l’os, les muscles courbaturés, un corsaire passe la porte de la première taverne sur son chemin.
-PJPensif: Soupir
 PJPensif: Enfin un endroit chaud où je peux trouver un semblant de réconfort.
-Le tonnerre gronde dehors, accompagné par la violente averse qui lacérait toutes âmes qui osaient s'y confronter.
 PJPensif: Cette satanée tempête m’a fait perdre mon bateau et mon équipage.
 Corsaire: Quelle journée de merde...
-PJPensif: Je n’ai qu’une seule envie \: me poser, m’asseoir et prendre une bonne bouteille de gnôle, au moins pour panser la douleur des pertes de la journée.
-Avec un pas las, il se fraie un chemin dans l’amas de pochtrons, jusqu'au comptoir. Le bruit ambiant couplé du brouhaha était particulièrement bruyant.
-PJPensif: J’ai bien d'autres chats à fouetter ce soir que ces vulgaires soûlards.
-Une fois assis, il a l’impression qu’un poids énorme est retombé.
+PJPensif: Je n’ai qu’une seule envie \: me poser, m’asseoir et prendre une bonne bouteille de gnôle.
 Qu’est ce que je te sers ?
-Corsaire: Pff… Servez-moi votre meilleur rhum arrangé…. la plus chargée possible. Que je puisse au moins noyer autre chose que mon bateau ou mon équipage.
-Le tintement des glaçons dans le verre lui laisse un sourire amer sur les lèvres.
+Corsaire: Pff… Servez-moi votre meilleur rhum arrangé…. Le plus chargé possible.
+Corsaire: Que je puisse au moins noyer autre chose que mon bateau ou mon équipage.
 PJPensif: Finalement, la soirée ne se finit pas si mal.
 Le barman pose le verre sur le comptoir et le fait glisser jusqu’au corsaire.
-Une fois dans sa main, il le lève jusqu’à son nez. La bonne odeur du liquide cristallin l'enivre alors qu’il le fait tourner dans le verre.
+Une fois dans sa main, il le lève jusqu’à son nez.
 En une gorgée, il le bois.
 
 # #Illus qui s’affiche maintenant ?
-[background arg="res://Textures/Narration/illu_prologue_capitaine_flirt.jpg" fade="2.0"]
+[background arg="res://Textures/Narration/illu_bar.jpg" fade="2.0"]
 Capitaine: Joli cul-sec !
 Surpris, il se retourne, se confrontant à une magnifique femme au large chapeau vert.
 Capitaine: C’est la première fois que je te vois, ici. T’es nouveau ?
-Elle le dévisage de haut en bas, semblant le juger en effleurant du bout des doigts le goulot de verre dans un mouvement circulaire.
-Corsaire: Merci…
-Il souffle en passant une main fatiguée sur son visage.
 Corsaire: Ouais, c’est la première fois que je viens ici, plutôt que j'atterris ici.
 Elle se penche sur le bar nonchalamment, toujours en fixant le corsaire, une lueur d’intérêt pétillant dans ses yeux menthe.
 Une odeur d’épices et de cannelle se dégage de ses cheveux lorsqu’elle les fait voler d’un vif geste de main.
@@ -38,23 +30,15 @@ Un sourire sur ses lèvres, elle lève les bras pour s’étirer.
 Elle vacille un peu, même beaucoup.
 Lorsqu’elle se penche en arrière, il ne peut s'empêcher de mettre une main dans son dos pour éviter qu’elle ne chute.
 PJPensif: Elle n’en est pas à son premier verre, pour sûr.
-Cette fois, c’est au tour du corsaire de la dévisager.
-Un ample manteau vert d’eau drape ses épaules, bien draché.
-De ses longs cheveux châtains perlent de grosses gouttes, alors que son chapeau luit à cause de l’eau qui le recouvre.
-De tout évidence, elle aussi avait été victime de ce maudit orage.
-Il se penche à son tour vers elle, posant un bras près de son verre pour se soutenir.
 Corsaire: Longue nuit ?
 Il questionne, une pointe de cynisme dans sa voix. La réponse du capitaine est un rire venant du cœur.
 PJPensif: Je suis soit particulièrement drôle ce soir, soit c’est l’alcool monté à sa tête.
-En soufflant du nez, elle enchaîne.
 Capitaine: Bahaha ! Entre nous deux, je suis celle qui a la meilleure mine.
 Capitaine: T’as vraiment l’air pathétique !
 PJPensif: Elle n'a pas tort.
 Capitaine: S’tu veux, je te paye ton prochain verre. Peu importe ce que tu veux commander.
 Capitaine: Comme ça tu peux passer un peu de temps avec une capitaine hyper sympa, plutôt que ruminer du noir.
 Corsaire: Avec plaisir !
-Avec entrain, la capitaine lève la main pour pouvoir commander deux autres verres. D’alcool évidemment.
-Le barman s’exécute.
 Capitaine: Alors… Qu’est ce que tu fais ici, perdu dans ce trou ? Enfin autre que la météo.
 Quelques secondes de silence s'écoulent.
 C’était une histoire de mariée disparue.
@@ -124,6 +108,32 @@ leave --All-- [animation="Slide Out Down" length="2.0"]
 Malgré la douce voix de Carmen et sa brûlante envie d’apprendre à la connaître, Corsaire finit par s’endormir emporté par le marchand de sable.
 [music fade="3.0" volume="0.0"]
 [wait time="3.0"]
+
+# Faire ça pour l'intro
+[background]
+join mousse center
+PJPensif: Ma tête me fait atrocement mal...
+Corsaire: Aïeuh... Où est-ce que je suis ?
+mousse: *BAM* Comment s'ouvre cette fichue porte ?!
+Corsaire: Hein ? Qui est là ?
+mousse: AAAAAAAAAAH !
+Corsaire: AAAAH ! Qu'est-ce qui vous prend à crier comme ça ?!
+mousse: Pardon vous m'avez fait peur. Je ne pensais pas vous voir vous réveiller de sitôt au vue de votre état hier soir.
+Corsaire: Comment ça ? Qu'est-ce qu'il s'est passé hier soir ?
+mousse: Je vous ai retrouvé tout titubant, rond comme un phoque, implorant pour un endroit où dormir. Je n'ai pas trouvé meilleur endroit que l'infirmerie pour vous coucher.
+PJPensif: Je me souviens avoir passé une soirée à la taverne, mais pourquoi aurais-je autant abusé de la boisson ? Ça ne me ressemble pas...
+mousse: Vous ressembliez à une épave ! Vous n'arrêtiez pas de parler de bateau coulé et de femme, j'avoue ne pas avoir tout suivi.
+PJPensif: ...Mais bien sûr ! J'ai perdu mon bateau et mon équipage dans cette affreuse tempête et je me suis retrouvé échoué sur cette île. je suis allé à cette taverne et puis...
+PJPensif: Bazard de zut ! Je ne me souviens plus de rien après ça, même plus de la raison de ma venue.
+PJPensif: Je sais ! Mon ordre de mission était dans ma poche...
+Corsaire:...
+Corsaire:Où est ma veste ?
+mousse: Votre veste ? Je ne vous ai jamais vu avec une veste je crois.
+Corsaire: Raaagh ! Comment faire ?! Il faut absolument que je trouve quelqu'un qui puisse me rafraîchir la mémoire.
+mousse: Mon équipage pourrait bien vous aider, mais je crois bien que la porte de sortie refuse de bouger.
+Corsaire: Hum... Comment vous appelez-vous ?
+mousse: Allen ! Mousse professionnel de père en fils !
+Corsaire: Eh bien mon cher Allen, je crois bien que nous allons devoir collaborer pour sortir d'ici !
 
 set {prologue_fini} = true
 set {Chapitre_1.RatEtFromage.quete_en_cours} = true

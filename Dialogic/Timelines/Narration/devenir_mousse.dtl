@@ -1,3 +1,69 @@
 [music path="res://Music/fin_mousse.mp3" fade="3.0" volume="0.0"]
-là on est une grosse merde
+[background]
+
+#sprite second + capitaine confus
+join Second
+join Capitaine
+Les deux commandants regardent l’ancien corsaire avec une moue plus que perplexe.
+Ils le dévisagent de haut en bas, comme s' ils regardaient un alien venu du ciel. 
+
+Capitaine: Eh bien eh bien…
+Second: Uhm- 
+
+Cette fois ils se regardent. 
+
+Capitaine: Tu aimes bien la vie sur le bateau ? Au moins…  ?
+Corsaire: Oui ! Bien sûr !
+#sprite capitaine side eye 
+update Capitaine
+Capitaine: Super…
+#sprite second malaise
+update Second
+Second: On va te trouver une utilité c’est sûr.
+
+Le second se lève, après avoir échangé un dernier regard avec Carmen.  
+
+Narrateur: Je crois avoir dans chié dans la colle comme on pourrait dire par chez moi.
+Corsaire: C’est une bonne nouvelle ? 
+#sprite capitaine doute
+update Capitaine
+Capitaine: On peut dire ça en quelques sens.
+Capitaine: En tout cas, tu sais, cette soirée…
+Corsaire: Oui ! 
+
+La capitaine détourne les yeux, comme prise d’un léger malaise. Elle se racle la gorge l’espace d’un instant pour simplement reprendre ses esprits. 
+
+Capitaine: Je crois que j’étais un peu trop saoule. On ferait mieux de laisser ça derrière nous.
+Corsaire: C'est-à-dire ?
+#sprite capitaine doute
+update Capitaine
+Capitaine: C’est à dire que tes réponses ne sont pas… ce que je recherche si tu vois ce que je veux dire.
+Capitaine: C’était très sympa, tu es très sympa mais sans plus.
+
+Le Second revient un seau dans la main et dans l’autre un balai. 
+Carmen lui jette un regard, acquiesçant avec un sourire satisfait.
+
+PJPensif: Je ne sens rien de bon.
+#sprite capitaine sourire
+update Capitaine
+Capitaine: Voilà ! Parfait ! 
+Corsaire: C-Comment ça ?
+Second: Tu as bien fait connaissance avec Allen, n’est ce pas ? Le mousse…
+Corsaire: Oui, mais-
+Capitaine: PARFAIT !
+Elle se lève subitement. D’un pas confiant, elle se redirige vers Seth et prend de ses mains les ustensiles de nettoyage. 
+Elle les plaque sur le torse du corsaire.
+
+#sprite capitaine sourire
+update Capitaine
+Capitaine: Bienvenue à bord, mousse !
+
+D’un coup de pied, elle le poussa sur le pont un grand sourire sur les lèvres.
+
+#illus fin mousse
+[background]
+PJPensif: Eh bien si j’avais su que je finirais à récurer le pont de pirate, j’aurais choisi une autre taverne que celle d' hier soir. 
+PJPensif: Je jure de plus jamais accepter des missions de mariée disparue, plus jamais…
+PJPensif: Surtout, maintenant c’est l’alcool que j’arrête. Maximum deux verres par jour, et pas tous les jours… 
+
 [music fade="2.0" volume="0.0"]

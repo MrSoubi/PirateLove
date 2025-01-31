@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/Cuisine/cuisine.png" fade="0.0"]
 if {Chapitre_1.LaLoucheDeMurlock.indice_poudre} == true:
 	jump indice
 Cuistot (Disregard): C'est là que je range ma louche d'habitude.

@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/Placeholders/mat_background.jpg" fade="0.0"]
 # Premiere discussion, en boucle tant qu'on a pas apprivoisé les araignées
 join Guet center
 if {Chapitre_1.ReparerLeBateau.araignees_apprivoisees} == false:

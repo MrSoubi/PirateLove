@@ -11,7 +11,7 @@ Second: Encore toi beau gosse, ça s’est bien passé ?
 
 Corsaire: Oui, plutôt bien.
 # #sprite second sourire
-update Second
+update Second center
 Second: Heureux de l’entendre !
 Ça aurait été encore mieux avec toi.
 # #sprite second flirt / blush

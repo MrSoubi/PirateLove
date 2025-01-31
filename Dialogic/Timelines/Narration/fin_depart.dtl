@@ -1,3 +1,58 @@
 [music path="res://Music/fin_celibat.mp3" fade="3.0" volume="0.0"]
-là on se fait tej
+[background]
+Un silence s’installe dans la pièce. 
+Un silence drôlement pesant. 
+La capitaine se lève brusquement, tapant sur la première chose à sa portée de ses deux mains.
+
+#sprite énervé second + capitaine
+join Capitaine
+join Second
+Capitaine: Assez ! 
+Capitaine: Je te laisse gérer ça, Seth !
+
+Elle part aussitôt, tapant du talon, visiblement énervée.
+leave Capitaine
+
+PJPensif: Aïe !
+
+En face de moi le second ne bronche pas, toujours aussi insatisfait. 
+
+#sprite énervé second
+Second: Bon...
+
+...
+
+Second: J’ai bien l’impression que tu n’as pas vraiment les mêmes valeurs que nous...
+Corsaire: J’imagine que- 
+Second: Tu ferais mieux d’oublier tout. Quand je dis tout, je dis tout ce qui s'est passé sur le bateau.
+Corsaire: Ouais je-
+Second: Vais y aller, en effet. 
+
+Les deux hommes se levèrent, dans un silence les mettant inévitablement mal à l’aise. 
+Ni l’un, ni l'autre ne voulaient, n’osaient dire mots.
+
+Second: Je vais te laisser y aller par toi-même.
+Corsaire: Au moins je ne passe pas par la planche...
+Second: Tu devrais éviter de faire ce genre de blague, surtout quand tu n’en es pas si loin...
+Corsaire: Bah super.
+
+#enviro du pont
+[background ]
+Bredouille, le corsaire descend du bateau la queue entre les jambes.
+#sprite équipage énervé ou confus/surpris en fonction des sprites dispos
+join Cannonier
+join Cuistot
+join mousse
+Les autres membres de l’équipage le regardent passer, mécontents. Les nouvelles vont vite, il semblerait.
+#illus bateau au loin
+
+[background]
+Une fois les deux pieds sur terre, il regarde une dernière fois le bateau. 
+Ce n’est ni la nostalgie, ni la tristesse qui se lit dans ses yeux plutôt du soulagement.
+
+Corsaire: Souffle
+PJPensif: Eh bah comme quoi, je crois que je l’ai échappé belle. 
+PJPensif: Qui sait ce qui aurait pu m’arriver sur ce bateau.
+PJPensif: Je jure de ne plus jamais accepter des missions de mariée disparue, plus jamais…
+PJPensif: Surtout, maintenant c’est l’alcool que j’arrête. Maximum deux verres par jour, et pas tous les jours…
 [music fade="2.0" volume="0.0"]

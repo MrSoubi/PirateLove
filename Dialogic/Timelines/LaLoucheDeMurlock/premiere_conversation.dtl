@@ -1,3 +1,4 @@
+[background arg="res://Textures/Locations/Cale/cale_fini.png" fade="0.0"]
 join Guet left
 join Cannonier center
 join Medecin right
@@ -153,7 +154,7 @@ if {Chapitre_1.LaLoucheDeMurlock.possede_louche} == true:
 # #####
 if {Chapitre_1.LaLoucheDeMurlock.cuistot_possede_louche} == true and {Chapitre_1.LaLoucheDeMurlock.possede_plats} == false:
 	leave Guet
-	update  Medecin
+	update Medecin
 	update Cannonier left
 	Medecin: Alors, où sont ces plats ?
 	Cannonier: J'AI FAAAIIIIIM !!!

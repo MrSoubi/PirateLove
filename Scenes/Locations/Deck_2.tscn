@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm3rnqwkf5jt3"]
+[gd_scene load_steps=8 format=3 uid="uid://dm3rnqwkf5jt3"]
 
-[ext_resource type="Texture2D" uid="uid://eru7yv614bsv" path="res://Textures/Locations/Placeholders/pont2_background.jpg" id="1_ipv72"]
+[ext_resource type="Texture2D" uid="uid://dyrhdtupstwod" path="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" id="1_iyjvk"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_3v7aa"]
 [ext_resource type="PackedScene" uid="uid://0vgrc2li3kgg" path="res://Characters/Captain.tscn" id="2_f82jl"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="4_0k3ab"]
 [ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="4_pm0ef"]
 [ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_q1mvx"]
+[ext_resource type="Texture2D" uid="uid://dbeeaxqtdr0ic" path="res://Textures/Locations/Deck_2/pont_1_porte.png" id="7_bdjlb"]
 
 [node name="Deck2" type="Node"]
 
@@ -17,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ipv72")
+texture = ExtResource("1_iyjvk")
 expand_mode = 5
 
 [node name="Captain" parent="CanvasLayer" instance=ExtResource("2_f82jl")]
@@ -54,12 +55,27 @@ polygon = PackedVector2Array(459, 334, 461, 485, 563, 477, 563, 329)
 script = ExtResource("5_q1mvx")
 hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/DoorInteractible"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_bdjlb")
+
 [node name="Area2D" type="Area2D" parent="CanvasLayer/DoorInteractible"]
 script = ExtResource("4_0k3ab")
 timeline = "porte_cabine"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/DoorInteractible/Area2D"]
+polygon = PackedVector2Array(459, 334, 560, 330, 562, 475, 458, 485)
 
 [connection signal="input_event" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door_To_ShipHold" to="CanvasLayer/Door_To_ShipHold" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door_To_Deck1" to="CanvasLayer/Door_To_Deck1" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Door/Door_To_CaptainCabin" to="CanvasLayer/Door/Door_To_CaptainCabin" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/Area2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/DoorInteractible/Area2D" to="CanvasLayer/DoorInteractible/Area2D" method="_on_mouse_exited"]
