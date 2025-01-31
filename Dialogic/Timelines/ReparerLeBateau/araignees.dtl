@@ -1,6 +1,7 @@
 #####
 # Parler avec les araignées si le joueur n'a pas de biscuit
 #####
+join toile_araignee center
 if {Chapitre_1.ReparerLeBateau.possede_biscuit} == false:
 	PJPensif: Ces pestes grouillent de partout... Je les exterminerais à la flamme si ce bateau n'était pas fait en bois.
 	PJPensif: Leur toile a l'air extrêmement solide en revanche. Peut-être que je pourrais réussir à en récupérer d'une manière ou d'une autre ?
@@ -21,7 +22,8 @@ if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true::
 	Corsaire: J'EN AI DE PARTOUT, ELLES SONT DANS MES VÊTEMENTS, VIREZ LES DE LÀ ! AU SECOURS, AU SECOURS !...
 	Corsaire: ...
 	PJPensif: Elles ne me piquent pas ?...
-	join Cannonier center
+	update toile_araignee left
+	join Cannonier right 
 	Cannonier: Tout va bien matelos ? J'ai des entendu des cr-
 	Cannonier: OH MILLE SABORDS, TU TE FAIS BOUFFER TOUT CRU PAR CES BESTIOLES !
 	Cannonier: T'inquiète pas gamin, je vais les virer à gros coup de POUDRE A CANON DU TONTON ORLAGH !
@@ -33,6 +35,7 @@ if {Chapitre_1.ReparerLeBateau.possede_biscuit} == true::
 	Cannonier: Bien sûr, bien sûr...
 	Cannonier: Bon c'est pas tout, mais j'ai un canon à aller lustrer moi !
 	leave Cannonier
+	update toile_araignee center 
 	Corsaire: ...
 	Corsaire: Bref, il faut que j'aille réparer cette voile moi maintenant...
 	PJPensif: Mon dos me gratte atrocement, mais j'ai peur de les brusquer.

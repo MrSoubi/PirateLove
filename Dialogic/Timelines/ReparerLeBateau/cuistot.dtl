@@ -1,3 +1,4 @@
+join Cuistot center
 if {Chapitre_1.ReparerLeBateau.discussion_mousse_araignees} == false:
 	Cuistot: Qu'est-ce que tu me veux encore ?
 	Corsaire: Euh... je voulais savoir si tu sais où on peut trouver de la toile ou des planches.
