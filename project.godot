@@ -139,6 +139,7 @@ variables={
 "chapitre1_fini": false,
 "chapitre2_fini": false,
 "prologue_fini": false,
+"score_test_second": 0,
 "secret_decouvert": false,
 "test_du_second_fini": false,
 "test_reussi": false
