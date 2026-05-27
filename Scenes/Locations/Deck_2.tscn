@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dyrhdtupstwod" path="res://Textures/Locations/Deck_2/pont_1_sans_porte.png" id="1_iyjvk"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_3v7aa"]
 [ext_resource type="PackedScene" uid="uid://0vgrc2li3kgg" path="res://Characters/Captain.tscn" id="2_f82jl"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="4_0k3ab"]
-[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="4_pm0ef"]
-[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="5_q1mvx"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="4_0k3ab"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="4_pm0ef"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="5_q1mvx"]
 [ext_resource type="Texture2D" uid="uid://dbeeaxqtdr0ic" path="res://Textures/Locations/Deck_2/pont_1_porte.png" id="7_bdjlb"]
 
 [sub_resource type="Gradient" id="Gradient_rhuuk"]
@@ -128,7 +128,7 @@ polygon = PackedVector2Array(-34, 501, 562, 549, 811, 664, -69, 667)
 
 [node name="Door" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("4_pm0ef")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
 
 [node name="Door_To_CaptainCabin" type="Area2D" parent="CanvasLayer/Door"]
 script = ExtResource("2_3v7aa")
@@ -139,11 +139,12 @@ polygon = PackedVector2Array(459, 334, 461, 485, 563, 477, 563, 329)
 
 [node name="DoorInteractible" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("4_pm0ef")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.discussion_capitaine_second_bois"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.discussion_capitaine_second_bois"])
 
 [node name="DoorInteractible" type="Node2D" parent="CanvasLayer/DoorInteractible"]
 script = ExtResource("5_q1mvx")
-hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.porte_demantelee"])
+invert = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/DoorInteractible/DoorInteractible"]
 position = Vector2(576, 324)

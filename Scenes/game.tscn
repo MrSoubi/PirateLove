@@ -108,7 +108,6 @@ louche_de_murlock_var = "Chapitre_1.LaLoucheDeMurlock.quete_finie"
 chapitre2_var = "chapitre2_fini"
 reparer_bateau_var = "Chapitre_1.ReparerLeBateau.quete_finie"
 test_du_second_var = "test_du_second_fini"
-initial_scene = 2
 
 [node name="LocationContainer" type="Node2D" parent="."]
 

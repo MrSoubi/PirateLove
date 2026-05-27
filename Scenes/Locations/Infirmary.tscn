@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://rbfetri0gcyh" path="res://Textures/Locations/bg_infirmerie_vierge.png" id="1_6oxw4"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_5f6go"]
 [ext_resource type="PackedScene" uid="uid://bicfe6o7ysdev" path="res://Characters/Mousse.tscn" id="2_iqjt0"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="3_nuxq3"]
-[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="3_rvsmg"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="3_nuxq3"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="3_rvsmg"]
 [ext_resource type="Texture2D" uid="uid://u1q35aho185e" path="res://Textures/Locations/Infirmerie/inf_levier_haut.png" id="6_85y8w"]
-[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_edijj"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="6_edijj"]
 [ext_resource type="Texture2D" uid="uid://jjt1n01mu3vs" path="res://Textures/Locations/Infirmerie/inf_papier_bureau.png" id="7_njkp6"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="8_302bf"]
 [ext_resource type="Texture2D" uid="uid://drm0hd3l7unap" path="res://Textures/Locations/Infirmerie/inf_cadena.png" id="8_fbmnj"]
@@ -31,7 +31,8 @@ expand_mode = 3
 
 [node name="RatEtFromage" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("3_rvsmg")
-hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.quete_finie"])
+conditions = Array[String](["Chapitre_1.RatEtFromage.quete_finie"])
+invert = true
 
 [node name="Mousse" parent="CanvasLayer/RatEtFromage" instance=ExtResource("2_iqjt0")]
 position = Vector2(333, 365)
@@ -78,7 +79,8 @@ polygon = PackedVector2Array(615, 163, 614, 404, 828, 405, 825, 163)
 [node name="Rat" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 position = Vector2(-27, 11)
 script = ExtResource("3_rvsmg")
-hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
+conditions = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
+invert = true
 
 [node name="Rat" type="Sprite2D" parent="CanvasLayer/RatEtFromage/Rat"]
 position = Vector2(716, 293)
@@ -88,7 +90,8 @@ texture = ExtResource("8_xray4")
 [node name="DoorInfo" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 position = Vector2(-505, -140)
 script = ExtResource("3_rvsmg")
-hide_if_one_is_true = Array[String](["Chapitre_1.RatEtFromage.levier_active"])
+conditions = Array[String](["Chapitre_1.RatEtFromage.levier_active"])
+invert = true
 
 [node name="Area2D" type="Area2D" parent="CanvasLayer/RatEtFromage/DoorInfo"]
 z_index = 1
@@ -100,7 +103,7 @@ polygon = PackedVector2Array(929, 337, 931, 452, 981.82, 492.058, 967, 582, 1101
 
 [node name="RatQuiMange" type="Node2D" parent="CanvasLayer/RatEtFromage"]
 script = ExtResource("6_edijj")
-hide_if_one_is_false = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
+conditions = Array[String](["Chapitre_1.RatEtFromage.rat_parti"])
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RatEtFromage/RatQuiMange"]
 position = Vector2(179, 110)
@@ -123,7 +126,7 @@ texture = ExtResource("10_a3oe8")
 [node name="ReparerLeBateau" type="Node2D" parent="CanvasLayer"]
 visible = false
 script = ExtResource("6_edijj")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
 
 [node name="Door" type="Node2D" parent="CanvasLayer/ReparerLeBateau"]
 script = ExtResource("6_edijj")
@@ -149,14 +152,15 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_kvwdb")
 script = ExtResource("3_rvsmg")
-hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.trou_infirmerie_repare"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.trou_infirmerie_repare"])
+invert = true
 
 [node name="TrouRepare" type="Sprite2D" parent="CanvasLayer/ReparerLeBateau/Trou"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_0dji4")
 script = ExtResource("6_edijj")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_infirmerie_repare"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.trou_infirmerie_repare"])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/ReparerLeBateau/Trou"]
 position = Vector2(538, -424)
@@ -165,7 +169,7 @@ polygon = PackedVector2Array(543, 532, 551, 671, 631, 668, 624, 529)
 [node name="LoucheMurlock" type="Node2D" parent="CanvasLayer"]
 visible = false
 script = ExtResource("6_edijj")
-hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
+conditions = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/LoucheMurlock"]
 script = ExtResource("2_5f6go")

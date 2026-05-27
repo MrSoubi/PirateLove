@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://biijrjl0b3pia"]
 
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_igj1c"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="1_igj1c"]
 [ext_resource type="Texture2D" uid="uid://d4i2xp5ntv7ix" path="res://Textures/Characters/Second/second_chibi.png" id="2_b1m2w"]
 
 [node name="Second" type="Area2D"]
 script = ExtResource("1_igj1c")
+cursor_type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b1m2w")

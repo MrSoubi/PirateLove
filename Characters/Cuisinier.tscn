@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu13foefgfwex"]
 
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_dk06k"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="1_dk06k"]
 [ext_resource type="Texture2D" uid="uid://21ibncx64vw2" path="res://Textures/Characters/Cuistot/Cuisiniere_chibi.png" id="2_5yyhd"]
 
 [node name="Cuisinier" type="Area2D"]
 script = ExtResource("1_dk06k")
+cursor_type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_5yyhd")

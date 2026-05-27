@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4w0ict66kxhl"]
 
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_jglu2"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="1_jglu2"]
 [ext_resource type="Texture2D" uid="uid://nexd22j7fxcv" path="res://Textures/Characters/Medecin/infirmiere_chibi.png" id="1_p85gm"]
 
 [node name="Medecin" type="Area2D"]
 script = ExtResource("1_jglu2")
+cursor_type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p85gm")
