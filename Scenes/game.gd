@@ -34,7 +34,7 @@ var location_manager
 func _ready() -> void:
 	location_manager = LocationManager.new(location_container)
 	progression_manager = ProgressionManager.new(_build_progression_steps())
-	endgame_resolver = EndgameResolver.new()
+	endgame_resolver = EndgameResolver.new(_build_endgame_rules())
 	TRAVEL_EVENT.triggered.connect(_on_location_requested)
 	Dialogic.signal_event.connect(progression_manager.handle_dialogic_signal)
 	progression_manager.action_requested.connect(_execute_action)
@@ -78,13 +78,36 @@ func _build_progression_steps() -> Array[Dictionary]:
 		}
 	]
 
-func _get_endgame_timelines() -> Dictionary:
-	return {
-		"smash_capitaine": fin_smash_capitaine_timeline,
-		"smash_second": fin_smash_second_timeline,
-		"devenir_mousse": fin_mousse_timeline,
-		"fin_depart": fin_depart_timeline
-	}
+# Endgame rules for PirateLove — evaluated in order, first match wins.
+# Each rule lists the Dialogic variable conditions that must ALL be true, plus
+# the key into the ending_timelines dictionary to return on a match.
+# An empty "conditions" array acts as a fallback and always matches.
+func _build_endgame_rules() -> Array[Dictionary]:
+	return [
+		{
+			"conditions": [
+				{"var": "test_reussi", "value": true},
+				{"var": "secret_decouvert", "value": true}
+			],
+			"timeline_key": "smash_second"
+		},
+		{
+			"conditions": [
+				{"var": "test_reussi", "value": true}
+			],
+			"timeline_key": "smash_capitaine"
+		},
+		{
+			"conditions": [
+				{"var": "secret_decouvert", "value": true}
+			],
+			"timeline_key": "fin_depart"
+		},
+		{
+			"conditions": [],
+			"timeline_key": "devenir_mousse"
+		}
+	]
 
 func _on_location_requested(destination : GlobalScope.Location) -> void:
 	location_manager.set_location(destination)
@@ -115,7 +138,13 @@ func _on_button_nouvelle_partie_pressed() -> void:
 	start_game()
 
 func handle_endgame():
-	var timeline := endgame_resolver.resolve(_get_endgame_timelines())
+	var ending_timelines := {
+		"smash_capitaine": fin_smash_capitaine_timeline,
+		"smash_second": fin_smash_second_timeline,
+		"devenir_mousse": fin_mousse_timeline,
+		"fin_depart": fin_depart_timeline
+	}
+	var timeline := endgame_resolver.resolve(ending_timelines)
 	if timeline != "":
 		start_cutscene(timeline)
 

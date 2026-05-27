@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="2"]
+
+; -----------------------------------------------------------------------
+; Location: {location_name}
+; -----------------------------------------------------------------------
+; Structure guide
+; ───────────────
+; Each location scene contains:
+;   - A CanvasLayer (layer 0) holding all visual and interactive content.
+;   - A TextureRect child filling the canvas with the background art.
+;   - One or more Door nodes (Area2D + door.gd) with collision polygons
+;     tracing the clickable transition area.  Set `destination` in the
+;     inspector to the GlobalScope.Location enum value of the target room.
+;   - One or more Interactable nodes (Area2D + interactable.gd) triggering
+;     Dialogic timelines on click.  Set `timeline` to the timeline ID.
+;   - Conditionner (Node2D + conditionner.gd) wrappers to show / hide groups
+;     of nodes based on Dialogic variable values.
+;
+; Quest-layer pattern
+; ───────────────────
+; Wrap everything that belongs to a specific quest in a Conditionner node
+; whose `conditions` array contains the quest-active variable.  This way
+; the scene switches context automatically without any custom code.
+;
+; Replace this comment and the ColorRect placeholder with your actual art.
+; -----------------------------------------------------------------------
+
+[node name="{location_name}" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.25, 1)
