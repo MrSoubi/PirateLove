@@ -1,0 +1,29 @@
+{{
+  "@path": "res://addons/dialogic/Resources/character.gd",
+  "@subpath": "",
+  "_translation_id": "",
+  "color": Color({color_r}, {color_g}, {color_b}, 1),
+  "custom_info": {{
+    "sound_mood_default": "",
+    "sound_moods": {{}},
+    "style": ""
+  }},
+  "default_portrait": "Default",
+  "description": "{description}",
+  "display_name": "{display_name}",
+  "mirror": false,
+  "nicknames": [""],
+  "offset": Vector2(0, 0),
+  "portraits": {{
+    "Default": {{
+      "export_overrides": {{
+        "image": "\"res://Textures/Characters/{character_name}/default.png\""
+      }},
+      "mirror": false,
+      "offset": Vector2(0, 0),
+      "scale": 1.0,
+      "scene": ""
+    }}
+  }},
+  "scale": 1.0
+}}

@@ -1,0 +1,119 @@
+extends Node
+
+@onready var transition_layer: Fader = $TransitionLayer
+@onready var main_menu: CanvasLayer = $MainMenu
+@onready var location_container: Node2D = $LocationContainer
+
+# -------------------------------------------------------------------------
+# Exported timeline IDs — set these in the Godot inspector on the Game node.
+# -------------------------------------------------------------------------
+# Add one @export var per cutscene / narration timeline your game uses.
+# Example:
+#   @export var intro_timeline: String
+#   @export var chapter_1_timeline: String
+# -------------------------------------------------------------------------
+
+{timeline_exports}
+
+# -------------------------------------------------------------------------
+# Exported progression variable paths — Dialogic variable paths whose boolean
+# values gate story progression (one per step).
+# -------------------------------------------------------------------------
+
+{variable_exports}
+
+const TRAVEL_EVENT = preload("res://Data/TravelEvent.tres")
+const ProgressionManager = preload("res://Scripts/progression_manager.gd")
+const EndgameResolver = preload("res://Scripts/endgame_resolver.gd")
+const LocationManager = preload("res://Scripts/location_manager.gd")
+
+var progression_manager
+var endgame_resolver
+var location_manager
+
+func _ready() -> void:
+	location_manager = LocationManager.new(location_container)
+	progression_manager = ProgressionManager.new(_build_progression_steps())
+	endgame_resolver = EndgameResolver.new(_build_endgame_rules())
+	TRAVEL_EVENT.triggered.connect(_on_location_requested)
+	Dialogic.signal_event.connect(progression_manager.handle_dialogic_signal)
+	progression_manager.action_requested.connect(_execute_action)
+
+# -------------------------------------------------------------------------
+# Progression steps — add one dict per story beat.
+#
+# Keys:
+#   "variable_name" : Dialogic variable path; step completes when it is true.
+#   "on_complete"   : action dict to execute when the variable flips to true.
+#   "on_incomplete" : action dict to execute when the variable is still false.
+#
+# Action dict types:
+#   {{"type": "location", "value": GlobalScope.Location.SOME_LOCATION}}
+#   {{"type": "cutscene", "value": "timeline_id_string"}}
+#   {{"type": "endgame"}}
+# -------------------------------------------------------------------------
+
+func _build_progression_steps() -> Array[Dictionary]:
+	return [
+{progression_steps}
+	]
+
+# -------------------------------------------------------------------------
+# Endgame rules — evaluated in order; first fully-matching rule wins.
+#
+# Keys:
+#   "conditions"   : list of {{"var": "...", "value": true/false}} checks.
+#                    Empty list = always matches (use as fallback).
+#   "timeline_key" : key into the dict returned by _get_endgame_timelines().
+# -------------------------------------------------------------------------
+
+func _build_endgame_rules() -> Array[Dictionary]:
+	return [
+{endgame_rules}
+	]
+
+func _get_endgame_timelines() -> Dictionary:
+	return {{
+{endgame_timelines}
+	}}
+
+# -------------------------------------------------------------------------
+# Internal plumbing — generally no need to edit below this line.
+# -------------------------------------------------------------------------
+
+func _on_location_requested(destination: GlobalScope.Location) -> void:
+	location_manager.set_location(destination)
+
+func _execute_action(action: Dictionary) -> void:
+	match action.get("type", ""):
+		"location":
+			_on_location_requested(action.get("value"))
+		"cutscene":
+			start_cutscene(action.get("value", ""))
+		"endgame":
+			handle_endgame()
+
+func start_game():
+	progression_manager.refresh()
+	main_menu.visible = false
+	_execute_action(progression_manager.get_startup_action())
+
+func _on_button_continuer_pressed() -> void:
+	transition_layer.transition()
+	await transition_layer.on_transition_finished
+	Dialogic.Save.load()
+	start_game()
+
+func _on_button_nouvelle_partie_pressed() -> void:
+	transition_layer.transition()
+	await transition_layer.on_transition_finished
+	start_game()
+
+func handle_endgame():
+	var timeline := endgame_resolver.resolve(_get_endgame_timelines())
+	if timeline != "":
+		start_cutscene(timeline)
+
+func start_cutscene(timeline: String):
+	transition_layer.transition()
+	Dialogic.start(timeline)

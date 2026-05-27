@@ -1,0 +1,20 @@
+extends Node
+
+# -------------------------------------------------------------------------
+# Location registry
+# -------------------------------------------------------------------------
+# Add one entry per explorable location in your game.
+# The integer values map to LocationDefinition .tres files below.
+# door.gd uses @export var destination: GlobalScope.Location, so the enum
+# value is stored directly in each Door node inside the Godot editor.
+
+enum Location {{
+{location_enum}
+}}
+
+const LOCATION_DEFINITIONS := {{
+{location_definitions}
+}}
+
+func get_location_definition(location: Location) -> LocationDefinition:
+	return LOCATION_DEFINITIONS[location]

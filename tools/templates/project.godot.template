@@ -1,0 +1,55 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="{game_name}"
+run/main_scene="res://Scenes/game.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalScope="*res://Scripts/global_scope.gd"
+CursorManager="*res://Scripts/cursor_manager.gd"
+
+[dialogic]
+
+directories/dch_directory={{dch_directory}}
+directories/dtl_directory={{dtl_directory}}
+variables={{variables}}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/advance_delay=0.1
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+save/autosave=true
+save/default_slot="Save"
+layout/style_list=["res://Dialogic/Styles/DefaultStyle.tres"]
+layout/default_style="res://Dialogic/Styles/DefaultStyle.tres"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[input]
+
+dialogic_default_action={{dialogic_default_action}}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

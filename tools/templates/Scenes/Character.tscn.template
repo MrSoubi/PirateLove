@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="1"]
+
+; -----------------------------------------------------------------------
+; Character scene: {character_name}
+; -----------------------------------------------------------------------
+; This is the in-world clickable representation of a character (the chibi /
+; sprite that appears inside location scenes).  It is separate from the
+; Dialogic character definition (.dch) that controls portraits and dialogue.
+;
+; Setup checklist:
+;   1. Replace the CollisionShape2D with a CollisionPolygon2D that traces
+;      your character sprite's silhouette.
+;   2. Add a Sprite2D child and assign the character's art texture.
+;   3. Set `cursor_type` on the root Area2D to CursorManager.Type.CHARACTER (0).
+;   4. When placed in a location scene, set the `timeline` property on the
+;      root node to the Dialogic timeline ID for this character's dialogue.
+; -----------------------------------------------------------------------
+
+[node name="{character_name}" type="Area2D"]
+script = ExtResource("1")
+cursor_type = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

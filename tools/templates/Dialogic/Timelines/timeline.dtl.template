@@ -1,0 +1,39 @@
+# Timeline: {timeline_id}
+# Quest: {quest_name}
+#
+# ── Dialogic timeline syntax quick reference ────────────────────────────────
+#
+# Plain text line          Narrator / no-speaker line displayed in the text box.
+# Character: Text          Character says "Text" (character must be defined in .dch).
+# Character (Portrait): T  Same but switches to the named portrait.
+# join CharName position   Shows portrait at: left / center / right / leftmost / rightmost
+# leave CharName           Hides portrait.
+# leave --All--            Hides all portraits.
+# update CharName pos      Moves portrait to new position.
+# [background arg="res://..." fade="1.0"]   Change background image.
+# [music path="res://..." fade="2.0" volume="0.0"]  Start music.
+# [music fade="1.0" volume="0.0"]           Stop music (no path = stop).
+# [wait time="2.0"]        Pause for N seconds.
+# [signal arg="variables_changed"]  Notify the engine that variables changed.
+# [end_timeline]           Ends this timeline (returns to scene).
+#
+# Variable operations:
+#   set {{variable_path}} = true
+#   set {{variable_path}} = false
+#   set {{variable_path}} = 42
+#
+# Conditionals:
+#   if {{variable_path}} == true:
+#       ...indented lines run only when condition is true
+#
+# Choices:
+#   - Option A label
+#       ...lines only run when player picks A
+#   - Option B label
+#       ...lines only run when player picks B
+#
+# Always emit [signal arg="variables_changed"] after changing any variable that
+# the Conditionner nodes or ProgressionManager need to react to.
+# ────────────────────────────────────────────────────────────────────────────
+
+# TODO: write the dialogue for this timeline.
