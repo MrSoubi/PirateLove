@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://uc7wiuquw018"]
 
 [ext_resource type="Texture2D" uid="uid://rbjgr6ttyg8t" path="res://Textures/Locations/Cuisine/cuisine.png" id="1_jo5ep"]
-[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="2_4pbdh"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="2_4pbdh"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_mj3ii"]
 [ext_resource type="PackedScene" uid="uid://cu13foefgfwex" path="res://Characters/Cuisinier.tscn" id="3_8pbwl"]
-[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="4_of5xr"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="5_0eosh"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="4_of5xr"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="5_0eosh"]
 [ext_resource type="Texture2D" uid="uid://cvdcduejxiprq" path="res://Textures/Locations/Cuisine/trou_eau.png" id="6_yqg6p"]
 [ext_resource type="Texture2D" uid="uid://q7lisk5235r7" path="res://Textures/Locations/Cuisine/trace_poudre.png" id="7_dp8am"]
 [ext_resource type="Texture2D" uid="uid://3nmwvvxbmdlm" path="res://Textures/Locations/Cuisine/planche.png" id="7_t0dva"]
@@ -26,7 +26,7 @@ expand_mode = 3
 
 [node name="ReparerBateau" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("2_4pbdh")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/ReparerBateau"]
 script = ExtResource("2_mj3ii")
@@ -53,18 +53,20 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_yqg6p")
 script = ExtResource("4_of5xr")
-hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.trou_cuisine_repare"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.trou_cuisine_repare"])
+invert = true
 
 [node name="Planche" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_t0dva")
 script = ExtResource("2_4pbdh")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_cuisine_repare"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.trou_cuisine_repare"])
 
 [node name="LaLoucheDeMurlock" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("4_of5xr")
-hide_if_one_is_true = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_finie"])
+conditions = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_finie"])
+invert = true
 
 [node name="Door_To_ShipHold" type="Area2D" parent="CanvasLayer/LaLoucheDeMurlock"]
 script = ExtResource("2_mj3ii")
@@ -85,7 +87,7 @@ texture = ExtResource("7_dp8am")
 
 [node name="Etageres" type="Node2D" parent="CanvasLayer/LaLoucheDeMurlock"]
 script = ExtResource("2_4pbdh")
-hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.discussion_cuistot"])
+conditions = Array[String](["Chapitre_1.LaLoucheDeMurlock.discussion_cuistot"])
 
 [node name="Etageres" type="Area2D" parent="CanvasLayer/LaLoucheDeMurlock/Etageres"]
 script = ExtResource("5_0eosh")

@@ -1,4 +1,4 @@
 class_name TravelEvent
 extends Resource
 
-signal triggered(destination : LocationDefinition)
+signal triggered(destination : GlobalScope.Location)

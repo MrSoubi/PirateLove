@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://doh6p5v5o7neh" path="res://Characters/Cannonier.tscn" id="3_a6lkd"]
 [ext_resource type="PackedScene" uid="uid://hvuusqysuf45" path="res://Characters/Guet.tscn" id="4_drmdt"]
 [ext_resource type="PackedScene" uid="uid://b4w0ict66kxhl" path="res://Characters/Medecin.tscn" id="5_p4q6l"]
-[ext_resource type="Script" path="res://Scripts/conditionner_false.gd" id="6_8py5v"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="6_8py5v"]
 [ext_resource type="Texture2D" uid="uid://b7yurrawak0uw" path="res://Textures/Locations/Cale/trou_test.png" id="8_7tuth"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="9_ab5xv"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="9_ab5xv"]
 [ext_resource type="Texture2D" uid="uid://vr11sa4ukvis" path="res://Textures/Locations/Cale/planche_cale.png" id="9_ddee4"]
-[ext_resource type="Script" path="res://Scripts/conditionner_true.gd" id="9_h27mn"]
+[ext_resource type="Script" path="res://Scripts/conditionner.gd" id="9_h27mn"]
 
 [node name="ShipHold" type="Node"]
 
@@ -27,11 +27,11 @@ expand_mode = 3
 [node name="NourrirEquipage" type="Node2D" parent="CanvasLayer"]
 visible = false
 script = ExtResource("6_8py5v")
-hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
+conditions = Array[String](["Chapitre_1.LaLoucheDeMurlock.quete_en_cours"])
 
 [node name="Door_To_Kitchen" type="Node2D" parent="CanvasLayer/NourrirEquipage"]
 script = ExtResource("6_8py5v")
-hide_if_one_is_false = Array[String](["Chapitre_1.LaLoucheDeMurlock.discussion_cannonier", "Chapitre_1.LaLoucheDeMurlock.discussion_guet", "Chapitre_1.LaLoucheDeMurlock.discussion_medecin"])
+conditions = Array[String](["Chapitre_1.LaLoucheDeMurlock.discussion_cannonier", "Chapitre_1.LaLoucheDeMurlock.discussion_guet", "Chapitre_1.LaLoucheDeMurlock.discussion_medecin"])
 
 [node name="Door_To_Kitchen" type="Area2D" parent="CanvasLayer/NourrirEquipage/Door_To_Kitchen"]
 script = ExtResource("2_46xdj")
@@ -63,7 +63,7 @@ polygon = PackedVector2Array(159, 565, 288, 705, 1099, 655, 596, 527)
 
 [node name="ReparerBateau" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("6_8py5v")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.quete_en_cours"])
 
 [node name="Door_To_Kitchen" type="Area2D" parent="CanvasLayer/ReparerBateau"]
 script = ExtResource("2_46xdj")
@@ -90,14 +90,15 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_7tuth")
 script = ExtResource("9_h27mn")
-hide_if_one_is_true = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
+invert = true
 
 [node name="planche" type="Sprite2D" parent="CanvasLayer/ReparerBateau/Trou"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_ddee4")
 script = ExtResource("6_8py5v")
-hide_if_one_is_false = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
+conditions = Array[String](["Chapitre_1.ReparerLeBateau.trou_cale_repare"])
 
 [node name="Door_To_Infirmary" type="Area2D" parent="CanvasLayer/ReparerBateau"]
 script = ExtResource("2_46xdj")

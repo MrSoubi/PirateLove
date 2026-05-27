@@ -5,5 +5,4 @@
 
 [resource]
 script = ExtResource("1_t0a87")
-location_name = "Cuisine"
 scene = ExtResource("1_4hadf")

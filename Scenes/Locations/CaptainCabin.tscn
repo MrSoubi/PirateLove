@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3m08r0k0ai8n" path="res://Textures/Locations/CabineCapitaine/cabine.png" id="1_xuq5i"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="2_y2d5c"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="3_8qo3i"]
+[ext_resource type="Script" path="res://Scripts/interactable.gd" id="3_8qo3i"]
 
 [node name="CaptainCabin" type="Node"]
 

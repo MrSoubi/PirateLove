@@ -1,6 +1,8 @@
 extends Node
 
 @onready var transition_layer: Fader = $TransitionLayer
+@onready var main_menu: CanvasLayer = $MainMenu
+@onready var location_container: Node2D = $LocationContainer
 
 # timelines narration
 @export var prologue_timeline : String
@@ -12,14 +14,6 @@ extends Node
 @export var fin_mousse_timeline : String
 @export var fin_depart_timeline : String
 
-var prologue_termine : bool
-var rat_et_fromage_termine : bool
-var chapitre1_termine : bool
-var louche_de_murlock_termine : bool
-var chapitre2_termine : bool
-var reparer_bateau_termine : bool
-var test_du_second_termine : bool
-
 @export var prologue_var : String
 @export var rat_et_fromage_var : String
 @export var chapitre1_var : String
@@ -28,108 +22,86 @@ var test_du_second_termine : bool
 @export var reparer_bateau_var : String
 @export var test_du_second_var : String
 
-@onready var main_menu: CanvasLayer = $MainMenu
-@onready var location_container: Node2D = $LocationContainer
-
-@export var initial_scene : GlobalScope.Location
-
 const TRAVEL_EVENT = preload("res://Data/TravelEvent.tres")
+const ProgressionManager = preload("res://Scripts/progression_manager.gd")
+const EndgameResolver = preload("res://Scripts/endgame_resolver.gd")
+const LocationManager = preload("res://Scripts/location_manager.gd")
 
-# locations
-const KITCHEN = preload("res://LocationDefinitions/Kitchen.tres")
-const CAPTAIN_CABIN = preload("res://LocationDefinitions/CaptainCabin.tres")
-const DECK_1 = preload("res://LocationDefinitions/Deck_1.tres")
-const DECK_2 = preload("res://LocationDefinitions/Deck_2.tres")
-const INFIRMARY = preload("res://LocationDefinitions/Infirmary.tres")
-const MAST = preload("res://LocationDefinitions/Mast.tres")
-const SHIP_HOLD = preload("res://LocationDefinitions/ShipHold.tres")
+var progression_manager
+var endgame_resolver
+var location_manager
 
 func _ready() -> void:
-	TRAVEL_EVENT.triggered.connect(set_location)
-	Dialogic.signal_event.connect(handle_dialogic_signal)
+	location_manager = LocationManager.new(location_container)
+	progression_manager = ProgressionManager.new(_build_progression_steps())
+	endgame_resolver = EndgameResolver.new()
+	TRAVEL_EVENT.triggered.connect(_on_location_requested)
+	Dialogic.signal_event.connect(progression_manager.handle_dialogic_signal)
+	progression_manager.action_requested.connect(_execute_action)
 
-func handle_dialogic_signal(argument : String):
-	# on vient de finir le prologue
-	if prologue_termine != Dialogic.VAR.get_variable(prologue_var):
-		prologue_termine = true
-		set_location(GlobalScope.Location.INFIRMARY)
-	
-	# on vient de finir Rate et Fromage
-	if rat_et_fromage_termine != Dialogic.VAR.get_variable(rat_et_fromage_var):
-		rat_et_fromage_termine = true
-		start_cutscene(chapitre1_timeline)
-	
-	# on vient de finir le chapitre 1
-	if chapitre1_termine != Dialogic.VAR.get_variable(chapitre1_var):
-		chapitre1_termine = true
-		set_location(GlobalScope.Location.SHIP_HOLD)
-	
-	# on vient de finir la louche de Murlock
-	if louche_de_murlock_termine != Dialogic.VAR.get_variable(louche_de_murlock_var):
-		louche_de_murlock_termine = true
-		start_cutscene(chapitre2_timeline)
-	
-	# on vient de finir le chapitre 2
-	if chapitre2_termine != Dialogic.VAR.get_variable(chapitre2_var):
-		chapitre2_termine = true
-		set_location(GlobalScope.Location.DECK_1)
-	
-	# on vient de finir la réparation du bateau
-	if reparer_bateau_termine != Dialogic.VAR.get_variable(reparer_bateau_var):
-		reparer_bateau_termine = true
-		start_cutscene(test_du_second_timeline)
-	
-	# on vient de finir le test du second
-	if test_du_second_termine != Dialogic.VAR.get_variable(test_du_second_var):
-		test_du_second_termine = true
-		handle_endgame()
+func _build_progression_steps() -> Array[Dictionary]:
+	return [
+		{
+			"variable_name": prologue_var,
+			"on_complete": {"type": "location", "value": GlobalScope.Location.INFIRMARY},
+			"on_incomplete": {"type": "cutscene", "value": prologue_timeline}
+		},
+		{
+			"variable_name": rat_et_fromage_var,
+			"on_complete": {"type": "cutscene", "value": chapitre1_timeline},
+			"on_incomplete": {"type": "location", "value": GlobalScope.Location.INFIRMARY}
+		},
+		{
+			"variable_name": chapitre1_var,
+			"on_complete": {"type": "location", "value": GlobalScope.Location.SHIP_HOLD},
+			"on_incomplete": {"type": "cutscene", "value": chapitre1_timeline}
+		},
+		{
+			"variable_name": louche_de_murlock_var,
+			"on_complete": {"type": "cutscene", "value": chapitre2_timeline},
+			"on_incomplete": {"type": "location", "value": GlobalScope.Location.SHIP_HOLD}
+		},
+		{
+			"variable_name": chapitre2_var,
+			"on_complete": {"type": "location", "value": GlobalScope.Location.DECK_1},
+			"on_incomplete": {"type": "cutscene", "value": chapitre2_timeline}
+		},
+		{
+			"variable_name": reparer_bateau_var,
+			"on_complete": {"type": "cutscene", "value": test_du_second_timeline},
+			"on_incomplete": {"type": "location", "value": GlobalScope.Location.DECK_2}
+		},
+		{
+			"variable_name": test_du_second_var,
+			"on_complete": {"type": "endgame"},
+			"on_incomplete": {"type": "cutscene", "value": test_du_second_timeline}
+		}
+	]
 
-func set_location(destination : GlobalScope.Location):
-	var destination_definition
-	match destination:
-		GlobalScope.Location.KITCHEN : 
-			destination_definition = KITCHEN
-		GlobalScope.Location.CAPTAIN_CABIN : 
-			destination_definition = CAPTAIN_CABIN
-		GlobalScope.Location.DECK_1 : 
-			destination_definition = DECK_1
-		GlobalScope.Location.DECK_2 : 
-			destination_definition = DECK_2
-		GlobalScope.Location.INFIRMARY : 
-			destination_definition = INFIRMARY
-		GlobalScope.Location.MAST : 
-			destination_definition = MAST
-		GlobalScope.Location.SHIP_HOLD :
-			destination_definition = SHIP_HOLD
-	
-	empty_location_container()
-	var new_location = destination_definition.scene.instantiate()
-	location_container.add_child(new_location)
+func _get_endgame_timelines() -> Dictionary:
+	return {
+		"smash_capitaine": fin_smash_capitaine_timeline,
+		"smash_second": fin_smash_second_timeline,
+		"devenir_mousse": fin_mousse_timeline,
+		"fin_depart": fin_depart_timeline
+	}
 
-func empty_location_container():
-	for child in location_container.get_children():
-		location_container.remove_child(child)
+func _on_location_requested(destination : GlobalScope.Location) -> void:
+	location_manager.set_location(destination)
+
+func _execute_action(action: Dictionary) -> void:
+	match action.get("type", ""):
+		"location":
+			_on_location_requested(action.get("value"))
+		"cutscene":
+			start_cutscene(action.get("value", ""))
+		"endgame":
+			handle_endgame()
 
 func start_game():
-	set_local_booleans()
+	progression_manager.refresh()
 	main_menu.visible = false
-	
-	if not prologue_termine:
-		start_cutscene(prologue_timeline)
-	elif not rat_et_fromage_termine:
-		set_location(GlobalScope.Location.INFIRMARY)
-	elif not chapitre1_termine:
-		start_cutscene(chapitre1_timeline)
-	elif not louche_de_murlock_termine:
-		set_location(GlobalScope.Location.SHIP_HOLD)
-	elif not chapitre2_termine:
-		start_cutscene(chapitre2_timeline)
-	elif not reparer_bateau_termine:
-		set_location(GlobalScope.Location.DECK_2)
-	elif not test_du_second_termine:
-		start_cutscene(test_du_second_timeline)
-	else:
-		handle_endgame()
+	_execute_action(progression_manager.get_startup_action())
 
 func _on_button_continuer_pressed() -> void:
 	transition_layer.transition()
@@ -142,37 +114,11 @@ func _on_button_nouvelle_partie_pressed() -> void:
 	await transition_layer.on_transition_finished
 	start_game()
 
-func set_local_booleans():
-	prologue_termine = Dialogic.VAR.get_variable(prologue_var)
-	rat_et_fromage_termine = Dialogic.VAR.get_variable(rat_et_fromage_var)
-	chapitre1_termine = Dialogic.VAR.get_variable(chapitre1_var)
-	louche_de_murlock_termine = Dialogic.VAR.get_variable(louche_de_murlock_var)
-	chapitre2_termine = Dialogic.VAR.get_variable(chapitre2_var)
-	reparer_bateau_termine = Dialogic.VAR.get_variable(reparer_bateau_var)
-	test_du_second_termine = Dialogic.VAR.get_variable(test_du_second_var)
-
 func handle_endgame():
-	var smash_la_capitaine : bool
-	var smash_le_second : bool
-	var deviens_un_pirate : bool
-	var le_celibat_c_cool : bool
-	
-	smash_la_capitaine = Dialogic.VAR.get_variable("test_reussi") and not Dialogic.VAR.get_variable("secret_decouvert")
-	smash_le_second = Dialogic.VAR.get_variable("test_reussi") and Dialogic.VAR.get_variable("secret_decouvert")
-	deviens_un_pirate = not Dialogic.VAR.get_variable("test_reussi") and not Dialogic.VAR.get_variable("secret_decouvert")
-	le_celibat_c_cool = not Dialogic.VAR.get_variable("test_reussi") and Dialogic.VAR.get_variable("secret_decouvert")
-	
-	if smash_la_capitaine:
-		start_cutscene(fin_smash_capitaine_timeline)
-	elif smash_le_second:
-		start_cutscene(fin_smash_second_timeline)
-	elif deviens_un_pirate:
-		start_cutscene(fin_mousse_timeline)
-	elif le_celibat_c_cool:
-		start_cutscene(fin_depart_timeline)
+	var timeline := endgame_resolver.resolve(_get_endgame_timelines())
+	if timeline != "":
+		start_cutscene(timeline)
 
 func start_cutscene(timeline : String):
-	prints("lancement cutscene", timeline)
 	transition_layer.transition()
-	#await transition_layer.on_transition_finished
 	Dialogic.start(timeline)
